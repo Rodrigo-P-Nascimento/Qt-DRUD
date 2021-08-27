@@ -3,11 +3,11 @@
 using namespace std;
 
 void Menu(){
-    cout << "\t\t Menu de Funcoes:\n
-             \t 1 - Cadastrar Produto\n
-             \t 2 - Buscar Produto\n
-             \t 3 - Relatorio de Produtos\n
-             \t 9 - Sair\n"
+    cout << "\t\t Menu de Funcoes:\n" <<
+            "\t 1 - Cadastrar Produto\n" <<
+            "\t 2 - Buscar Produto\n" <<
+            "\t 3 - Relatorio de Produtos\n" <<
+            "\t 9 - Sair" << endl;
 }
 
 int main(){
@@ -15,7 +15,7 @@ int main(){
 
     while(1){
         Menu();
-        cout << "Digite uma opcao: " << endl;
+        cout << "Digite uma opcao: ";
         cin >> opcao;
         
         if(opcao == 9){
@@ -33,7 +33,7 @@ int main(){
 
                 break;
             default:
-                cout << "Opcao " << opcao << " invalida."
+                cout << "Opcao " << opcao << " invalida." << endl;
         }
     }
 
