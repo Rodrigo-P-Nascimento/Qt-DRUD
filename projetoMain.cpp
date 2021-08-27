@@ -2,6 +2,7 @@
 #include <string>
 
 #define TAM 100
+#define MAX_NOME 50
 
 using namespace std;
 
@@ -18,6 +19,7 @@ typedef struct {
 
 void PreencheArray(tProdutos *prod);
 void Menu();
+void CadastrarProdutos(tProdutos *prod);
 
 int main(){
 
@@ -25,7 +27,6 @@ int main(){
     int opcao;
 
     PreencheArray(produtos);
-
     while(1){
         Menu();
         cout << "Digite uma opcao: ";
@@ -71,4 +72,54 @@ void Menu(){
             "\t 2 - Buscar Produto\n" <<
             "\t 3 - Relatorio de Produtos\n" <<
             "\t 9 - Sair" << endl;
+}
+
+void CadastrarProdutos(tProdutos *prod){
+    
+    int i = 0;
+    int opcao;
+    bool pararCadastro = false;
+
+    cout << "Informe as seguintes informacoes do(s) produto(s):" << endl;
+    while(1)
+    {
+        cout << "\tNome: ";
+        getline(cin, prod[i].nome);
+        cout << "Nome digitado: " << prod[i].nome << endl;
+
+        cout << "\tPreco: ";
+        cin >> prod[i].preco;
+
+        cout << "\tData de fabricacao: ";
+        cin >> prod[i].dataFabricacao;
+
+        cout << "\tData de validade: ";
+        cin >> prod[i].dataValidade;
+
+        cout << "Codigo: ";
+        cin >> prod[i].codigo;
+
+        while(1){
+            cout << "Deseja cadastrar mais algum produto?" << endl
+                << "\t[1] Sim" << endl
+                << "\t[0] Nao" << endl;
+
+            cin >> opcao;
+
+            if (opcao == 1){
+                i++;
+                break;
+            }else if (opcao == 0){
+                pararCadastro = true;
+                break;
+            }else {
+                cout << "Opcao invalida!" << endl;
+            }
+        }
+
+        if (pararCadastro){
+            break;
+        }
+    }
+
 }
