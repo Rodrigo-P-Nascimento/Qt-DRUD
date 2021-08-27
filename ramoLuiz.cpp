@@ -19,7 +19,7 @@ typedef struct {
 
 void PreencheArray(tProdutos prod[]);
 
-void CadastrarProdutos(tProdutos prod[]);
+void CadastrarProdutos(tProdutos *prod);
 
 
 int main(){
@@ -49,30 +49,38 @@ void PreencheArray(tProdutos prod[]){ // Função para iniciar os produtos com v
 }
 
 
-void CadastrarProdutos(tProdutos prod[]){
+void CadastrarProdutos(tProdutos *prod){
     
     int i = 0;
     int opcao;
     bool pararCadastro = false;
 
-    cout << "Informe as seguintes informacoes do(s) produto(s):" << endl;
     while(1)
     {
+        system("clear");
+
+        cout << "Informe as seguintes informacoes do(s) produto(s):" << endl;
         cout << "\tNome: ";
         getline(cin, prod[i].nome);
         cout << "Nome digitado: " << prod[i].nome << endl;
 
         cout << "\tPreco: ";
         cin >> prod[i].preco;
+        cout << "Preco digitado: " << prod[i].preco << endl;
+        getchar(); //Retira '\n' do buffer
 
         cout << "\tData de fabricacao: ";
-        cin >> prod[i].dataFabricacao;
+        getline(cin, prod[i].dataFabricacao);
+        cout << "Data de Fabricacao digitada: " << prod[i].dataFabricacao << endl;
 
         cout << "\tData de validade: ";
-        cin >> prod[i].dataValidade;
+        getline(cin, prod[i].dataValidade);
+        cout << "Data de Validade digitada: " << prod[i].dataValidade << endl;
 
-        cout << "Codigo: ";
+        cout << "\tCodigo: ";
         cin >> prod[i].codigo;
+        cout << "Codigo digitado: " << prod[i].codigo << endl;
+
 
         while(1){
             cout << "Deseja cadastrar mais algum produto?" << endl
@@ -80,6 +88,7 @@ void CadastrarProdutos(tProdutos prod[]){
                 << "\t[0] Nao" << endl;
 
             cin >> opcao;
+            getchar(); //Retira '\n' do buffer
 
             if (opcao == 1){
                 i++;
