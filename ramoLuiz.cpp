@@ -21,6 +21,7 @@ void PreencheArray(tProdutos prod[]);
 
 void CadastrarProdutos(tProdutos *prod);
 
+void limparBuffer();
 
 int main(){
 
@@ -48,7 +49,21 @@ void PreencheArray(tProdutos prod[]){ // Função para iniciar os produtos com v
 
 }
 
+void limparBuffer(void){
+    char c;
 
+    while((c = getchar()) != '\n' && c != EOF);
+}
+
+/**
+ * Objetivo: Cadastrar os produtos que irão para o estoque.
+ * 
+ * Parâmetros:
+ * (entrada e saída) *prod - Array do tipo tProdutos que armazenará
+ *                           as informações dos produtos.
+ * 
+ * Retorno: void.
+*/
 void CadastrarProdutos(tProdutos *prod){
     
     int i = 0;
@@ -57,29 +72,27 @@ void CadastrarProdutos(tProdutos *prod){
 
     while(1)
     {
-        system("clear");
-
         cout << "Informe as seguintes informacoes do(s) produto(s):" << endl;
         cout << "\tNome: ";
         getline(cin, prod[i].nome);
-        cout << "Nome digitado: " << prod[i].nome << endl;
+        //cout << "Nome digitado: " << prod[i].nome << endl;
 
         cout << "\tPreco: ";
         cin >> prod[i].preco;
-        cout << "Preco digitado: " << prod[i].preco << endl;
-        getchar(); //Retira '\n' do buffer
+        //cout << "Preco digitado: " << prod[i].preco << endl;
+        limparBuffer();
 
         cout << "\tData de fabricacao: ";
         getline(cin, prod[i].dataFabricacao);
-        cout << "Data de Fabricacao digitada: " << prod[i].dataFabricacao << endl;
+        //cout << "Data de Fabricacao digitada: " << prod[i].dataFabricacao << endl;
 
         cout << "\tData de validade: ";
         getline(cin, prod[i].dataValidade);
-        cout << "Data de Validade digitada: " << prod[i].dataValidade << endl;
+        //cout << "Data de Validade digitada: " << prod[i].dataValidade << endl;
 
         cout << "\tCodigo: ";
         cin >> prod[i].codigo;
-        cout << "Codigo digitado: " << prod[i].codigo << endl;
+        //cout << "Codigo digitado: " << prod[i].codigo << endl;
 
 
         while(1){
@@ -88,7 +101,7 @@ void CadastrarProdutos(tProdutos *prod){
                 << "\t[0] Nao" << endl;
 
             cin >> opcao;
-            getchar(); //Retira '\n' do buffer
+            limparBuffer();
 
             if (opcao == 1){
                 i++;
