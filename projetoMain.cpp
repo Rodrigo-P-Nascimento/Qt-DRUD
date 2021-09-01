@@ -8,43 +8,44 @@ using namespace std;
 
 typedef struct {
     string nome;
-    float preco;
-    //char tipoMedida;
     string dataFabricacao;
     string dataValidade;
     int codigo;
-    //string fornecedor;
-    //Implementar o estoque
+    float preco;
 }tProdutos;
 
 void PreencheArray(tProdutos *prod);
-void Menu();
 void CadastrarProdutos(tProdutos *prod);
+void Menu(void);
+void limparBuffer(void);
 
 int main(){
 
     tProdutos produtos[TAM];
-    int opcao;
+    int opcao=1;
 
     PreencheArray(produtos);
-    while(1){
+
+    while(opcao != 9){
         Menu();
         cout << "Digite uma opcao: ";
         cin >> opcao;
         
-        if(opcao == 9){
-            break;
-        }
-
         switch(opcao){
             case 1:
-
+                CadastrarProdutos(produtos);
                 break;
             case 2:
-
+                //Implementar função que busca um produto pelo: nome ou codigo do mesmo.
                 break;
-            case 3:
-
+             case 3:
+                //Implementar função que exiba todos os produtos na tela, poderia ser feita uma tabela
+                break;
+             case 4:
+                //Implementar função que 'remova' os valores de um produto, basta colocar todos os elementos do produto com os valores padrões da função PreencheArray.
+                break;
+            case 9:
+                cout << "Saindo do programa!" << endl;
                 break;
             default:
                 cout << "Opcao " << opcao << " invalida." << endl;
@@ -52,8 +53,16 @@ int main(){
     }
     return 0;
 }
-
-void PreencheArray(tProdutos *prod){ // Função para iniciar os produtos com valores padrões
+/**
+ * Objetivo: Preencher todos os elemetos do array, afim de padronizar os valores.
+ * 
+ * Parâmetros:
+ * (entrada e saída) *prod - Array do tipo tProdutos que armazenará
+ *                           as informações dos produtos.
+ * 
+ * Retorno: void.
+*/
+void PreencheArray(tProdutos *prod){
 
     int i;
 
@@ -65,27 +74,51 @@ void PreencheArray(tProdutos *prod){ // Função para iniciar os produtos com va
         prod[i].dataValidade = "vazio";
     }
 }
-
+/**
+ * Objetivo: Um pequeno menu de opções
+ * 
+ * Parâmetros:
+ * (entrada e saída) nenhum
+ * 
+ * Retorno: void.
+*/
 void Menu(){
     cout << "\t\t Menu de Funcoes:\n" <<
-            "\t 1 - Cadastrar Produto\n" <<
-            "\t 2 - Buscar Produto\n" <<
+            "\t 1 - Cadastrar um Produto\n" <<
+            "\t 2 - Buscar um Produto\n" <<
             "\t 3 - Relatorio de Produtos\n" <<
+            "\t 4 - Remover um Produto\n" <<
             "\t 9 - Sair" << endl;
 }
-
+/**
+ * Objetivo: Cadastrar os produtos que irão para o estoque.
+ * 
+ * Parâmetros:
+ * (entrada e saída) *prod - Array do tipo tProdutos que armazenará
+ *                           as informações dos produtos.
+ * 
+ * Retorno: void.
+*/
 void CadastrarProdutos(tProdutos *prod){
     
-    int i = 0;
+    int i;
     int opcao;
-    bool pararCadastro = false;
+    bool pararCadastro = true;
 
-    cout << "Informe as seguintes informacoes do(s) produto(s):" << endl;
-    while(1)
-    {
+    while(pararCadastro){
+        cout << "Informe as seguintes informacoes do produto:" << endl;
+        for(i=0; i < TAM; i++){
+            if(prod[i].nome == "vazio"){
+                break;
+                //Isso serve apenas para salvar a posição de i, que no caso é usada pra saber qual posição esta vazia ou não
+                //Se estiver vazia um novo produto é cadastrado ali, senão o programa ira procurar a proxima posição vazia
+            }
+        }
+
+        limparBuffer();
         cout << "\tNome: ";
         getline(cin, prod[i].nome);
-        cout << "Nome digitado: " << prod[i].nome << endl;
+        cout << "\tNome digitado: " << prod[i].nome << endl;
 
         cout << "\tPreco: ";
         cin >> prod[i].preco;
@@ -96,7 +129,7 @@ void CadastrarProdutos(tProdutos *prod){
         cout << "\tData de validade: ";
         cin >> prod[i].dataValidade;
 
-        cout << "Codigo: ";
+        cout << "\tCodigo: ";
         cin >> prod[i].codigo;
 
         while(1){
@@ -107,19 +140,26 @@ void CadastrarProdutos(tProdutos *prod){
             cin >> opcao;
 
             if (opcao == 1){
-                i++;
                 break;
             }else if (opcao == 0){
-                pararCadastro = true;
+                pararCadastro = false;
                 break;
             }else {
                 cout << "Opcao invalida!" << endl;
             }
         }
-
-        if (pararCadastro){
-            break;
-        }
     }
 
+}
+/**
+ * Objetivo: Limpar o buffer de entrada de qualquer valor indesejado
+ * 
+ * Parâmetros:
+ * (entrada e saída) nenhum
+ * 
+ * Retorno: void.
+*/
+void limparBuffer(void){
+    char c;
+    while((c = getchar()) != '\n' && c != EOF);
 }
