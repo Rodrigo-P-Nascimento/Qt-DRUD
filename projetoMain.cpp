@@ -16,6 +16,7 @@ typedef struct {
 
 void PreencheArray(tProdutos *prod);
 void CadastrarProdutos(tProdutos *prod);
+void ProcuraNome(tProdutos *Prod);
 void Menu(void);
 void limparBuffer(void);
 
@@ -36,7 +37,7 @@ int main(){
                 CadastrarProdutos(produtos);
                 break;
             case 2:
-                //Implementar função que busca um produto pelo: nome ou codigo do mesmo.
+                ProcuraNome(produtos);
                 break;
              case 3:
                 //Implementar função que exiba todos os produtos na tela, poderia ser feita uma tabela
@@ -118,16 +119,16 @@ void CadastrarProdutos(tProdutos *prod){
         limparBuffer();
         cout << "\tNome: ";
         getline(cin, prod[i].nome);
-        cout << "\tNome digitado: " << prod[i].nome << endl;
-
+        
         cout << "\tPreco: ";
         cin >> prod[i].preco;
 
+        limparBuffer();
         cout << "\tData de fabricacao: ";
-        cin >> prod[i].dataFabricacao;
-
+        getline(cin, prod[i].dataFabricacao);
+    
         cout << "\tData de validade: ";
-        cin >> prod[i].dataValidade;
+        getline(cin, prod[i].dataValidade);
 
         cout << "\tCodigo: ";
         cin >> prod[i].codigo;
@@ -136,7 +137,6 @@ void CadastrarProdutos(tProdutos *prod){
             cout << "Deseja cadastrar mais algum produto?" << endl
                 << "\t[1] Sim" << endl
                 << "\t[0] Nao" << endl;
-
             cin >> opcao;
 
             if (opcao == 1){
@@ -162,4 +162,52 @@ void CadastrarProdutos(tProdutos *prod){
 void limparBuffer(void){
     char c;
     while((c = getchar()) != '\n' && c != EOF);
+}
+/**
+ * Objetivo: Procurar um nome de um produto, usando a comparação entre duas strings
+ * 
+ * Parâmetros:
+ * (entrada e saída) *prod  
+ * 
+ * Retorno: void.
+*/
+void ProcuraNome(tProdutos *Prod){
+
+    string nome;
+    int i, opp=1;
+    bool achou;
+    char op;
+
+    while (opp){
+
+        cout << "Digite o nome que deseja procurar, maximo de " << MAX_NOME << " caracteres." << endl;
+        cin.ignore();
+        getline(cin, nome);
+        achou = false;
+
+        for(i=0; i < TAM; i++){
+            if(nome == Prod[i].nome){
+                cout << "Temos esse produto no estoque!" << endl;
+                achou = true;
+                break;
+            }   
+        }
+
+        if(achou == false) cout << "Nao temos " << nome << " no estoque." << endl;
+        
+        while(true){
+
+            cout << "Deseja procurar mais algum outro produto: [S / N]: " << endl;
+            cin >> op;
+
+            if(op == 's' || op == 'S'){
+                break;
+            }else if(op == 'n' || op == 'N'){
+                opp = 0;
+                break;
+            }else{
+                cout << "Resposta errada, tente novamente!" << endl;
+            }
+        }
+    }
 }
