@@ -130,8 +130,22 @@ void CadastrarProdutos(tProdutos *prod){
         cout << "\tData de validade: ";
         getline(cin, prod[i].dataValidade);
 
-        cout << "\tCodigo: ";
-        cin >> prod[i].codigo;
+
+        while(flag1){
+            
+            cout << "\tCodigo: ";
+            cin >> varqq;
+
+            for(i=0 ; i < TAM ; i++){
+                if(varqq == prod[i].codigo){
+                    cout << 'tente novamente'
+                }else{
+                    prod[i].codigo = varqq;
+                    flag = 1;
+                }
+            }
+        }
+        
 
         while(1){
             cout << "Deseja cadastrar mais algum produto?" << endl
