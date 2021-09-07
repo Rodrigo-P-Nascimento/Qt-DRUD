@@ -1,122 +1,15 @@
 #include <iostream>
 #include <string>
-
-#define TAM 100
-#define MAX_NOME 50
+#include <stdio.h>
 
 using namespace std;
 
-typedef struct {
-    string nome;
-    float preco;
-    //char tipoMedida;
-    string dataFabricacao;
-    string dataValidade;
-    int codigo;
-    //string fornecedor;
-    //Implementar o estoque
-}tProdutos;
-
-void PreencheArray(tProdutos prod[]);
-
-void CadastrarProdutos(tProdutos *prod);
-
-void limparBuffer();
 
 int main(){
 
-    tProdutos produtos[TAM];
+    string nome = "Ronaldo";
 
-    PreencheArray(produtos);
-
-    CadastrarProdutos(produtos);
-
-    return 0;
-}
-
-void PreencheArray(tProdutos prod[]){ // Função para iniciar os produtos com valores padrões
-
-    int i;
-
-    for(i=0 ; i < TAM; i++){
-        prod[i].nome = "vazio";
-        prod[i].preco = 0;
-        prod[i].codigo = 0;
-        prod[i].dataFabricacao = "vazio";
-        prod[i].dataValidade = "vazio";
-    }
-
-
-}
-
-void limparBuffer(void){
-    char c;
-
-    while((c = getchar()) != '\n' && c != EOF);
-}
-
-/**
- * Objetivo: Cadastrar os produtos que irão para o estoque.
- * 
- * Parâmetros:
- * (entrada e saída) *prod - Array do tipo tProdutos que armazenará
- *                           as informações dos produtos.
- * 
- * Retorno: void.
-*/
-void CadastrarProdutos(tProdutos *prod){
+    printf("%s bugo mano\n", &nome);
     
-    int i = 0;
-    int opcao;
-    bool pararCadastro = false;
-
-    while(1)
-    {
-        cout << "Informe as seguintes informacoes do(s) produto(s):" << endl;
-        cout << "\tNome: ";
-        getline(cin, prod[i].nome);
-        //cout << "Nome digitado: " << prod[i].nome << endl;
-
-        cout << "\tPreco: ";
-        cin >> prod[i].preco;
-        //cout << "Preco digitado: " << prod[i].preco << endl;
-        limparBuffer();
-
-        cout << "\tData de fabricacao: ";
-        getline(cin, prod[i].dataFabricacao);
-        //cout << "Data de Fabricacao digitada: " << prod[i].dataFabricacao << endl;
-
-        cout << "\tData de validade: ";
-        getline(cin, prod[i].dataValidade);
-        //cout << "Data de Validade digitada: " << prod[i].dataValidade << endl;
-
-        cout << "\tCodigo: ";
-        cin >> prod[i].codigo;
-        //cout << "Codigo digitado: " << prod[i].codigo << endl;
-
-
-        while(1){
-            cout << "Deseja cadastrar mais algum produto?" << endl
-                << "\t[1] Sim" << endl
-                << "\t[0] Nao" << endl;
-
-            cin >> opcao;
-            limparBuffer();
-
-            if (opcao == 1){
-                i++;
-                break;
-            }else if (opcao == 0){
-                pararCadastro = true;
-                break;
-            }else {
-                cout << "Opcao invalida!" << endl;
-            }
-        }
-
-        if (pararCadastro){
-            break;
-        }
-    }
-
+    return 0;
 }
