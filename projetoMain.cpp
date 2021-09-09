@@ -26,6 +26,7 @@ void ProcurarCodigo(tProdutos *Prod);
 void RelatorioProdutos(tProdutos *Prod);
 void AtualizaProduto(tProdutos *Prod);
 int FuncaoCompara(tProdutos a_prod, tProdutos b_prod);
+void RemoverProduto(tProdutos *Prod);
 
 int main(){
 
@@ -63,7 +64,7 @@ int main(){
                 break;
             case 6:
                 limparTela();
-                //Implementar função que 'remova' os valores de um produto, basta colocar todos os elementos do produto com os valores padrões da função PreencheArray.
+                RemoverProduto(produtos);
                 break;
             case 9:
                 cout << "Saindo do programa!" << endl;
@@ -491,3 +492,101 @@ void AtualizaProduto(tProdutos *Prod){
         } // End While(true)
     } // End While(pararAtualizar)
 } // End AtualizaProduto()
+
+/**
+ * Objetivo: Retirar um produto do estoque (do array do tipo tProdutos,
+ *           de nome "produtos").
+ * 
+ * Parâmetros:
+ * (entrada e saída) *Prod
+ * 
+ * Retorno: void.
+*/
+void RemoverProduto(tProdutos *Prod){
+    int cod; //Código que será lido do teclado (para remoção do produto)
+    int indice; //Índice do produto que se deseja remover
+    int opcao; //Opção escolhida pelo usuário (aparece em dois locais)
+    bool continuaRemover = true;
+
+    while(continuaRemover){
+        limparTela();
+        cout << "Digite o valor do codigo do produto que deseja remover: ";
+        cin >> cod;
+
+        indice = -1; /* O valor negativo do índice indica que não há um produto vinculado a ele,
+                        ou seja: se após o laço "for" a seguir o "indice" ainda for -1, o produto
+                        desejado para remoção não foi encontrado */
+
+        if (cod != 0){ //0 é o valor de código padrão e, portanto, inválido
+
+            for (int i = 0; i < TAM; i++)
+            {
+                if (Prod[i].codigo == cod){
+                    indice = i;
+                    break;
+                }
+            }
+
+        }
+
+        if (indice < 0){ //Produto não foi encontrado
+            cout << "Nao ha um produto de codigo " << cod << " no estoque." << endl;
+        }
+        else { //Produto foi encontrado
+
+
+            cout << "\nProduto encontrado:\n"
+                 << "Nome: " << Prod[indice].nome << endl
+                 << "Codigo: " << Prod[indice].codigo << endl
+                 << "Preco: " << Prod[indice].preco << endl
+                 << "Data de Fabricacao: " << Prod[indice].dataFabricacao << endl
+                 << "Data de Validade: " << Prod[indice].dataValidade << endl;
+
+            while(true){
+                cout << "\nDeseja mesmo remover esse produto?\n"
+                    << "\t[0] Nao" << endl
+                    << "\t[1] Sim" << endl;
+
+                cin >> opcao;
+
+                if (opcao == 1){
+                    Prod[indice].nome = "vazio";
+                    Prod[indice].preco = 0;
+                    Prod[indice].codigo = 0;
+                    Prod[indice].dataFabricacao = "vazio";
+                    Prod[indice].dataValidade = "vazio";
+
+                    cout << "Produto removido com sucesso!" << endl;
+                    break;
+                }
+                else if (opcao == 0){
+                    break;
+                }
+                else {
+                    cout << "Opcao invalida!" << endl;
+                }
+            }
+
+        } // End else
+
+        while(true){
+            cout << "\nDeseja continuar a remocao de produtos?\n"
+                << "\t[0] Nao" << endl
+                << "\t[1] Sim" << endl;
+
+            cin >> opcao;
+
+            if (opcao == 1){
+                break;
+            }
+            else if (opcao == 0){
+                continuaRemover = false;
+                break;
+            }
+            else {
+                cout << "Opcao invalida!" << endl;
+            }
+        }
+
+    } // End While(true)
+} // End RemoverProduto()
