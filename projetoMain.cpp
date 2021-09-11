@@ -55,8 +55,11 @@ int main(){
                 break;
             case 4:
                 limparTela();
-                sort(produtos, produtos+TAM, FuncaoCompara);
                 RelatorioProdutos(produtos);
+
+                limparBuffer();
+                cout << "\nPrecione ENTER para voltar ao menu!" << endl;
+                getchar();
                 break;
             case 5:
                 limparTela();
@@ -67,20 +70,27 @@ int main(){
                 RemoverProduto(produtos);
                 break;
             case 9:
+                limparBuffer();
                 cout << "Saindo do programa!" << endl;
+
+                cout << "\nPrecione ENTER para sair do programa!" << endl;
+                getchar();
                 break;
             default:
                 cout << "Opcao " << opcao << " invalida." << endl;
+                limparBuffer();
+                cout << "\nPrecione ENTER para voltar!" << endl;
+                getchar();
         }
     }
     return 0;
 }
 
 /**
- * Objetivo: Apresentar um Menu de opções e funções
+ * Objetivo: Apresentar um Menu de opções relacionado as funções
  * 
  * Parâmetros:
- * (entrada e saída) nenhuma
+ * (entrada e saída) nenhum
  * 
  * Retorno: void.
 */
@@ -150,7 +160,7 @@ void PreencherArray(tProdutos *Prod){
  * Retorno: void.
 */
 void CadastrarProdutos(tProdutos *Prod){
-    int i;
+    int i, suporte=1;
     int opcao;
     bool pararCadastro = true;
     int codigoValido;
@@ -169,9 +179,16 @@ void CadastrarProdutos(tProdutos *Prod){
         cout << "\tNome: ";
         getline(cin, Prod[i].nome);
         
-        cout << "\tPreco: ";
-        cin >> Prod[i].preco;
+        do{
+            cout << "\tPreco: ";
+            cin >> Prod[i].preco;
 
+            if(Prod[i].preco < 0){
+                cout << "Preco invalido, tente novamente!" << endl;
+            }
+        }while(Prod[i].preco < 0);
+        
+       
         limparBuffer();
         cout << "\tData de fabricacao: ";
         getline(cin, Prod[i].dataFabricacao);
@@ -186,6 +203,11 @@ void CadastrarProdutos(tProdutos *Prod){
             cout << "\tCodigo: ";
             cin >> cod;
 
+            if(cod < 0){
+                cout << "Codigo invalido, tente novamente!" << endl;
+                continue;
+            }
+            
             for (j = 0; j < i; j++){
                 if (cod == Prod[j].codigo){
                     cout << "Codigo invalido (ja esta em uso), tente novamente." << endl;
@@ -232,7 +254,7 @@ void CadastrarProdutos(tProdutos *Prod){
 */
 void ProcurarNome(tProdutos *Prod){
     string nome;
-    int i;
+    int i, j;
     bool pararProcura = true;
     bool produtoEncontrado;
     int opcao;
@@ -243,12 +265,12 @@ void ProcurarNome(tProdutos *Prod){
         cin.ignore();
         getline(cin, nome);
         produtoEncontrado = false;
-
+        j=1;
         for(i = 0; i < TAM; i++){
-            if(nome == Prod[i].nome){
-                cout << "Temos esse produto no estoque!" << endl;
+            if(Prod[i].nome.find(nome) != Prod[i].nome.npos){
+                cout << "Produto["<< j << "]: " << Prod[i].nome << endl;
                 produtoEncontrado = true;
-                break;
+                j++;
             }   
         }
 
@@ -346,6 +368,8 @@ int FuncaoCompara(tProdutos a_prod, tProdutos b_prod){
 */
 void RelatorioProdutos(tProdutos *Prod){
     int i;
+    sort(Prod, Prod+TAM, FuncaoCompara);
+
     cout << "Temos os seguintes produtos em nosso estoque!" << endl;
     cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
     
@@ -359,9 +383,7 @@ void RelatorioProdutos(tProdutos *Prod){
             cout << "Preco: R$ " << Prod[i].preco << endl;
         }
     }
-    cout << "\nPrecione ENTER para voltar ao menu!" << endl;
-    getchar();
-    getchar();
+
 } // End RelatorioProdutos()
 
 /**
@@ -379,10 +401,19 @@ void AtualizaProduto(tProdutos *Prod){
     int indice;
     bool pararAtualizar = true;
 
+    cout << "Lista de produtos atuais: " << endl;
+    
+    for(int h = 0; h < TAM; h++){
+        if(Prod[h].nome != "vazio"){
+            cout << "\nNome: " << Prod[h].nome << endl;
+            cout << "Codigo: " << Prod[h].codigo << endl;
+        }
+    }
+    cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
     while(pararAtualizar){
         
         while(true){
-            cout << "Buscar produto por \'Nome\' ou por \'Codigo\' para ser atualizado:" << endl
+            cout << "\nBuscar produto por \'Nome\' ou por \'Codigo\' para ser atualizado:" << endl
                 << "\t[1] Nome" << endl
                 << "\t[0] Codigo" << endl
                 << "Digite uma opcao: ";
@@ -435,9 +466,15 @@ void AtualizaProduto(tProdutos *Prod){
         cout << "\tNome: ";
         getline(cin, Prod[indice].nome);
         
-        cout << "\tPreco: ";
-        cin >> Prod[indice].preco;
+        do{
+            cout << "\tPreco: ";
+            cin >> Prod[indice].preco;
 
+            if(Prod[indice].preco < 0){
+                cout << "Preco invalido, tente novamente!" << endl;
+            }
+        }while(Prod[indice].preco < 0);
+        
         limparBuffer();
 
         cout << "\tData de fabricacao: ";
@@ -451,8 +488,14 @@ void AtualizaProduto(tProdutos *Prod){
         int j;
         Prod[indice].codigo = 0;
         while (codigoValido){
+
             cout << "\tCodigo: ";
             cin >> cod;
+
+            if(cod < 0){
+                cout << "Codigo invalido, tente novamente!" << endl;
+                continue;
+            }
 
             limparBuffer();
 
@@ -510,6 +553,14 @@ void RemoverProduto(tProdutos *Prod){
 
     while(continuaRemover){
         limparTela();
+        cout << "Temos os seguintes produtos: " << endl;
+        
+        for(int h = 0; h < TAM; h++){
+            if(Prod[h].nome != "vazio"){
+                cout << "\nNome: " << Prod[h].nome << endl;
+                cout << "Codigo: " << Prod[h].codigo << endl;
+            }
+        }
         cout << "Digite o valor do codigo do produto que deseja remover: ";
         cin >> cod;
 
@@ -526,14 +577,12 @@ void RemoverProduto(tProdutos *Prod){
                     break;
                 }
             }
-
         }
 
         if (indice < 0){ //Produto não foi encontrado
             cout << "Nao ha um produto de codigo " << cod << " no estoque." << endl;
         }
         else { //Produto foi encontrado
-
 
             cout << "\nProduto encontrado:\n"
                  << "Nome: " << Prod[indice].nome << endl
