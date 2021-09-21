@@ -4,7 +4,6 @@
 #include <algorithm>
 
 #define TAM 100
-#define MAX_NOME 50
 
 using namespace std;
 
@@ -43,7 +42,6 @@ int main(){
         
         switch(opcao){
             case 1:
-                limparTela();
                 CadastrarProdutos(produtos);
                 break;
             case 2:
@@ -161,12 +159,14 @@ void PreencherArray(tProdutos *Prod){
  * Retorno: void.
 */
 void CadastrarProdutos(tProdutos *Prod){
+    
     int i;
     int opcao;
     bool pararCadastro = true;
     int codigoValido;
 
     while(pararCadastro){
+        limparTela();
         cout << "Informe as seguintes informacoes do produto:" << endl;
         for(i = 0; i < TAM; i++){
             if(Prod[i].nome == "vazio"){
@@ -262,8 +262,8 @@ void ProcurarNome(tProdutos *Prod){
     int opcao;
 
     while(pararProcura){
-
-        cout << "Digite o nome que deseja procurar, maximo de " << MAX_NOME << " caracteres." << endl;
+        limparTela();
+        cout << "Digite o nome que deseja procurar: "<< endl;
         cout << "\tNome: ";
         cin.ignore();
         getline(cin, nome);
@@ -319,7 +319,7 @@ void ProcurarCodigo(tProdutos *Prod){
     int opcao;
 
     while (pararProcura){
-
+        limparTela();
         cout << "Digite o codigo que deseja procurar. " << endl;
         cout << "\tCodigo: ";
         cin >> codigo;
@@ -416,20 +416,22 @@ void AtualizaProduto(tProdutos *Prod){
     bool pararAtualizar = true;
     bool produtoEncontrado;
 
-    cout << "Temos os seguintes produtos em nosso estoque!" << endl;
-    cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
 
-    for(i = 0; i < TAM; i++){
-        if(Prod[i].nome != "vazio"){
-            cout << "\nNome: " << Prod[i].nome << endl;
-            cout << "Codigo: " << Prod[i].codigo << endl;
-        }
-    }
-
-    cout << "\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
 
     while(pararAtualizar){
-        
+        limparTela();
+        cout << "Temos os seguintes produtos em nosso estoque!" << endl;
+        cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
+
+        for(i = 0; i < TAM; i++){
+            if(Prod[i].nome != "vazio"){
+                cout << "\nNome: " << Prod[i].nome << endl;
+                cout << "Codigo: " << Prod[i].codigo << endl;
+            }
+        }
+
+        cout << "\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
+
         while(true){
             cout << "\nBuscar produto por \'Nome\' ou por \'Codigo\' para ser atualizado:" << endl
                 << "\t[1] Nome" << endl
