@@ -162,10 +162,10 @@ void CadastrarProdutos(tProdutos *Prod){
     
     int i;
     int opcao;
-    bool pararCadastro = true;
+    bool continuarCadastro = true;
     int codigoValido;
 
-    while(pararCadastro){
+    while(continuarCadastro){
         limparTela();
         cout << "Informe as seguintes informacoes do produto:" << endl;
         for(i = 0; i < TAM; i++){
@@ -236,14 +236,14 @@ void CadastrarProdutos(tProdutos *Prod){
             if (opcao == 1){
                 break;
             }else if (opcao == 0){
-                pararCadastro = false;
+                continuarCadastro = false;
                 break;
             }else {
                 cout << "Opcao " << opcao << " invalida. Tente novamente!" << endl;
             }
 
         } // End While(true)
-    } // End While(pararCadastro)
+    } // End While(continuarCadastro)
 } // End CadastrarProdutos()
 
 /**
@@ -257,11 +257,11 @@ void CadastrarProdutos(tProdutos *Prod){
 void ProcurarNome(tProdutos *Prod){
     string nome;
     int i, j;
-    bool pararProcura = true;
+    bool continuarProcura = true;
     bool produtoEncontrado;
     int opcao;
 
-    while(pararProcura){
+    while(continuarProcura){
         limparTela();
         cout << "Digite o nome que deseja procurar: "<< endl;
         cout << "\tNome: ";
@@ -294,13 +294,13 @@ void ProcurarNome(tProdutos *Prod){
             if(opcao == 1){
                 break;
             }else if(opcao == 0){
-                pararProcura = false;
+                continuarProcura = false;
                 break;
             }else{
                 cout << "Opcao " << opcao << " invalida. Tente novamente!" << endl;
             }
         } // End While(true)
-    } // End While(pararProcura)
+    } // End While(continuarProcura)
 } // End ProcurarNome()
 
 /**
@@ -314,11 +314,11 @@ void ProcurarNome(tProdutos *Prod){
 void ProcurarCodigo(tProdutos *Prod){
     int codigo;
     int i;
-    bool pararProcura = true;
+    bool continuarProcura = true;
     bool produtoEncontrado;
     int opcao;
 
-    while (pararProcura){
+    while (continuarProcura){
         limparTela();
         cout << "Digite o codigo que deseja procurar. " << endl;
         cout << "\tCodigo: ";
@@ -350,13 +350,13 @@ void ProcurarCodigo(tProdutos *Prod){
             if(opcao == 1){
                 break;
             }else if(opcao == 0){
-                pararProcura = false;
+                continuarProcura = false;
                 break;
             }else{
                 cout << "Opcao " << opcao << " invalida. Tente novamente!" << endl;
             }
         } // End While(true)
-    } // End While(pararProcura)
+    } // End While(continuarProcura)
 } // End ProcurarCodigo()
 
 /**
@@ -413,12 +413,12 @@ void AtualizaProduto(tProdutos *Prod){
     string nome_busca;
     int codigo_busca;
     int indice;
-    bool pararAtualizar = true;
+    bool continuarAtualizar = true;
     bool produtoEncontrado;
 
 
 
-    while(pararAtualizar){
+    while(continuarAtualizar){
         limparTela();
         cout << "Temos os seguintes produtos em nosso estoque!" << endl;
         cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
@@ -608,13 +608,13 @@ void AtualizaProduto(tProdutos *Prod){
             if (opcao == 1){
                 break;
             }else if (opcao == 0){
-                pararAtualizar = false;
+                continuarAtualizar = false;
                 break;
             }else {
                 cout << "Opcao invalida!" << endl;
             }
         } // End While(true)
-    } // End While(pararAtualizar)
+    } // End While(continuarAtualizar)
 } // End AtualizaProduto()
 
 /**
