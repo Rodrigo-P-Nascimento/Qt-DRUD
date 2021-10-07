@@ -18,6 +18,7 @@ typedef struct {
 void Menu(void);
 void limparBuffer(void);
 void limparTela(void);
+// ¯\_(ツ)_/¯
 
 //void PreencherArray(tProdutos *Prod);     > CONSTRUTOR
 void CadastrarProdutos(tProdutos *Prod);          
