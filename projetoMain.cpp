@@ -18,15 +18,15 @@ typedef struct {
 void Menu(void);
 void limparBuffer(void);
 void limparTela(void);
-void PreencherArray(tProdutos *Prod);
-void CadastrarProdutos(tProdutos *Prod);
+
+//void PreencherArray(tProdutos *Prod);     > CONSTRUTOR
+void CadastrarProdutos(tProdutos *Prod);          
 void ProcurarNome(tProdutos *Prod);
 void ProcurarCodigo(tProdutos *Prod);
-void RelatorioProdutos(tProdutos *Prod);
-void AtualizaProduto(tProdutos *Prod);
-void RemoverProduto(tProdutos *Prod);
+void RelatorioProdutos(tProdutos *Prod);      
+void AtualizaProduto(tProdutos *Prod);          
+void RemoverProduto(tProdutos *Prod); 
 int FuncaoCompara(tProdutos a_prod, tProdutos b_prod);
-
 
 int main(){
 
