@@ -20,7 +20,7 @@ void limparBuffer(void);
 void limparTela(void);
 
 //void PreencherArray(tProdutos *Prod);     > CONSTRUTOR
-void CadastrarProdutos(tProdutos *Prod);          
+void CadastrarProdutos(tProdutos *Prod);    //Comentario de testes  
 void ProcurarNome(tProdutos *Prod);
 void ProcurarCodigo(tProdutos *Prod);
 void RelatorioProdutos(tProdutos *Prod);      
