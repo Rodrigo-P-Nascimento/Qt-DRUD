@@ -13,6 +13,7 @@ Mercearia::Mercearia(std::string nome, int codigo, float preco, RemessaUnidade r
 /******** MÉTODOS ********/
 
 void Mercearia::CadastrarNovoProduto(){
+
     std::string nome;
     int codigo, quantidade;
     float preco;
@@ -29,5 +30,5 @@ void Mercearia::CadastrarNovoProduto(){
     std::cin >> codigo;
     std::cout << "Preco do produto R$: ";
     std::cin >> preco;
-    //std::cin >> quantidade;
+
 }
