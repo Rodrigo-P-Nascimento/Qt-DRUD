@@ -44,7 +44,7 @@ class Remessa
         std::string getDataValidade() const { return dataValidade; }
 
 
-        void setQuantProdutos(int quant);
+        //void setQuantProdutos(int quant)=0; POSSIVLE ERRO Não seria melhor usar o VIRTUAL AQUI ou tirar?
         void setDataFabricacao(int dia, int mes, int ano);
         void setDataValidade(int dia, int mes, int ano);
 };
