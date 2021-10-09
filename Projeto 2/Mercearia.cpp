@@ -18,7 +18,7 @@ void Mercearia::CadastrarNovoProduto(){
     int codigo, quantidade;
     float preco;
     RemessaUnidade Runi;
-
+    
     int dia_f, mes_f, ano_f;
     int dia_v, mes_v, ano_v;
 

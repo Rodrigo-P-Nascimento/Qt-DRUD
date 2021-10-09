@@ -11,7 +11,6 @@ using namespace std;
 void Menu();
 void FazLinhas(int numLinhas);
 void Cadastrar();
-void CadastrarMercearia();
 
 int main(){
     //classes de produtos
@@ -62,23 +61,6 @@ void Menu(){
     cout << "Digite uma opcao: ";
 }
 
-void CadastrarMercearia(){
-    string nome;
-    int codigo;
-    float preco;
-    RemessaUnidade Runi;
-
-    cout << "Digite o nome do produto: ";
-    cin.ignore();
-    getline(cin, nome);
-
-    cout << "Codigo: ";
-    cin >> codigo;
-    cout << "Preco do produto R$: ";
-    cin >> preco;
-    
-}
-
 void Cadastrar(){
     int op, ativo=1;
 
@@ -97,7 +79,7 @@ void Cadastrar(){
         switch (op){
         case 1:
             cout << "Insira os dados do produto do tipo Mercearia." <<endl;
-            CadastrarMercearia();
+            
             ativo = 0;
             break;
         
