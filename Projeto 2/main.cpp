@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Produtos.h"
 #include "Produtos.cpp"
+#include "Mercearia.h"
+#include "Mercearia.cpp"
 
 #define LINHAS 30
 
@@ -31,7 +33,8 @@ int main(){
             ativo = 0;
             break;
         case 1:
-            Cadastar();
+            Cadastrar();
+            break;
         default:
             cout << "Opcao invalida, tente novamente!" << endl;
             break;
@@ -76,7 +79,7 @@ void CadastrarMercearia(){
     
 }
 
-void Cadastar(){
+void Cadastrar(){
     int op, ativo=1;
 
     FazLinhas(LINHAS);
