@@ -10,7 +10,7 @@ using namespace std;
 
 void Menu();
 void FazLinhas(int numLinhas);
-void Cadastrar();
+int Cadastrar();
 
 int main(){
     //classes de produtos
@@ -18,25 +18,51 @@ int main(){
     ProdutoUnidade PDunidade;
     RemessaUnidade ReUNI;
     RemessaPeso RePES;
+    vector<Mercearia> merc;
 
     //Variavéis de suporte ao programa
     int opcao, ativo=1;
+    bool opInvalida;
 
     while(ativo){
-        Menu();
+        FazLinhas(LINHAS);
+        cout << "Em qual das seções deseja trabalhar?" << endl;
+        FazLinhas(LINHAS);
+        cout << "[1] Mercearia" << endl;
+        cout << "[2] Frios/Acougue" << endl;
+        cout << "[3] Padaria" << endl;
+        cout << "[4] Bebidas" << endl;
+        cout << "[5] Limpeza" << endl;
 
-        cin >> opcao;
+        opInvalida = true;
+        while (opInvalida){
+            cin >> opcao;
 
-        switch (opcao){
-        case -1:
-            ativo = 0;
-            break;
-        case 1:
-            Cadastrar();
-            break;
-        default:
-            cout << "Opcao invalida, tente novamente!" << endl;
-            break;
+            switch (opcao){
+                case 1:
+
+                    opInvalida = false;
+                    break;
+                case 2:
+
+                    opInvalida = false;
+                    break;
+                case 3:
+
+                    opInvalida = false;
+                    break;
+                case 4:
+
+                    opInvalida = false;
+                    break;
+                case 5:
+
+                    opInvalida = false;
+                    break;
+                default:
+                    cout << "Opcao invalida! Tente novamente!" << endl;
+                    break;
+            }
         }
     }
     
@@ -61,31 +87,21 @@ void Menu(){
     cout << "Digite uma opcao: ";
 }
 
-void Cadastrar(){
-    int op, ativo=1;
+int Cadastrar(){
+    int op;
 
     FazLinhas(LINHAS);
-    cout << "Voce escolheu cadastrar um novo produto, em qual categoria ele se enquadra? " << endl;
+    cout << "Em qual das seções deseja trabalhar?" << endl;
     FazLinhas(LINHAS);
-    cout << "[1] Merceaira" << endl;
+    cout << "[1] Mercearia" << endl;
     cout << "[2] Frios/Acougue" << endl;
     cout << "[3] Padaria" << endl;
     cout << "[4] Bebidas" << endl;
     cout << "[5] Limpeza" << endl;
 
-    while (ativo){
+    while (true){
         cin >> op;
 
-        switch (op){
-        case 1:
-            cout << "Insira os dados do produto do tipo Mercearia." <<endl;
-            
-            ativo = 0;
-            break;
-        
-        default:
-            cout << "Opcao invalida, tente novamente!" << endl;
-            break;
-        }
+        if (op >= 1 && op <= 5) return op;
     }
 }
