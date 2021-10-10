@@ -250,12 +250,38 @@ void Produto::setNome(std::string nome){
 
 void Produto::setCodigo(int codigo){
 
-    if (codigo > 0) this->codigo = codigo;
+    if (codigo > 0){
+        this->codigo = codigo;
+        return;
+    }
+
+    int cod;
+    while (true)
+    {
+        std::cout << "Codigo invalido! Insira um novo codigo: ";
+        std::cin >> cod;
+        if (cod > 0) break; //Codigo valido
+    }
+
+    this->codigo = cod;
 }
 
 void Produto::setPreco(float preco){
 
-    if (preco >= 0) this->preco = preco;
+    if (preco > 0){
+        this->preco = preco;
+        return;
+    }
+
+    float price;
+    while (true)
+    {
+        std::cout << "Preco invalido! Insira um novo preco: ";
+        std::cin >> price;
+        if (price > 0) break; //Preco valido
+    }
+
+    this->preco = price;
 }
 
 int Produto::getQuantProdutos(){
