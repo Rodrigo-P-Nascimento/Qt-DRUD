@@ -10,7 +10,8 @@ using namespace std;
 
 void Menu();
 void FazLinhas(int numLinhas);
-int Cadastrar();
+int LerOpcao(int comeco, int fim, int sair);
+void MenuMercearia(vector<Mercearia>::iterator merc);
 
 int main(){
     //classes de produtos
@@ -33,38 +34,20 @@ int main(){
         cout << "[3] Padaria" << endl;
         cout << "[4] Bebidas" << endl;
         cout << "[5] Limpeza" << endl;
+        cout << "[-1] Sair do Programa" << endl;
 
-        opInvalida = true;
-        while (opInvalida){
-            cin >> opcao;
 
-            switch (opcao){
-                case 1:
-
-                    opInvalida = false;
-                    break;
-                case 2:
-
-                    opInvalida = false;
-                    break;
-                case 3:
-
-                    opInvalida = false;
-                    break;
-                case 4:
-
-                    opInvalida = false;
-                    break;
-                case 5:
-
-                    opInvalida = false;
-                    break;
-                default:
-                    cout << "Opcao invalida! Tente novamente!" << endl;
-                    break;
-            }
+        opcao = LerOpcao(1, 5, -1);
+    
+        switch (opcao){
+            case 1:
+                MenuMercearia(merc.begin());
+                break;
+            case -1:
+                ativo = 0;
+                break;
         }
-    }
+    } // Ende while(ativo)
     
 
     return 0;
@@ -78,30 +61,51 @@ void FazLinhas(int numLinhas){
 }
 
 void Menu(){
-    cout << "Bem vindo Usuario(a)!" << endl;
     FazLinhas(LINHAS);
     cout << "[1]    > Cadastrar novo Produto." << endl;
-    cout << "[-1]   > Sair do programa." << endl;
-    FazLinhas(5);
+    cout << "[2]    > Remover um Produto." << endl;
+    cout << "[-1]   > Voltar para Menu anterior." << endl;
+    FazLinhas(LINHAS);
 
     cout << "Digite uma opcao: ";
 }
 
-int Cadastrar(){
-    int op;
+int LerOpcao(int comeco, int fim, int sair){
+    int opcao;
+    bool opcaoInvalida = true;
+    
+    while (opcaoInvalida)
+    {
+        cin >> opcao;
 
-    FazLinhas(LINHAS);
-    cout << "Em qual das seções deseja trabalhar?" << endl;
-    FazLinhas(LINHAS);
-    cout << "[1] Mercearia" << endl;
-    cout << "[2] Frios/Acougue" << endl;
-    cout << "[3] Padaria" << endl;
-    cout << "[4] Bebidas" << endl;
-    cout << "[5] Limpeza" << endl;
-
-    while (true){
-        cin >> op;
-
-        if (op >= 1 && op <= 5) return op;
+        if ((opcao >= comeco && opcao <= fim) || (opcao == sair)){
+            return opcao;
+        }
+        else {
+            cout << "Opcao invalida! Tente novamente!" << endl;
+        }
     }
+}
+
+void MenuMercearia(vector<Mercearia>::iterator merc){
+    int opcao;
+    bool ativo;
+
+
+    cout << "Bem-vindo a secao de Mercearia!" << endl;
+    ativo = true;
+    while(ativo)
+    {
+        Menu();
+
+        opcao = LerOpcao(1, 2, -1);
+
+        switch (opcao){
+            case 1:
+                merc->CadastrarNovoProduto();
+                break;
+            case -1:
+                return;
+        }
+    }// End while(ativo)
 }
