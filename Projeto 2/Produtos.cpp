@@ -311,6 +311,73 @@ RemessaUnidade ProdutoUnidade::getRemessa(int indice) const{
     if (indice >= 0 && indice < remessa.size()) return remessa[indice];
 }
 
+void ProdutoUnidade::novaRemessa()
+{
+    remessa.push_back(RemessaUnidade());
+
+    int quant;
+    int dia, mes, ano;
+
+    std::cout << "Digite quantos produtos tem na remessa: ";
+    std::cin >> quant;
+    while(quant <= 0){
+        std::cout << "Quantidade invalida! Insira um novo valor: ";
+        std::cin >> quant;
+    }
+    remessa[remessa.size()-1].setQuantProdutos(quant);
+
+    std::cout << "Digite os seguintes dados da data de fabricacao dos produtos:" << std::endl;
+    
+    std::cout << "Ano: ";
+    std::cin >> ano;
+    while(ano <= 0){
+        std::cout << "Ano invalido! Insira um novo ano: ";
+        std::cin >> ano;
+    }
+
+    std::cout << "Mes: ";
+    std::cin >> mes;
+    while(mes < 1 || mes > 12){
+        std::cout << "Mes invalido! Insira um novo ano: ";
+        std::cin >> mes;
+    }
+
+    std::cout << "Dia: ";
+    std::cin >> dia;
+    while(dia < 1 || dia > 31){
+        std::cout << "Dia invalido! Insira um novo ano: ";
+        std::cin >> dia;
+    }
+
+    remessa[remessa.size()-1].setDataFabricacao(dia, mes, ano);
+
+
+    std::cout << "Digite os seguintes dados da data de validade dos produtos:" << std::endl;
+    
+    std::cout << "Ano: ";
+    std::cin >> ano;
+    while(ano <= 0){
+        std::cout << "Ano invalido! Insira um novo ano: ";
+        std::cin >> ano;
+    }
+
+    std::cout << "Mes: ";
+    std::cin >> mes;
+    while(mes < 1 || mes > 12){
+        std::cout << "Mes invalido! Insira um novo ano: ";
+        std::cin >> mes;
+    }
+
+    std::cout << "Dia: ";
+    std::cin >> dia;
+    while(dia < 1 || dia > 31){
+        std::cout << "Dia invalido! Insira um novo ano: ";
+        std::cin >> dia;
+    }
+
+    remessa[remessa.size()-1].setDataValidade(dia, mes, ano);
+}
+
 
 
 /********************* Class ProdutoPeso *********************/

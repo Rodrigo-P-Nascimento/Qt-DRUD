@@ -63,7 +63,8 @@ void FazLinhas(int numLinhas){
 void Menu(){
     FazLinhas(LINHAS);
     cout << "[1]    > Cadastrar novo Produto." << endl;
-    cout << "[2]    > Remover um Produto." << endl;
+    cout << "[2]    > Adicionar uma Remessa." << endl;
+    cout << "[3]    > Remover um Produto." << endl;
     cout << "[-1]   > Voltar para Menu anterior." << endl;
     FazLinhas(LINHAS);
 
@@ -102,6 +103,9 @@ void MenuMercearia(vector<Mercearia> &merc){
             case 1:
                 merc.push_back(Mercearia());
                 merc[merc.size()-1].CadastrarNovoProduto();
+                break;
+            case 2:
+                merc[merc.size()-1].novaRemessa();
                 break;
             case -1:
                 return;

@@ -117,7 +117,6 @@ class Produto
         void setPreco(float preco);
 
 
-        void novaRemessa(Remessa rem);
         void novaRemessa(int n_prod, int dia_fab, int mes_fab, int ano_fab,
                          int dia_val, int mes_val, int ano_val);
 
@@ -140,6 +139,8 @@ class ProdutoUnidade : public Produto
         RemessaUnidade getUltimaRemessa() const { return remessa.back(); }
         RemessaUnidade getRemessa(int indice) const;
         int getQuantRemessas() const { return remessa.size(); }
+
+        void novaRemessa();
 };
 
 
@@ -158,6 +159,9 @@ class ProdutoPeso : public Produto
         RemessaPeso getUltimaRemessa() const { return remessa.back(); }
         RemessaPeso getRemessa(int indice) const;
         int getQuantRemessas() const { return remessa.size(); }
+
+        void novaRemessa(float peso_prod, int dia_fab, int mes_fab, int ano_fab,
+                         int dia_val, int mes_val, int ano_val);
 };
 /******************************************************************************************/
 
