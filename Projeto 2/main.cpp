@@ -11,7 +11,7 @@ using namespace std;
 void Menu();
 void FazLinhas(int numLinhas);
 int LerOpcao(int comeco, int fim, int sair);
-void MenuMercearia(vector<Mercearia> merc);
+void MenuMercearia(vector<Mercearia> &merc);
 
 int main(){
     //classes de produtos
@@ -42,8 +42,6 @@ int main(){
         switch (opcao){
             case 1:
                 MenuMercearia(merc);
-                cout << "AQUI!" << endl;
-                cout << merc.size() << "!!!!!!!!" << endl;
                 break;
             case -1:
                 ativo = 0;
@@ -89,10 +87,10 @@ int LerOpcao(int comeco, int fim, int sair){
     }
 }
 
-void MenuMercearia(vector<Mercearia> merc){
+void MenuMercearia(vector<Mercearia> &merc){
     int opcao;
 
-    merc.resize(1);
+    
     cout << "Bem-vindo a secao de Mercearia!" << endl;
     while(true)
     {
@@ -102,8 +100,8 @@ void MenuMercearia(vector<Mercearia> merc){
 
         switch (opcao){
             case 1:
-                merc[0].CadastrarNovoProduto();
-                cout << merc[0].getNome() << endl;
+                merc.push_back(Mercearia());
+                merc[merc.size()-1].CadastrarNovoProduto();
                 break;
             case -1:
                 return;
