@@ -7,22 +7,25 @@ class Produto{
 		std::string nome;
 		int codigo;
 		float preco;
-	public:
-		virtual void RelatorioProduto();
 
+	public:
 		Produto();
-		virtual ~Produto();
 		Produto(std::string nome, int codigo, float preco);
+		virtual ~Produto();
+
+		virtual void RelatorioProduto();
 };
 
-class Mercearia : public Produto {
+class Mercearia : public Produto{
 protected:
 	int unidade;
+
 public:
-	virtual void RelatorioProduto() override;
 	Mercearia();
 	Mercearia(std::string nome, int codigo, float preco, int unidade);
 	virtual ~Mercearia();
+
+	virtual void RelatorioProduto() override;
 };
 
 #endif

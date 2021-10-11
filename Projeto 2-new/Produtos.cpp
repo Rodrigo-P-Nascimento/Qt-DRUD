@@ -27,11 +27,11 @@ Produto::Produto(std::string nome, int codigo, float preco){
 void Mercearia::RelatorioProduto()
 {
     Produto::RelatorioProduto();
-
     std::cout << "Unidades: " << unidade << std::endl;
 }
 
-Mercearia::Mercearia(){
+Mercearia::Mercearia()
+{
 }
 
 Mercearia::Mercearia(std::string nome, int codigo, float preco, int unidade)
@@ -40,5 +40,6 @@ Mercearia::Mercearia(std::string nome, int codigo, float preco, int unidade)
     this->unidade = unidade;
 }
 
-Mercearia::~Mercearia(){
+Mercearia::~Mercearia()
+{
 }

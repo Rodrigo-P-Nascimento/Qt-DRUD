@@ -14,8 +14,6 @@ void Relatorio(Produto **prod, int quant){
 
 int main(){
 
-    
-
 
 
     return 0;
