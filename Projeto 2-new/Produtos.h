@@ -8,7 +8,7 @@ class Produto{
 		int codigo;
 		float preco;
 	public:
-		//virtual void RelatorioProduto();
+		virtual void RelatorioProduto();
 
 		Produto();
 		virtual ~Produto();
@@ -19,7 +19,7 @@ class Mercearia : public Produto {
 protected:
 	int unidade;
 public:
-	//void RelatorioProduto();
+	virtual void RelatorioProduto() override;
 	Mercearia();
 	Mercearia(std::string nome, int codigo, float preco, int unidade);
 	virtual ~Mercearia();

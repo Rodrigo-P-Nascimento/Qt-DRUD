@@ -1,4 +1,11 @@
 #include "Produtos.h"  
+#include <iostream>
+
+void Produto::RelatorioProduto(){
+    std::cout << "Nome: " << nome << std::endl
+              << "Codigo: " << codigo << std::endl
+              << "Preco: " << preco << std::endl;
+}
 
 Produto::Produto(){
     this->nome = "";
@@ -15,7 +22,22 @@ Produto::Produto(std::string nome, int codigo, float preco){
     this->preco = preco;
 }
 
+//////////////////////////////////////////////////////////////////////////////////
+
+void Mercearia::RelatorioProduto()
+{
+    Produto::RelatorioProduto();
+
+    std::cout << "Unidades: " << unidade << std::endl;
+}
+
 Mercearia::Mercearia(){
+}
+
+Mercearia::Mercearia(std::string nome, int codigo, float preco, int unidade)
+         : Produto(nome, codigo, preco)
+{
+    this->unidade = unidade;
 }
 
 Mercearia::~Mercearia(){
