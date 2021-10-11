@@ -6,6 +6,7 @@
 class Mercearia : public ProdutoUnidade{
 public:
     void CadastrarNovoProduto();
+    void RelatorioProdutos();
     Mercearia();
     Mercearia(std::string nome, int codigo, float preco, RemessaUnidade rem);
 

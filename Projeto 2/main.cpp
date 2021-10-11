@@ -15,10 +15,6 @@ void MenuMercearia(vector<Mercearia> &merc);
 
 int main(){
     //Classes de Produtos
-    ProdutoPeso PDpeso;
-    ProdutoUnidade PDunidade;
-    RemessaUnidade ReUNI;
-    RemessaPeso RePES;
     vector<Mercearia> merc;
 
     //Variavéis de Suporte ao Programa
@@ -93,7 +89,8 @@ void Menu(){
     FazLinhas(LINHAS);
     cout << "[1] Cadastrar novo Produto" << endl;
     cout << "[2] Adicionar uma Remessa" << endl;
-    cout << "[3] Remover um Produto" << endl;
+    cout << "[3] Relatorios de Produtos" << endl;
+    cout << "[4] Remover um Produto" << endl;
     cout << "[-1] Voltar para Menu Anterior" << endl;
     FazLinhas(LINHAS);
 
@@ -119,6 +116,8 @@ void MenuMercearia(vector<Mercearia> &merc){
             case 2:
                 merc[merc.size()-1].novaRemessa();
                 break;
+            case 3:
+                //merc[].RelatorioProdutos();
             case -1:
                 return;
         }

@@ -17,11 +17,6 @@ void Mercearia::CadastrarNovoProduto(){
     std::string nome;
     int codigo;
     float preco;
-    //RemessaUnidade Runi;
-    //int quantidade;
-    
-    //int dia_f, mes_f, ano_f;
-    //int dia_v, mes_v, ano_v;
 
     std::cout << "Digite o nome do produto: ";
     std::cin.ignore();
@@ -35,4 +30,8 @@ void Mercearia::CadastrarNovoProduto(){
     std::cout << "Preco do produto R$: ";
     std::cin >> preco;
     setPreco(preco);
+}
+
+void Mercearia::RelatorioProdutos(){
+    
 }
