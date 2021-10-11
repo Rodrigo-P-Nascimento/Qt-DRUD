@@ -14,6 +14,9 @@ class Produto{
 		virtual ~Produto();
 
 		virtual void RelatorioProduto();
+		virtual void Cadastro();
+		virtual void Remover();
+		virtual void Atualizar();
 };
 
 class Mercearia : public Produto{
@@ -26,6 +29,9 @@ public:
 	virtual ~Mercearia();
 
 	virtual void RelatorioProduto() override;
+	virtual void Cadastro() override;
+	virtual void Remover() override;
+	virtual void Atualizar() override;
 };
 
 #endif
