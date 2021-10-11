@@ -8,7 +8,7 @@ public:
     void CadastrarNovoProduto();
     void RelatorioProdutos();
     Mercearia();
-    Mercearia(std::string nome, int codigo, float preco, RemessaUnidade rem);
+    Mercearia(std::string nome, int codigo, float preco);
 
 };
 

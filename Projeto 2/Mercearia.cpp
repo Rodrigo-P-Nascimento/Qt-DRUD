@@ -6,9 +6,7 @@
 /******** CONSTRUTORES ********/
 Mercearia::Mercearia(){
 }
-Mercearia::Mercearia(std::string nome, int codigo, float preco, RemessaUnidade rem)
-    : ProdutoUnidade(nome, codigo, preco, rem){
-}
+
 
 /******** MÉTODOS ********/
 

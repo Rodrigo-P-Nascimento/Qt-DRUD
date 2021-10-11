@@ -114,7 +114,7 @@ void MenuMercearia(vector<Mercearia> &merc){
                 merc[merc.size()-1].CadastrarNovoProduto();
                 break;
             case 2:
-                merc[merc.size()-1].novaRemessa();
+                //merc[merc.size()-1].novaRemessa();
                 break;
             case 3:
                 //merc[].RelatorioProdutos();
