@@ -16,10 +16,11 @@ class Produto{
 		virtual ~Produto();
 
 		/******** MÉTODOS ********/
-		virtual void Relatorio();
 		virtual void Cadastro();
-		virtual void Remover();
+		virtual void Relatorio();
 		virtual void Atualizar();
+		virtual void Remover();
+		
 		std::string getNome();
 };
 
@@ -34,10 +35,10 @@ class Mercearia : public Produto{
 		virtual ~Mercearia();
 
 		/******** MÉTODOS ********/
-		virtual void Relatorio() override;
 		virtual void Cadastro() override;
+		virtual void Relatorio() override;
+		//virtual void Atualizar() override;
 		virtual void Remover() override;
-		//virtual void Atualizar() override; Nao eh necessario
 };
 
 #endif

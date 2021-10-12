@@ -1,27 +1,29 @@
 #include <iostream>
+#include <windows.h>
 #include "Produtos.h"
 #include "Produtos.cpp"
-#include <windows.h>
 
 #define LINHAS 30
 
 using namespace std;
 
-//Funções de suporte
+// Funções Suporte
 void FazLinhas(int numLinhas);
+void limparTela(void);
 int LerOpcao(int comeco, int fim, int sair);
-//Funções que lidam com uma das classes
-void RemoverGeral(Produto **prod);
-void AtualizarGeral(Produto **prod);
+
+// Funções Suporte para as Classes
 void CadastroGeral(Produto **prod);
 void RelatorioGeral(Produto **prod);
+void AtualizarGeral(Produto **prod);
+void RemoverGeral(Produto **prod);
 void MenuGeral(Produto **prod);
 
 int main(){
 
     Produto *merc[100];
     Produto *padaria[100];
-    Produto *frios[100];
+    Produto *frios_acougue[100];
     Produto *limpeza[100];
     Produto *bebidas[100];
 
@@ -30,13 +32,19 @@ int main(){
 
     for(int i=0;i < 100; i++){
         merc[i] = new Mercearia();
+        //frios_acougue[i] = new Frios_Acougue();
+        //padaria[i] = new Padaria();
+        //bebidas[i] = new Bebidas();
+        //limpeza[i] = new Limpeza();
     }
     
     while(ativo){
-        system("cls");
+        limparTela();
+
         FazLinhas(LINHAS);
         cout << "Em qual das Secoes deseja trabalhar?" << endl;
         FazLinhas(LINHAS);
+
         cout << "\t[1] Mercearia" << endl;
         cout << "\t[2] Frios/Acougue" << endl;
         cout << "\t[3] Padaria" << endl;
@@ -49,23 +57,69 @@ int main(){
     
         switch (opcao){
             case 1:
-                system("cls");
-                MenuGeral(merc);
-                cout << "Digite enter ae meu patrao" << endl;
+                limparTela();
+
+                FazLinhas(LINHAS);
+                cout << "Bem-vindo a Secao de Mercearia!" << endl;
+                FazLinhas(LINHAS);
+
+                MenuGeral(merc); // MERCEARIA
+
+                cout << "\nPrecione ENTER para tentar novamente!" << endl;
                 getchar();
                 getchar();
                 break;
             case 2:
-                //MenuFrios_Acougue();
+                limparTela();
+                
+                FazLinhas(LINHAS);
+                cout << "Bem-vindo a Secao de Frios e Acougue!" << endl;
+                FazLinhas(LINHAS);
+
+                MenuGeral(frios_acougue); // FRIOS E AÇOUGUE
+
+                cout << "\nPrecione ENTER para tentar novamente!" << endl;
+                getchar();
+                getchar();
                 break;
             case 3:
-                //MenuPadaria();
+                limparTela();
+
+                FazLinhas(LINHAS);
+                cout << "Bem-vindo a Secao de Padaria!" << endl;
+                FazLinhas(LINHAS);
+
+                MenuGeral(padaria); // PADARIA
+
+                cout << "\nPrecione ENTER para tentar novamente!" << endl;
+                getchar();
+                getchar();
                 break;
             case 4:
-                //MenuBebidas();
+                limparTela();
+
+                FazLinhas(LINHAS);
+                cout << "Bem-vindo a Secao de Bebidas!" << endl;
+                FazLinhas(LINHAS);
+
+                MenuGeral(bebidas); // BEBIDAS
+
+                cout << "\nPrecione ENTER para tentar novamente!" << endl;
+                getchar();
+                getchar();
                 break;
             case 5:
-                //MenuLimpeza();
+                limparTela();
+
+                FazLinhas(LINHAS);
+                cout << "Bem-vindo a Secao de Limpeza!" << endl;
+                FazLinhas(LINHAS);
+
+                MenuGeral(limpeza); // LIMPEZA
+
+                cout << "\nPrecione ENTER para tentar novamente!" << endl;
+                getchar();
+                getchar();
                 break;
             case -1:
                 ativo = 0;
@@ -73,19 +127,25 @@ int main(){
         }
     }// End While(ativo)
     
-    cout << "Acabou o programa!" << endl;
+    cout << "Saindo do programa!" << endl;
+
+    cout << "\nPrecione ENTER para sair do programa!" << endl;
+    getchar();
 
     return 0;
 }//End main
 
-// Funções de suporte
-
+/******************** FUNÇÕES SUPORTE ********************/
 void FazLinhas(int numLinhas){
     for(int i=1; i <= numLinhas; i++){
         if(i == numLinhas) cout << "-" << endl;
         else cout << "-";
     }
 }// End FazLinhas()
+
+void limparTela(void){
+    system("cls"); // Só funciona no Windows
+} // End limparTela()
 
 int LerOpcao(int comeco, int fim, int sair){
     int opcao;
@@ -104,72 +164,65 @@ int LerOpcao(int comeco, int fim, int sair){
     }// End While(opcaoInvalida)
 }// End LerOpcao()
 
-//Funções que lidam com as classes
-void RemoverGeral(Produto **prod){
-    int op;
-
-    cout << "Veja os produtos para escolher!" <<  endl;
-
-    RelatorioGeral(prod);
-
-    cout << "Escolha um dos produtos para remover: ";
-
-    cin >> op;
-
-    prod[op]->Remover();
-
-    cout << "Produto removido com sucesso!" << endl;
-}
-void AtualizarGeral(Produto **prod){
-    int op;
-
-    cout << "Veja os produtos para escolher!" <<  endl;
-
-    RelatorioGeral(prod);
-
-    cout << "Escolha um dos produtos para atualizar: ";
-
-    cin >> op;
-
-    prod[op]->Atualizar();
-
-    cout << "Produto atualizado com sucesso!" << endl;
-}
-
-void RelatorioGeral(Produto **prod){
-
-    for (int i = 0; i < 100; i++){
-
-        if(prod[i]->getNome() != ""){
-            prod[i]->Relatorio();
-            cout << "\n";
-        }
-    }
-}//End Relatorio
-
+/******************** Funções Suporte para as Classes ********************/
 void CadastroGeral(Produto **prod){
     for (int i = 0; i < 100; i++){
-
         if(prod[i]->getNome() == ""){
             prod[i]->Cadastro();
             break;
         }
     }
-}
+} //End CadastroGeral()
 
-void MenuGeral(Produto **prod){
+void RelatorioGeral(Produto **prod){
+    cout << "\nCODIGO" << "\tNOME" << "\t\tPRECO" << "\tESTOQUE" <<endl;
+    for (int i = 0; i < 100; i++){
+        if(prod[i]->getNome() != ""){
+            prod[i]->Relatorio();
+            cout << "\n";
+        }
+    }
+} //End RelatorioGeral()
+
+void AtualizarGeral(Produto **prod){
     int op;
 
-    cout << "[1] Cadastrar um novo produto" << endl;
-    cout << "[2] Relatorio do Produto" << endl;
-    cout << "[3] Atualizar um produto" << endl;
+    cout << "\nSelecione um Produto para atualizar" <<  endl;
+    RelatorioGeral(prod);
+
+    cout << "Indice: ";
+    cin >> op;
+
+    prod[op]->Atualizar();
+    cout << "Produto Atualizado!" << endl;
+} //End AtualizarGeral()
+
+void RemoverGeral(Produto **prod){
+    int op;
+
+    cout << "Selecione um Produto para remover" <<  endl;
+    RelatorioGeral(prod);
+
+    cout << "Indice: ";
+    cin >> op;
+
+    prod[op]->Remover();
+    cout << "Produto Removido!" << endl;
+} //End RemoverGeral()
+
+void MenuGeral(Produto **prod){
+    int opcao;
+
+    cout << "[1] Cadastrar um Novo Produto" << endl;
+    cout << "[2] Relatorio de Secao" << endl;
+    cout << "[3] Atualizar um Produto" << endl;
     cout << "[4] Remover um Produto" << endl;
     cout << "[-1] Voltar para Menu Anterior" << endl;
 
-    cout << "Digite uma opcao: ";
-    cin >> op;
+    cout << "\nDigite uma opcao: ";
+    opcao = LerOpcao(1, 4, -1);
 
-    switch (op){
+    switch (opcao){
     case 1:
         CadastroGeral(prod);
         break;
@@ -182,7 +235,7 @@ void MenuGeral(Produto **prod){
     case 4:
         RemoverGeral(prod);
         break;
-    default:
-        break;
+    case -1:
+        return;
     }
-}
+} // MenuGeral()

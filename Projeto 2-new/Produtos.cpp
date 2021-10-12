@@ -19,46 +19,56 @@ Produto::Produto(std::string nome, int codigo, float preco){
 Produto::~Produto(){
 }
 
-
 /******** MÉTODOS ********/
+
+void Produto::Cadastro(){
+    std::cout << "\nNome: ";
+    std::cin.ignore();
+    std::getline(std::cin, nome);
+
+    do{
+        std::cout << "Codigo: ";
+        std::cin >> codigo;
+        if(codigo <= 0){
+            std::cout << "Codigo invalido, tente novamente!" << std::endl;
+        }
+    } while(codigo <= 0);
+
+    do{
+        std::cout << "Preco: ";
+        std::cin >> preco;
+        if(preco <= 0){
+            std::cout << "Preco invalido, tente novamente!" << std::endl;
+        }
+    } while(preco <= 0);
+}
+
 void Produto::Relatorio(){
     if(nome == "") return;
 
-    std::cout << "Nome: " << nome << std::endl
-              << "Codigo: " << codigo << std::endl
-              << "Preco: " << preco << std::endl;
+    std::cout << "[" << codigo << "]" << "\t" << nome << "\t\t" << preco;
 }
 
-void Produto::Cadastro(){
-    std::cout << "Digite o nome do produto: ";
-    std::cin.ignore();
-    std::getline(std::cin, nome);
-    std::cout << "Digite o codigo do produto, o mesmo deve ser maior que ZERO: ";
-    std::cin >> codigo;
-    std::cout << "Preco do produto: ";
-    std::cin >> preco;
+void Produto::Atualizar(){
+    std::cout << "\nINFORMACOES DO PRODUTO SELECIONADO:" << std::endl;
+
+    std::cout << "\nCODIGO" << "\tNOME" << "\t\tPRECO" << "\tESTOQUE" << std::endl;
+    Relatorio();
+
+    std::cout << "\n";
+    std::cout << "Insira as informacoes do produto atualizadas" << std::endl;
+    Cadastro();
 }
 
 void Produto::Remover(){
     (*this) = Produto();
 }
 
-void Produto::Atualizar(){
-    std::cout << "As informacoes do produto." << std::endl;
-    Relatorio();
-    std::cout << "\n";
-    std::cout << "Insira novamente as informacoes do produto. " << std::endl;
-    Cadastro();
-    std::cout << "\nInformacoes atualizadas com sucesso!" << std::endl; 
-}
-
 std::string Produto::getNome(){
     return this->nome;
 }
 
-
 //////////////////////////////////////////////////////////////////////////////////
-
 
 /******************************* Class Mercearia : public Produto *******************************/
 
@@ -77,19 +87,19 @@ Mercearia::~Mercearia()
 {
 }
 
-
 /******** MÉTODOS ********/
-void Mercearia::Relatorio()
-{
-    Produto::Relatorio();
-    std::cout << "Unidade(s): " << unidade << std::endl;
-}
 
 void Mercearia::Cadastro(){
     Produto::Cadastro();
 
-    std::cout << "Digite a quantidade de produtos: ";
+    std::cout << "Digite a quantidade de itens: ";
     std::cin >> unidade;
+}
+
+void Mercearia::Relatorio()
+{
+    Produto::Relatorio();
+    std::cout << "\t" << unidade << std::endl;
 }
 
 void Mercearia::Remover(){
