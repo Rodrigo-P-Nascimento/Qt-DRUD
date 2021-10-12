@@ -6,10 +6,12 @@
 
 using namespace std;
 
+//Funções de suporte
 void FazLinhas(int numLinhas);
-void MenuMercearia(Produto merc);
 int LerOpcao(int comeco, int fim, int sair);
+//Funções que lidam com uma das classes
 void Relatorio(Produto **prod, int quant);
+void MenuMercearia(Produto merc);
 
 int main(){
 
@@ -57,15 +59,9 @@ int main(){
     cout << "Acabou o programa!" << endl;
 
     return 0;
-}
+}//End main
 
-void Relatorio(Produto **prod, int quant){
-
-    for (int i = 0; i < quant; i++){
-        prod[i]->Relatorio();
-        cout << "\n";
-    }
-}
+// Funções de suporte
 
 void FazLinhas(int numLinhas){
     for(int i=1; i <= numLinhas; i++){
@@ -91,3 +87,17 @@ int LerOpcao(int comeco, int fim, int sair){
         }
     }// End While(opcaoInvalida)
 }// End LerOpcao()
+
+//Funções que lidam com as classes
+
+void Relatorio(Produto **prod, int quant){
+
+    for (int i = 0; i < quant; i++){
+        prod[i]->Relatorio();
+        cout << "\n";
+    }
+}//End Relatorio
+
+void MenuMercearia(Produto merc){
+
+}
