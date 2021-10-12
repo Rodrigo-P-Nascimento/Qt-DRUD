@@ -10,7 +10,8 @@ enum Seccao
 	MERCEARIA,
 	PADARIA,
 	FRIOS,
-	BEBIDAS
+	BEBIDAS,
+	LIMPEZA
 };
 
 
