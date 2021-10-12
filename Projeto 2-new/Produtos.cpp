@@ -52,6 +52,10 @@ void Produto::Atualizar(){
     std::cout << "\nInformacoes atualizadas com sucesso!" << std::endl; 
 }
 
+std::string Produto::getNome(){
+    return this->nome;
+}
+
 
 //////////////////////////////////////////////////////////////////////////////////
 

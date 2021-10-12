@@ -20,6 +20,7 @@ class Produto{
 		virtual void Cadastro();
 		virtual void Remover();
 		virtual void Atualizar();
+		std::string getNome();
 };
 
 class Mercearia : public Produto{
