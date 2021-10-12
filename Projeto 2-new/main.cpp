@@ -62,7 +62,7 @@ int main(){
 void Relatorio(Produto **prod, int quant){
 
     for (int i = 0; i < quant; i++){
-        prod[i]->RelatorioProduto();
+        prod[i]->Relatorio();
         cout << "\n";
     }
 }
