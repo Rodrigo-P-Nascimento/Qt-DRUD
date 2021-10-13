@@ -56,7 +56,7 @@ void Produto::Atualizar(){
     Relatorio();
 
     std::cout << "\n";
-    std::cout << "Insira as informacoes do produto atualizadas" << std::endl;
+    std::cout << "\nInsira as informacoes do produto atualizadas" << std::endl;
     Cadastro();
 }
 

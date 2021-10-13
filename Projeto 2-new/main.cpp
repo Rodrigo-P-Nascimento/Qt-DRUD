@@ -20,7 +20,7 @@ void RelatorioGeral(Produto **prod);
 void AtualizarGeral(Produto **prod);
 void RemoverGeral(Produto **prod);
 void MenuGeral(Produto **prod);
-//bool Compara(Produto *a, Produto *b);
+bool Compara(Produto *a, Produto *b);
 
 int main(){
 
@@ -33,7 +33,7 @@ int main(){
     int opcao, ativo=1;
     bool opInvalida;
 
-    for(int i=0;i < 100; i++){
+    for(int i=0;i < TAM; i++){
         merc[i] = new Mercearia();
         frios_acougue[i] = new Frios_Acougue();
         padaria[i] = new Padaria();
@@ -169,7 +169,7 @@ int LerOpcao(int comeco, int fim, int sair){
 
 /******************** Funções Suporte para as Classes ********************/
 void CadastroGeral(Produto **prod){
-    for (int i = 0; i < 100; i++){
+    for (int i = 0; i < TAM; i++){
         if(prod[i]->getNome() == ""){
             prod[i]->Cadastro();
             break;
@@ -177,16 +177,16 @@ void CadastroGeral(Produto **prod){
     }
 } //End CadastroGeral()
 
-/*bool Compara(Produto *a, Produto *b){
+bool Compara(Produto *a, Produto *b){
 	return a->getCodigo() < b->getCodigo();
-}*/
+}
 
 void RelatorioGeral(Produto **prod){
     cout << "\nCODIGO" << "\tNOME" << "\t\tPRECO" << "\tESTOQUE" <<endl;
 
-    //sort(prod, prod+TAM, Compara);
+    sort(prod, prod+TAM, Compara);
 
-    for (int i = 0; i < 100; i++){
+    for (int i = 0; i < TAM; i++){
         if(prod[i]->getNome() != ""){
             prod[i]->Relatorio();
             cout << "\n";
@@ -195,29 +195,47 @@ void RelatorioGeral(Produto **prod){
 } //End RelatorioGeral()
 
 void AtualizarGeral(Produto **prod){
-    int op;
+    int opcao;
+    bool produtoEncontrado = false;
 
     cout << "\nSelecione um Produto para atualizar" <<  endl;
     RelatorioGeral(prod);
 
-    cout << "\nIndice: ";
-    cin >> op;
+    cout << "\nCodigo: ";
+    cin >> opcao;
 
-    prod[op]->Atualizar();
-    cout << "Produto Atualizado!" << endl;
+    for (int i = 0; i < TAM; i++){
+        if(prod[i]->getCodigo() == opcao){
+            produtoEncontrado = true;
+            prod[i]->Atualizar();
+            cout << "\nProduto Atualizado!" << endl;
+            break;
+        }
+    }
+
+    if(produtoEncontrado == false) cout << "\nProduto nao encontrado " << endl;
 } //End AtualizarGeral()
 
 void RemoverGeral(Produto **prod){
-    int op;
+    int opcao;
+    bool produtoEncontrado = false;
 
-    cout << "Selecione um Produto para remover" <<  endl;
+    cout << "\nSelecione um Produto para remover" <<  endl;
     RelatorioGeral(prod);
 
-    cout << "\nIndice: ";
-    cin >> op;
+    cout << "\nCodigo: ";
+    cin >> opcao;
 
-    prod[op]->Remover();
-    cout << "Produto Removido!" << endl;
+    for (int i = 0; i < TAM; i++){
+        if(prod[i]->getCodigo() == opcao){
+            produtoEncontrado = true;
+            prod[i]->Remover();
+            cout << "\nProduto Removido!" << endl;
+            break;
+        }
+    }
+
+    if(produtoEncontrado == false) cout << "\nProduto nao encontrado " << endl;
 } //End RemoverGeral()
 
 void MenuGeral(Produto **prod){
