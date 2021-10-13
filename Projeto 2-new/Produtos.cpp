@@ -68,6 +68,10 @@ std::string Produto::getNome(){
     return this->nome;
 }
 
+int Produto::getCodigo(){
+    return this->codigo;
+}
+
 //////////////////////////////////////////////////////////////////////////////////
 
 /******************************* Class Mercearia : public Produto *******************************/
@@ -99,9 +103,161 @@ void Mercearia::Cadastro(){
 void Mercearia::Relatorio()
 {
     Produto::Relatorio();
-    std::cout << "\t" << unidade << std::endl;
+    std::cout << "\t" << unidade;
 }
 
 void Mercearia::Remover(){
     (*this) = Mercearia();
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+
+/******************************* Class Frios_Acougue : public Produto *******************************/
+
+/******** CONSTRUTORES / DESTRUTOR ********/
+Frios_Acougue::Frios_Acougue(){
+    peso = 0;
+}
+
+Frios_Acougue::Frios_Acougue(std::string nome, int codigo, float preco, float peso)
+         : Produto(nome, codigo, preco)
+{
+    this->peso = peso;
+}
+
+Frios_Acougue::~Frios_Acougue()
+{
+}
+
+/******** MÉTODOS ********/
+
+void Frios_Acougue::Cadastro(){
+    Produto::Cadastro();
+
+    std::cout << "Digite o peso do produto: ";
+    std::cin >> peso;
+}
+
+void Frios_Acougue::Relatorio()
+{
+    Produto::Relatorio();
+    std::cout << "\t" << peso;
+}
+
+void Frios_Acougue::Remover(){
+    (*this) = Frios_Acougue();
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+
+/******************************* Class Frios_Acougue : public Produto *******************************/
+
+/******** CONSTRUTORES / DESTRUTOR ********/
+Padaria::Padaria(){
+    peso = 0;
+}
+
+Padaria::Padaria(std::string nome, int codigo, float preco, float peso)
+         : Produto(nome, codigo, preco)
+{
+    this->peso = peso;
+}
+
+Padaria::~Padaria()
+{
+}
+
+/******** MÉTODOS ********/
+
+void Padaria::Cadastro(){
+    Produto::Cadastro();
+
+    std::cout << "Digite o peso do produto: ";
+    std::cin >> peso;
+}
+
+void Padaria::Relatorio()
+{
+    Produto::Relatorio();
+    std::cout << "\t" << peso;
+}
+
+void Padaria::Remover(){
+    (*this) = Padaria();
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+
+/******************************* Class Mercearia : public Produto *******************************/
+
+/******** CONSTRUTORES / DESTRUTOR ********/
+Bebidas::Bebidas(){
+    unidade = 0;
+}
+
+Bebidas::Bebidas(std::string nome, int codigo, float preco, int unidade)
+         : Produto(nome, codigo, preco)
+{
+    this->unidade = unidade;
+}
+
+Bebidas::~Bebidas()
+{
+}
+
+/******** MÉTODOS ********/
+
+void Bebidas::Cadastro(){
+    Produto::Cadastro();
+
+    std::cout << "Digite a quantidade de itens: ";
+    std::cin >> unidade;
+}
+
+void Bebidas::Relatorio()
+{
+    Produto::Relatorio();
+    std::cout << "\t" << unidade;
+}
+
+void Bebidas::Remover(){
+    (*this) = Bebidas();
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+
+/******************************* Class Mercearia : public Produto *******************************/
+
+/******** CONSTRUTORES / DESTRUTOR ********/
+Limpeza::Limpeza(){
+    unidade = 0;
+}
+
+Limpeza::Limpeza(std::string nome, int codigo, float preco, int unidade)
+         : Produto(nome, codigo, preco)
+{
+    this->unidade = unidade;
+}
+
+Limpeza::~Limpeza()
+{
+}
+
+/******** MÉTODOS ********/
+
+void Limpeza::Cadastro(){
+    Produto::Cadastro();
+
+    std::cout << "Digite a quantidade de itens: ";
+    std::cin >> unidade;
+}
+
+void Limpeza::Relatorio()
+{
+    Produto::Relatorio();
+    std::cout << "\t" << unidade;
+}
+
+void Limpeza::Remover(){
+    (*this) = Limpeza();
 }

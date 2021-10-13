@@ -1,8 +1,10 @@
 #include <iostream>
+#include <algorithm>
 #include <windows.h>
 #include "Produtos.h"
 #include "Produtos.cpp"
 
+#define TAM 100
 #define LINHAS 30
 
 using namespace std;
@@ -18,24 +20,25 @@ void RelatorioGeral(Produto **prod);
 void AtualizarGeral(Produto **prod);
 void RemoverGeral(Produto **prod);
 void MenuGeral(Produto **prod);
+bool Compara(Produto *a, Produto *b);
 
 int main(){
 
-    Produto *merc[100];
-    Produto *padaria[100];
-    Produto *frios_acougue[100];
-    Produto *limpeza[100];
-    Produto *bebidas[100];
+    Produto *merc[TAM];
+    Produto *padaria[TAM];
+    Produto *frios_acougue[TAM];
+    Produto *limpeza[TAM];
+    Produto *bebidas[TAM];
 
     int opcao, ativo=1;
     bool opInvalida;
 
     for(int i=0;i < 100; i++){
         merc[i] = new Mercearia();
-        //frios_acougue[i] = new Frios_Acougue();
-        //padaria[i] = new Padaria();
-        //bebidas[i] = new Bebidas();
-        //limpeza[i] = new Limpeza();
+        frios_acougue[i] = new Frios_Acougue();
+        padaria[i] = new Padaria();
+        bebidas[i] = new Bebidas();
+        limpeza[i] = new Limpeza();
     }
     
     while(ativo){
@@ -174,8 +177,15 @@ void CadastroGeral(Produto **prod){
     }
 } //End CadastroGeral()
 
+bool Compara(Produto *a, Produto *b){
+	return a->getCodigo() < b->getCodigo();
+}
+
 void RelatorioGeral(Produto **prod){
     cout << "\nCODIGO" << "\tNOME" << "\t\tPRECO" << "\tESTOQUE" <<endl;
+
+    sort(prod, prod+TAM, Compara);
+
     for (int i = 0; i < 100; i++){
         if(prod[i]->getNome() != ""){
             prod[i]->Relatorio();
