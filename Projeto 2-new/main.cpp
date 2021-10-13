@@ -20,7 +20,7 @@ void RelatorioGeral(Produto **prod);
 void AtualizarGeral(Produto **prod);
 void RemoverGeral(Produto **prod);
 void MenuGeral(Produto **prod);
-bool Compara(Produto *a, Produto *b);
+//bool Compara(Produto *a, Produto *b);
 
 int main(){
 
@@ -177,14 +177,14 @@ void CadastroGeral(Produto **prod){
     }
 } //End CadastroGeral()
 
-bool Compara(Produto *a, Produto *b){
+/*bool Compara(Produto *a, Produto *b){
 	return a->getCodigo() < b->getCodigo();
-}
+}*/
 
 void RelatorioGeral(Produto **prod){
     cout << "\nCODIGO" << "\tNOME" << "\t\tPRECO" << "\tESTOQUE" <<endl;
 
-    sort(prod, prod+TAM, Compara);
+    //sort(prod, prod+TAM, Compara);
 
     for (int i = 0; i < 100; i++){
         if(prod[i]->getNome() != ""){
@@ -200,7 +200,7 @@ void AtualizarGeral(Produto **prod){
     cout << "\nSelecione um Produto para atualizar" <<  endl;
     RelatorioGeral(prod);
 
-    cout << "Indice: ";
+    cout << "\nIndice: ";
     cin >> op;
 
     prod[op]->Atualizar();
@@ -213,7 +213,7 @@ void RemoverGeral(Produto **prod){
     cout << "Selecione um Produto para remover" <<  endl;
     RelatorioGeral(prod);
 
-    cout << "Indice: ";
+    cout << "\nIndice: ";
     cin >> op;
 
     prod[op]->Remover();
