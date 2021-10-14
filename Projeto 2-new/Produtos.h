@@ -8,8 +8,8 @@ enum Seccao
 {
 	INDEFINIDO,
 	MERCEARIA,
-	PADARIA,
 	FRIOS,
+	PADARIA,
 	BEBIDAS,
 	LIMPEZA
 };
@@ -28,11 +28,13 @@ class Produto{
 		virtual ~Produto();
 
 		/******** MÉTODOS ********/
-		virtual void Relatorio();
 		virtual void Cadastro();
-		virtual void Remover();
+		virtual void Relatorio() const;
 		virtual void Atualizar();
-		virtual Seccao Seccao();
+		virtual void TornarPadrao();
+		
+		std::string getNome() const;
+		int getCodigo() const;
 };
 
 class Mercearia : public Produto{
@@ -46,11 +48,82 @@ class Mercearia : public Produto{
 		virtual ~Mercearia();
 
 		/******** MÉTODOS ********/
-		virtual void Relatorio() override;
 		virtual void Cadastro() override;
-		virtual void Remover() override;
-		//virtual void Atualizar() override; Nao eh necessario
-		virtual ::Seccao Seccao() override;
+		virtual void Relatorio() const override;
+		//virtual void Atualizar() override;
+		virtual void TornarPadrao() override;
+};
+
+class Frios_Acougue : public Produto{
+	protected:
+		float peso;
+
+	public:
+		/******** CONSTRUTORES / DESTRUTOR ********/
+		Frios_Acougue();
+		Frios_Acougue(std::string nome, int codigo, float preco, float peso);
+		virtual ~Frios_Acougue();
+
+		/******** MÉTODOS ********/
+		virtual void Cadastro() override;
+		virtual void Relatorio() const override;
+		//virtual void Atualizar() override;
+		virtual void TornarPadrao() override;
+};
+
+class Padaria : public Produto{
+	protected:
+		float peso;
+		bool temGluten;
+
+	public:
+		/******** CONSTRUTORES / DESTRUTOR ********/
+		Padaria();
+		Padaria(std::string nome, int codigo, float preco, float peso);
+		virtual ~Padaria();
+
+		/******** MÉTODOS ********/
+		virtual void Cadastro() override;
+		virtual void Relatorio() const override;
+		//virtual void Atualizar() override;
+		virtual void TornarPadrao() override;
+};
+
+class Bebidas : public Produto{
+	protected:
+		int unidade;
+		float volume;
+		bool ehAlcoolica;
+		bool ehGaseificada;
+
+	public:
+		/******** CONSTRUTORES / DESTRUTOR ********/
+		Bebidas();
+		Bebidas(std::string nome, int codigo, float preco, int unidade);
+		virtual ~Bebidas();
+
+		/******** MÉTODOS ********/
+		virtual void Cadastro() override;
+		virtual void Relatorio() const override;
+		//virtual void Atualizar() override;
+		virtual void TornarPadrao() override;
+};
+
+class Limpeza : public Produto{
+	protected:
+		int unidade;
+
+	public:
+		/******** CONSTRUTORES / DESTRUTOR ********/
+		Limpeza();
+		Limpeza(std::string nome, int codigo, float preco, int unidade);
+		virtual ~Limpeza();
+
+		/******** MÉTODOS ********/
+		virtual void Cadastro() override;
+		virtual void Relatorio() const override;
+		//virtual void Atualizar() override;
+		virtual void TornarPadrao() override;
 };
 
 #endif
