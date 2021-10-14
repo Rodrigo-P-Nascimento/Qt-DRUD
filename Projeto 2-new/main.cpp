@@ -211,8 +211,22 @@ void RelatorioGeral(Produto **prod){
 void AtualizarGeral(Produto **prod){
     int opcao;
     bool produtoEncontrado = false;
+    bool produtosEmEstoque = false;
 
-    cout << "\nSelecione um Produto para atualizar" <<  endl;
+    for (int i = 0; i < TAM; i++){
+        if(prod[i]->getNome() != ""){
+            produtosEmEstoque = true;
+            break;
+        }
+    }
+
+    if(produtosEmEstoque){
+        cout << "\nSelecione um Produto para atualizar" <<  endl;
+    } else {
+        cout << "\nESTOQUE VAZIO!" << endl;
+        return;
+    }
+    
     RelatorioGeral(prod);
 
     cout << "\nCodigo: ";
@@ -233,8 +247,22 @@ void AtualizarGeral(Produto **prod){
 void RemoverGeral(Produto **prod){
     int opcao;
     bool produtoEncontrado = false;
+    bool produtosEmEstoque = false;
 
-    cout << "\nSelecione um Produto para remover" <<  endl;
+    for (int i = 0; i < TAM; i++){
+        if(prod[i]->getNome() != ""){
+            produtosEmEstoque = true;
+            break;
+        }
+    }
+
+    if(produtosEmEstoque){
+        cout << "\nSelecione um Produto para remover" <<  endl;
+    } else {
+        cout << "\nESTOQUE VAZIO!" << endl;
+        return;
+    }
+
     RelatorioGeral(prod);
 
     cout << "\nCodigo: ";
