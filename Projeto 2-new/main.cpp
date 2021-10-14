@@ -22,6 +22,7 @@ extern void NovoProduto(Seccao sec, vector<Produto*> &vec);
 extern void AtualizarGeral(Seccao sec, vector<Produto*> &vec);
 extern void RelatorioSeccao(Seccao sec, vector<Produto*> &prod);
 extern void RemoverGeral(Seccao sec, vector<Produto*> &vec);
+extern string ToStrSeccao(Seccao sec);
 
 
 int main(){
@@ -125,6 +126,7 @@ void MenuGeral(Seccao sec, vector<Produto*> &vec){
 
     while (true){
         limparTela();
+        cout << "Seccao atual: " << ToStrSeccao(sec) << endl;
         FazLinhas(LINHAS);
         cout << "Qual acao deseja realizar?" << endl
             << "[1] > Cadastrar um Novo Produto." << endl
@@ -242,24 +244,7 @@ void RelatorioSeccao(Seccao sec, vector<Produto*> &prod){
 
     sort(prod.begin(), prod.end(), Compara);
 
-    cout << "Relatorio de produtos da seccao ";
-    switch (sec){
-        case Seccao::MERCEARIA:
-            cout << "Mercearia:" << endl;
-            break;
-        case Seccao::FRIOS:
-            cout << "Frios:" << endl;
-            break;
-        case Seccao::PADARIA:
-            cout << "Padaria:" << endl;
-            break;
-        case Seccao::BEBIDAS:
-            cout << "Bebidas:" << endl;
-            break;
-        case Seccao::LIMPEZA:
-            cout << "Limpeza:" << endl;
-            break;
-    }
+    cout << "Relatorio de produtos da seccao " << ToStrSeccao(sec) << endl;
 
     cout << "\n";
     for (int i = 0; i < prod.size(); i++){
@@ -298,3 +283,22 @@ void RemoverGeral(Seccao sec, vector<Produto*> &vec){
 
     if (produtoEncontrado == false) cout << "\nProduto nao encontrado!" << endl;
 }// End RemoverGeral()
+
+
+string ToStrSeccao(Seccao sec){
+
+    switch (sec){
+        case Seccao::MERCEARIA:
+            return "Mercearia";
+        case Seccao::FRIOS:
+            return "Frios/Acougue";
+        case Seccao::PADARIA:
+            return "Padaria";
+        case Seccao::BEBIDAS:
+            return "Bebidas";
+        case Seccao::LIMPEZA:
+            return "Limpeza";
+        default:
+            return "INDEFINIDO";
+    }
+}// End ToStrSeccao()
