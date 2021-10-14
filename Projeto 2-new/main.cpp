@@ -179,10 +179,24 @@ void CadastroGeral(Produto **prod){
 
 bool Compara(Produto *a, Produto *b){
 	return a->getCodigo() < b->getCodigo();
-}
+} // End Compara()
 
 void RelatorioGeral(Produto **prod){
-    cout << "\nCODIGO" << "\tNOME" << "\t\tPRECO" << "\tESTOQUE" <<endl;
+    bool produtosEmEstoque = false;
+
+    for (int i = 0; i < TAM; i++){
+        if(prod[i]->getNome() != ""){
+            produtosEmEstoque = true;
+            break;
+        }
+    }
+
+    if(produtosEmEstoque){
+        cout << "\nCODIGO" << "\tNOME" << "\t\tPRECO" << "\tESTOQUE" << endl;
+    } else {
+        cout << "\nESTOQUE VAZIO!" << endl;
+        return;
+    }
 
     sort(prod, prod+TAM, Compara);
 
