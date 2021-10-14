@@ -133,7 +133,7 @@ void MenuGeral(Seccao sec, vector<Produto*> &vec){
             << "[2] > Atualizar os Dados de Um Produto." << endl
             << "[3] > Ver o Relatorio de Produtos." << endl
             << "[4] > Remover um Produto." << endl
-            << "[-1] > Voltar para Secçao Anterior." << endl;
+            << "[-1] > Voltar para Seccao Anterior." << endl;
         FazLinhas(LINHAS);
 
         cout << "\nEscolha uma opcao: ";
@@ -191,30 +191,43 @@ void NovoProduto(Seccao sec, vector<Produto*> &vec){
 
 void AtualizarGeral(Seccao sec, vector<Produto*> &vec){
 
-    if (vec.size() == 0){
-        cout << "\nESTOQUE VAZIO! NAO HA NENHUM PRODUTO PARA SE ATUALIZAR!" << endl;
-        return;
-    }
-
-    RelatorioSeccao(sec, vec);
-
-
     int codigo;
-    cout << "\nDigite o codigo do produto que deseja atualizar: ";
-    cin >> codigo;
+    bool produtoEncontrado, continuar = true;
 
-    bool produtoEncontrado = false;
-    for (int i = 0; i < vec.size(); i++)
+    while(continuar)
     {
-        if (vec[i]->getCodigo() == codigo){
-            vec[i]->Atualizar();
-            produtoEncontrado = true;
-            cout << "\nProduto atualizado com sucesso!" << endl;
-            break;
-        }
-    }
+        limparTela();
 
-    if (produtoEncontrado == false) cout << "\nProduto nao encontrado.";
+        if (vec.size() == 0){
+            cout << "\nESTOQUE VAZIO! NAO HA PRODUTO PARA ATUALIZAR!" << endl;
+            return;
+        }
+
+        RelatorioSeccao(sec, vec);
+    
+        cout << "\nDigite o codigo do produto que deseja atualizar: ";
+        cin >> codigo;
+
+        produtoEncontrado = false;
+        for (int i = 0; i < vec.size(); i++)
+        {
+            if (vec[i]->getCodigo() == codigo){
+                produtoEncontrado = true;
+                vec[i]->Atualizar();
+                cout << "\nProduto Atualizado com Sucesso!" << endl;
+                break;
+            }
+        }
+
+        if (produtoEncontrado == false) cout << "\nProduto nao encontrado!" << endl;
+
+        cout << "\nDeseja continuar a atualizacao de produtos?" << endl
+             << "[1] Sim" << endl
+             << "[0] Nao" << endl;
+
+        cout << "\nDigite uma opcao: ";
+        continuar = LerOpcao(0, 1, 0);
+    }
 }
 
 
@@ -257,31 +270,45 @@ void RelatorioSeccao(Seccao sec, vector<Produto*> &prod){
 
 
 void RemoverGeral(Seccao sec, vector<Produto*> &vec){
-
-    if (vec.size() == 0){
-        cout << "\nESTOQUE VAZIO!" << endl;
-        return;
-    }
-
-    RelatorioSeccao(sec, vec);
-
     int codigo;
-    cout << "\nDigite o codigo do produto que deseja deletar: ";
-    cin >> codigo;
+    bool produtoEncontrado, continuar = true;
 
-    bool produtoEncontrado = false;
-    for (int i = 0; i < vec.size(); i++)
+    while(continuar)
     {
-        if (vec[i]->getCodigo() == codigo){
-            produtoEncontrado = true;
-            delete vec[i];
-            vec.erase(vec.begin() + i);
-            cout << "\nProduto Removido com Sucesso!" << endl;
-            break;
+        limparTela();
+
+        if (vec.size() == 0){
+            cout << "\nESTOQUE VAZIO! NAO HA PRODUTO PARA REMOVER!" << endl;
+            return;
         }
+
+        RelatorioSeccao(sec, vec);
+    
+        cout << "\nDigite o codigo do produto que deseja deletar: ";
+        cin >> codigo;
+
+        produtoEncontrado = false;
+        for (int i = 0; i < vec.size(); i++)
+        {
+            if (vec[i]->getCodigo() == codigo){
+                produtoEncontrado = true;
+                delete vec[i];
+                vec.erase(vec.begin() + i);
+                cout << "\nProduto Removido com Sucesso!" << endl;
+                break;
+            }
+        }
+
+        if (produtoEncontrado == false) cout << "\nProduto nao encontrado!" << endl;
+
+        cout << "\nDeseja continuar a remocao de produtos?" << endl
+             << "[1] Sim" << endl
+             << "[0] Nao" << endl;
+
+        cout << "\nDigite uma opcao: ";
+        continuar = LerOpcao(0, 1, 0);
     }
 
-    if (produtoEncontrado == false) cout << "\nProduto nao encontrado!" << endl;
 }// End RemoverGeral()
 
 
