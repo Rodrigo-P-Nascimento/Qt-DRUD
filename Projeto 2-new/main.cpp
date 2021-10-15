@@ -20,7 +20,7 @@ extern bool Compara(Produto *a, Produto *b);
 extern void MenuGeral(Seccao sec, vector<Produto*> &vec);
 extern void NovoProduto(Seccao sec, vector<Produto*> &vec);
 extern void AtualizarGeral(Seccao sec, vector<Produto*> &vec);
-extern void RelatorioSeccao(Seccao sec, vector<Produto*> &prod);
+extern void RelatorioSeccao(Seccao sec, vector<Produto*> &vec);
 extern void RemoverGeral(Seccao sec, vector<Produto*> &vec);
 extern string ToStrSeccao(Seccao sec);
 
@@ -209,11 +209,11 @@ void AtualizarGeral(Seccao sec, vector<Produto*> &vec){
         cin >> codigo;
 
         produtoEncontrado = false;
-        for (int i = 0; i < vec.size(); i++)
+        for (auto&& it : vec)
         {
-            if (vec[i]->getCodigo() == codigo){
+            if (it->getCodigo() == codigo){
                 produtoEncontrado = true;
-                vec[i]->Atualizar();
+                it->Atualizar();
                 cout << "\nProduto Atualizado com Sucesso!" << endl;
                 break;
             }
@@ -231,7 +231,7 @@ void AtualizarGeral(Seccao sec, vector<Produto*> &vec){
 }
 
 
-void RelatorioSeccao(Seccao sec, vector<Produto*> &prod){
+void RelatorioSeccao(Seccao sec, vector<Produto*> &vec){
 
     limparTela();
     cout << "\n\n";
@@ -249,19 +249,19 @@ void RelatorioSeccao(Seccao sec, vector<Produto*> &prod){
     }
     */
 
-    if (prod.size() == 0){
+    if (vec.size() == 0){
         cout << "\nESTOQUE VAZIO!" << endl;
         FazLinhas(LINHAS);
         return;
     }
 
-    sort(prod.begin(), prod.end(), Compara);
+    sort(vec.begin(), vec.end(), Compara);
 
     cout << "Relatorio de produtos da seccao " << ToStrSeccao(sec) << endl;
 
     cout << "\n";
-    for (int i = 0; i < prod.size(); i++){
-        prod[i]->Relatorio();
+    for (auto&& it : vec){
+        it->Relatorio();
         cout << "\n";
     }
 

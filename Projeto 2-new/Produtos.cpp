@@ -136,14 +136,14 @@ Frios_Acougue::~Frios_Acougue()
 void Frios_Acougue::Cadastro(){
     Produto::Cadastro();
 
-    std::cout << "Digite o peso do produto: ";
+    std::cout << "Digite o peso do produto (em Kg): ";
     std::cin >> peso;
 }
 
 void Frios_Acougue::Relatorio() const
 {
     Produto::Relatorio();
-    std::cout << "Peso: " << peso << std::endl;
+    std::cout << "Peso: " << peso << "Kg" << std::endl;
 }
 
 void Frios_Acougue::TornarPadrao(){
@@ -174,7 +174,7 @@ Padaria::~Padaria()
 void Padaria::Cadastro(){
     Produto::Cadastro();
 
-    std::cout << "Digite o peso do produto: ";
+    std::cout << "Digite o peso do produto (em gramas): ";
     std::cin >> peso;
 
     std::cout << "\nO produto contem gluten?" << std::endl
@@ -186,7 +186,7 @@ void Padaria::Cadastro(){
 void Padaria::Relatorio() const
 {
     Produto::Relatorio();
-    std::cout << "Peso: " << peso << std::endl
+    std::cout << "Peso: " << peso << "g" << std::endl
               << "Tem gluten: ";
 
     if (temGluten) std::cout << "Nao" << std::endl;
@@ -242,7 +242,7 @@ void Bebidas::Relatorio() const
 {
     Produto::Relatorio();
     std::cout << "Unidade(s): " << unidade << std::endl
-              << "Volume por unidade: " << volume << std::endl;
+              << "Volume por unidade: " << volume << "ml" << std::endl;
 
     std::cout << "Eh alcoolica: ";
     if (ehAlcoolica) std::cout << "Sim" << std::endl;
