@@ -74,7 +74,7 @@ class Frios_Acougue : public Produto{
 class Padaria : public Produto{
 	protected:
 		float peso;
-		bool temGluten;
+		int temGluten;
 
 	public:
 		/******** CONSTRUTORES / DESTRUTOR ********/
@@ -93,8 +93,8 @@ class Bebidas : public Produto{
 	protected:
 		int unidade;
 		float volume;
-		bool ehAlcoolica;
-		bool ehGaseificada;
+		int ehAlcoolica;
+		int ehGaseificada;
 
 	public:
 		/******** CONSTRUTORES / DESTRUTOR ********/
