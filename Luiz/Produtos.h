@@ -112,6 +112,7 @@ class Bebidas : public Produto{
 class Limpeza : public Produto{
 	protected:
 		int unidade;
+		std::string fragrancia;
 
 	public:
 		/******** CONSTRUTORES / DESTRUTOR ********/

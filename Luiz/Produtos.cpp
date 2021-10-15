@@ -98,8 +98,13 @@ Mercearia::~Mercearia()
 void Mercearia::Cadastro(){
     Produto::Cadastro();
 
-    std::cout << "Digite a quantidade de itens: ";
-    std::cin >> unidade;
+    do{
+        std::cout << "Digite a quantidade de itens: ";
+        std::cin >> unidade;
+        if(unidade <= 0){
+            std::cout << "Quantidade invalido, tente novamente!" << std::endl;
+        }
+    }while(unidade <= 0);
 }
 
 void Mercearia::Relatorio() const
@@ -136,8 +141,13 @@ Frios_Acougue::~Frios_Acougue()
 void Frios_Acougue::Cadastro(){
     Produto::Cadastro();
 
-    std::cout << "Digite o peso do produto (em Kg): ";
-    std::cin >> peso;
+    do{
+        std::cout << "Digite o peso do produto (em Kg): ";
+        std::cin >> peso;
+    if(peso <= 0){
+        std::cout << "Peso invalido, tente novamente!" << std::endl;
+    }
+    }while(peso <= 0);
 }
 
 void Frios_Acougue::Relatorio() const
@@ -174,8 +184,13 @@ Padaria::~Padaria()
 void Padaria::Cadastro(){
     Produto::Cadastro();
 
-    std::cout << "Digite o peso do produto (em gramas): ";
-    std::cin >> peso;
+    do{
+        std::cout << "Digite o peso do produto (em gramas): ";
+        std::cin >> peso;
+        if(peso <= 0){
+            std::cout << "Peso invalido, tente novamente!" << std::endl;
+        }
+    }while(peso <= 0);
 
     std::cout << "\nO produto contem gluten?" << std::endl
               << "[1] Sim" << std::endl
@@ -221,11 +236,21 @@ Bebidas::~Bebidas()
 void Bebidas::Cadastro(){
     Produto::Cadastro();
 
-    std::cout << "Digite a quantidade de itens: ";
-    std::cin >> unidade;
+    do{
+        std::cout << "Digite a quantidade de itens: ";
+        std::cin >> unidade;
+        if(unidade <= 0){
+            std::cout << "Quantidade invalido, tente novamente!" << std::endl;
+        }
+    }while(unidade <= 0);
 
-    std::cout << "Digite o volume de cada unidade da bebida (em ml): ";
-    std::cin >> volume;
+    do{
+        std::cout << "Digite o volume de cada unidade da bebida (em ml): ";
+        std::cin >> volume;
+        if(volume <= 0){
+            std::cout << "Volume invalido, tente novamente!" << std::endl;
+        }
+    }while(volume <= 0);
 
     std::cout << "\nA bebida eh alcoolica?" << std::endl
               << "[1] Sim" << std::endl
@@ -281,14 +306,24 @@ Limpeza::~Limpeza()
 void Limpeza::Cadastro(){
     Produto::Cadastro();
 
-    std::cout << "Digite a quantidade de itens: ";
-    std::cin >> unidade;
+    do{
+        std::cout << "Digite a quantidade de itens: ";
+        std::cin >> unidade;
+        if(unidade <= 0){
+            std::cout << "Quantidade invalido, tente novamente!" << std::endl;
+        }
+    }while(unidade <= 0);
+
+    std::cout << "Coloque a fragrancia do produto: " << std::endl;
+    std::cin.ignore();
+    std::getline(std::cin, fragrancia);
 }
 
 void Limpeza::Relatorio() const
 {
     Produto::Relatorio();
-    std::cout << "Unidade(s): " << unidade;
+    std::cout << "Unidade(s): " << unidade << std::endl;
+    std::cout << "Fragrancia: " << fragrancia << std::endl;
 }
 
 void Limpeza::TornarPadrao(){

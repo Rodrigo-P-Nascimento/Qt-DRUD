@@ -96,8 +96,13 @@ Mercearia::~Mercearia()
 void Mercearia::Cadastro(){
     Produto::Cadastro();
 
-    std::cout << "Digite a quantidade de itens: ";
-    std::cin >> unidade;
+    do{
+        std::cout << "Digite a quantidade de itens: ";
+        std::cin >> unidade;
+        if(unidade <= 0){
+            std::cout << "Quantidade invalido, tente novamente!" << std::endl;
+        }
+    }while(unidade <= 0);
 }
 
 void Mercearia::Relatorio()
@@ -134,8 +139,13 @@ Frios_Acougue::~Frios_Acougue()
 void Frios_Acougue::Cadastro(){
     Produto::Cadastro();
 
-    std::cout << "Digite o peso do produto: ";
-    std::cin >> peso;
+    do{
+        std::cout << "Digite o peso do produto: ";
+        std::cin >> peso;
+    if(peso <= 0){
+        std::cout << "Peso invalido, tente novamente!" << std::endl;
+    }
+    }while(peso <= 0);
 }
 
 void Frios_Acougue::Relatorio()
@@ -172,8 +182,13 @@ Padaria::~Padaria()
 void Padaria::Cadastro(){
     Produto::Cadastro();
 
-    std::cout << "Digite o peso do produto: ";
-    std::cin >> peso;
+    do{
+        std::cout << "Digite o peso do produto: ";
+        std::cin >> peso;
+        if(peso <= 0){
+            std::cout << "Peso invalido, tente novamente!" << std::endl;
+        }
+    }while(peso <= 0);
 }
 
 void Padaria::Relatorio()
@@ -210,8 +225,14 @@ Bebidas::~Bebidas()
 void Bebidas::Cadastro(){
     Produto::Cadastro();
 
-    std::cout << "Digite a quantidade de itens: ";
-    std::cin >> unidade;
+    do{
+        std::cout << "Digite a quantidade de itens: ";
+        std::cin >> unidade;
+        if(unidade <= 0){
+            std::cout << "Quantidade invalido, tente novamente!" << std::endl;
+        }
+    }while(unidade <= 0);
+
 }
 
 void Bebidas::Relatorio()
@@ -248,8 +269,13 @@ Limpeza::~Limpeza()
 void Limpeza::Cadastro(){
     Produto::Cadastro();
 
-    std::cout << "Digite a quantidade de itens: ";
-    std::cin >> unidade;
+    do{
+        std::cout << "Digite a quantidade de itens: ";
+        std::cin >> unidade;
+        if(unidade <= 0){
+            std::cout << "Quantidade invalido, tente novamente!" << std::endl;
+        }
+    }while(unidade <= 0);
 }
 
 void Limpeza::Relatorio()
