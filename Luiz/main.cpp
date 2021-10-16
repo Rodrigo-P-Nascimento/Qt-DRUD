@@ -5,10 +5,9 @@
 #include "Produtos.h"
 #include "Produtos.cpp"
 
-#define LINHAS 30
+#define LINHAS 40
 
 using namespace std;
-
 
 // Funções Suporte
 extern void FazLinhas(int numLinhas);
@@ -37,9 +36,11 @@ int main(){
     
     while(ativo){
         limparTela();
+
         FazLinhas(LINHAS);
         cout << "Em qual das Secoes deseja trabalhar?" << endl;
         FazLinhas(LINHAS);
+
         cout << "\t[1] Mercearia" << endl;
         cout << "\t[2] Frios/Acougue" << endl;
         cout << "\t[3] Padaria" << endl;
@@ -79,8 +80,7 @@ int main(){
     getchar();
     
     return 0;
-}
-
+}// End Main()
 
 void FazLinhas(int numLinhas){
     for(int i=1; i <= numLinhas; i++){
@@ -89,53 +89,47 @@ void FazLinhas(int numLinhas){
     }
 }// End FazLinhas()
 
-
 void limparTela(void){
     system("cls"); // Só funciona no Windows
 } // End limparTela()
-
 
 int LerOpcao(int comeco, int fim, int sair){
     int opcao;
     bool opcaoInvalida = true;
     
-    while (opcaoInvalida)
-    {
+    while (opcaoInvalida){
         cin >> opcao;
 
         if ((opcao >= comeco && opcao <= fim) || (opcao == sair)){
             return opcao;
-        }
-        else {
+        } else {
             cout << "Opcao invalida! Tente novamente!" << endl;
             cout << "\nDigite uma opcao: ";
         }
     }// End While(opcaoInvalida)
 }// End LerOpcao()
 
-
 bool Compara(Produto *a, Produto *b){
 	return a->getCodigo() < b->getCodigo();
 } // End Compara()
 
-
 void MenuGeral(Seccao sec, vector<Produto*> &vec){
-
     int opcao;
 
     while (true){
         limparTela();
-        cout << "Seccao atual: " << ToStrSeccao(sec) << endl;
+
         FazLinhas(LINHAS);
-        cout << "Qual acao deseja realizar?" << endl
-            << "[1] > Cadastrar um Novo Produto." << endl
-            << "[2] > Atualizar os Dados de Um Produto." << endl
-            << "[3] > Ver o Relatorio de Produtos." << endl
-            << "[4] > Remover um Produto." << endl
-            << "[-1] > Voltar para Seccao Anterior." << endl;
+        cout << "Bem-vindo a Secao de " << ToStrSeccao(sec) << endl;
         FazLinhas(LINHAS);
 
-        cout << "\nEscolha uma opcao: ";
+        cout << "\t[1] Cadastrar um Novo Produto" << endl;
+        cout << "\t[2] Relatorio de Secao" << endl;
+        cout << "\t[3] Atualizar um Produto" << endl;
+        cout << "\t[4] Remover um Produto" << endl;
+        cout << "\t[-1] Voltar para Menu Anterior" << endl;
+
+        cout << "\nDigite uma opcao: ";
         opcao = LerOpcao(1, 4, -1);
 
         switch (opcao){
@@ -144,10 +138,10 @@ void MenuGeral(Seccao sec, vector<Produto*> &vec){
                 NovoProduto(sec, vec);
                 break;
             case 2:
-                AtualizarGeral(sec, vec);
+                RelatorioSeccao(sec, vec);
                 break;
             case 3:
-                RelatorioSeccao(sec, vec);
+                AtualizarGeral(sec, vec);
                 break;
             case 4:
                 RemoverGeral(sec, vec);
@@ -155,12 +149,11 @@ void MenuGeral(Seccao sec, vector<Produto*> &vec){
             case -1:
                 return;
         }
-        cout << "\nPressione ENTER para voltar ao menu" << endl;
+        cout << "\nPressione ENTER para voltar ao Menu" << endl;
         getchar();
         getchar();
     }
 }
-
 
 void NovoProduto(Seccao sec, vector<Produto*> &vec){
     
@@ -187,29 +180,66 @@ void NovoProduto(Seccao sec, vector<Produto*> &vec){
     cout << "\nProduto cadastrado com sucesso!" << endl;
 }
 
+void RelatorioSeccao(Seccao sec, vector<Produto*> &vec){
+    
+    limparTela();
+
+    if (vec.size() == 0){
+        cout << "\nESTOQUE VAZIO!" << endl;
+        return;
+    }
+
+    FazLinhas(LINHAS);
+    cout << "Relatorio da Secao " << ToStrSeccao(sec) << endl;
+    FazLinhas(LINHAS);
+
+    switch (sec){
+        case Seccao::MERCEARIA:
+            cout << "\nCODIGO" << "\tNOME" << "\t\t\t\t\t\tPRECO" << "\tESTOQUE" << endl;
+            break;
+        case Seccao::FRIOS:
+            cout << "\nCODIGO" << "\tNOME" << "\t\t\t\t\t\tPRECO" << "\tESTOQUE" << endl;
+            break;
+        case Seccao::PADARIA:
+            cout << "\nCODIGO" << "\tNOME" << "\t\t\t\t\t\tPRECO" << "\tGLUTEN" << "\tESTOQUE" << endl;
+            break;
+        case Seccao::BEBIDAS:
+            cout << "\nCODIGO" << "\tNOME" << "\t\t\t\t\t\tPRECO" << "\tALCOOLICA" << "\tGASEIFICADA" << "\tVOLUME" << "\tESTOQUE" << endl;
+            break;
+        case Seccao::LIMPEZA:
+            cout << "\nCODIGO" << "\tNOME" << "\t\t\t\t\t\tPRECO" << "\tFRAGRANCIA" << "\t\t\t\t\t\tESTOQUE" << endl;
+            break;
+    }
+
+    sort(vec.begin(), vec.end(), Compara);
+
+    for (auto&& it : vec){
+        it->Relatorio();
+        cout << endl;
+    }
+} // End RelatorioSeccao()
 
 void AtualizarGeral(Seccao sec, vector<Produto*> &vec){
-
     int codigo;
-    bool produtoEncontrado, continuar = true;
+    bool produtoEncontrado = false;
+    bool continuar = true;
 
-    while(continuar)
-    {
+    while(continuar){
         limparTela();
 
         if (vec.size() == 0){
-            cout << "\nESTOQUE VAZIO! NAO HA PRODUTO PARA ATUALIZAR!" << endl;
+            cout << "\nESTOQUE VAZIO!" << endl;
             return;
         }
 
         RelatorioSeccao(sec, vec);
     
-        cout << "\nDigite o codigo do produto que deseja atualizar: ";
+        cout << "\nSelecione um Produto para atualizar" <<  endl;
+        cout << "Codigo: ";
         cin >> codigo;
 
         produtoEncontrado = false;
-        for (auto&& it : vec)
-        {
+        for (auto&& it : vec){
             if (it->getCodigo() == codigo){
                 produtoEncontrado = true;
                 it->Atualizar();
@@ -220,7 +250,7 @@ void AtualizarGeral(Seccao sec, vector<Produto*> &vec){
 
         if (produtoEncontrado == false) cout << "\nProduto nao encontrado!" << endl;
 
-        cout << "\nDeseja continuar a atualizacao de produtos?" << endl
+        cout << "\nDeseja atualizar algum outro item?" << endl
              << "[1] Sim" << endl
              << "[0] Nao" << endl;
 
@@ -229,61 +259,23 @@ void AtualizarGeral(Seccao sec, vector<Produto*> &vec){
     }
 }
 
-
-void RelatorioSeccao(Seccao sec, vector<Produto*> &vec){
-
-    limparTela();
-    cout << "\n\n";
-    FazLinhas(LINHAS);
-
-    /*
-    if(prod.size() != 0){
-        cout << "\nCODIGO" << "\tNOME" << "\t\tPRECO" << "\tESTOQUE" << endl;
-    } else {
-        cout << "\nESTOQUE VAZIO!" << endl;
-        cout << "\nPressione ENTER para voltar ao menu" << endl;
-        getchar();
-        getchar();
-        return;
-    }
-    */
-
-    if (vec.size() == 0){
-        cout << "\nESTOQUE VAZIO!" << endl;
-        FazLinhas(LINHAS);
-        return;
-    }
-
-    sort(vec.begin(), vec.end(), Compara);
-
-    cout << "Relatorio de produtos da seccao " << ToStrSeccao(sec) << endl;
-
-    cout << "\n";
-    for (auto&& it : vec){
-        it->Relatorio();
-        cout << "\n";
-    }
-
-    FazLinhas(LINHAS);
-} // End RelatorioSeccao()
-
-
 void RemoverGeral(Seccao sec, vector<Produto*> &vec){
     int codigo;
-    bool produtoEncontrado, continuar = true;
+    bool produtoEncontrado = false;
+    bool continuar = true;
 
-    while(continuar)
-    {
+    while(continuar){
         limparTela();
 
         if (vec.size() == 0){
-            cout << "\nESTOQUE VAZIO! NAO HA PRODUTO PARA REMOVER!" << endl;
+            cout << "\nESTOQUE VAZIO!" << endl;
             return;
         }
 
         RelatorioSeccao(sec, vec);
-    
-        cout << "\nDigite o codigo do produto que deseja deletar: ";
+
+        cout << "\nSelecione um Produto para remover" <<  endl;
+        cout << "Codigo: ";
         cin >> codigo;
 
         produtoEncontrado = false;
@@ -300,7 +292,7 @@ void RemoverGeral(Seccao sec, vector<Produto*> &vec){
 
         if (produtoEncontrado == false) cout << "\nProduto nao encontrado!" << endl;
 
-        cout << "\nDeseja continuar a remocao de produtos?" << endl
+        cout << "\nDeseja remover algum outro item?" << endl
              << "[1] Sim" << endl
              << "[0] Nao" << endl;
 
@@ -309,7 +301,6 @@ void RemoverGeral(Seccao sec, vector<Produto*> &vec){
     }
 
 }// End RemoverGeral()
-
 
 string ToStrSeccao(Seccao sec){
 
