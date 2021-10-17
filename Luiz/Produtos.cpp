@@ -1,6 +1,45 @@
 #include <iostream>
 #include "Produtos.h"
 
+
+/******************************* Class Fornecedor *******************************/
+
+/******** CONSTRUTORES ********/
+Fornecedor::Fornecedor(){
+    nome = pais_sede = estado_sede = cidade_sede = "";
+}
+
+Fornecedor::Fornecedor(std::string nome, std::string pais, std::string estado, std::string cidade){
+    this->nome = nome;
+    this->pais_sede = pais;
+    this->estado_sede = estado;
+    this->cidade_sede = cidade;
+}
+
+
+/******** MÉTODOS ********/
+void Fornecedor::Cadastro(){
+    std::cout << "Informe as seguintes informacoes do fornecedor" << std::endl;
+
+    std::cin.ignore();
+    std::cout << "Nome: ";
+    std::getline(std::cin, nome);
+
+    std::cout << "Pais sede: ";
+    std::getline(std::cin, pais_sede);
+
+    std::cout << "Estado sede: ";
+    std::getline(std::cin, estado_sede);
+
+    std::cout << "Cidade sede: ";
+    std::getline(std::cin, cidade_sede);
+}
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
 /******************************* Class Produto *******************************/
 
 /******** CONSTRUTORES / DESTRUTOR ********/
@@ -102,6 +141,9 @@ void Mercearia::Cadastro(){
             std::cout << "Quantidade invalido, tente novamente!" << std::endl;
         }
     }while(unidade <= 0);
+
+    std::cout << "\n";
+    fornecedor.Cadastro();
 }
 
 void Mercearia::Relatorio() const{
@@ -144,6 +186,9 @@ void Frios_Acougue::Cadastro(){
         std::cout << "Peso invalido, tente novamente!" << std::endl;
     }
     }while(peso <= 0);
+
+    std::cout << "\n";
+    fornecedor.Cadastro();
 }
 
 void Frios_Acougue::Relatorio() const
@@ -198,6 +243,9 @@ void Padaria::Cadastro(){
         if(temGluten != 1 && temGluten != 0) std::cout << "Valor invalido, tente novamente!" << std::endl;
         else break;
     }
+
+    std::cout << "\n";
+    fornecedor.Cadastro();
 }
 
 void Padaria::Relatorio() const{
@@ -275,6 +323,8 @@ void Bebidas::Cadastro(){
         else break;
     }
     
+    std::cout << "\n";
+    fornecedor.Cadastro();
 }
 
 void Bebidas::Relatorio() const{
@@ -329,6 +379,9 @@ void Limpeza::Cadastro(){
             std::cout << "Quantidade invalido, tente novamente!" << std::endl;
         }
     }while(unidade <= 0);
+
+    std::cout << "\n";
+    fornecedor.Cadastro();
 }
 
 void Limpeza::Relatorio() const

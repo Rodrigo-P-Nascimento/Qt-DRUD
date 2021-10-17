@@ -4,6 +4,27 @@
 #include <string>
 
 
+////////////////////////////// Class Fornecedor //////////////////////////////
+
+class Fornecedor
+{
+	public:
+		std::string nome;
+		std::string pais_sede;
+		std::string estado_sede;
+		std::string cidade_sede;
+
+		/******** CONSTRUTORES ********/
+		Fornecedor();
+		Fornecedor(std::string nome, std::string pais, std::string estado, std::string cidade);
+
+		/******** MÉTODOS ********/
+		void Cadastro();
+};
+
+//////////////////////////////////////////////////////////////////////////////
+
+
 enum Seccao
 {
 	INDEFINIDO,
@@ -22,6 +43,8 @@ class Produto{
 		float preco;
 
 	public:
+		Fornecedor fornecedor;
+
 		/******** CONSTRUTORES / DESTRUTOR ********/
 		Produto();
 		Produto(std::string nome, int codigo, float preco);

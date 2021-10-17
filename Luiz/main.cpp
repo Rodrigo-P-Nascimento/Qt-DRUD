@@ -12,6 +12,7 @@ using namespace std;
 // Funções Suporte
 extern void FazLinhas(int numLinhas);
 extern void limparTela(void);
+extern void limparBuffer(void);
 extern int LerOpcao(int comeco, int fim, int sair);
 
 // Funções Suporte para as Classes
@@ -20,6 +21,7 @@ extern void MenuGeral(Seccao sec, vector<Produto*> &vec);
 extern void NovoProduto(Seccao sec, vector<Produto*> &vec);
 extern void AtualizarGeral(Seccao sec, vector<Produto*> &vec);
 extern void RelatorioSeccao(Seccao sec, vector<Produto*> &vec);
+extern void RelatorioFornecedores(Seccao sec, vector<Produto*> &vec);
 extern void RemoverGeral(Seccao sec, vector<Produto*> &vec);
 extern string ToStrSeccao(Seccao sec);
 
@@ -93,6 +95,11 @@ void limparTela(void){
     system("cls"); // Só funciona no Windows
 } // End limparTela()
 
+void limparBuffer(void){
+    char c;
+    while((c = getchar()) != '\n' && c != EOF);
+} // End limparBuffer()
+
 int LerOpcao(int comeco, int fim, int sair){
     int opcao;
     bool opcaoInvalida = true;
@@ -125,12 +132,13 @@ void MenuGeral(Seccao sec, vector<Produto*> &vec){
 
         cout << "\t[1] Cadastrar um Novo Produto" << endl;
         cout << "\t[2] Relatorio de Secao" << endl;
-        cout << "\t[3] Atualizar um Produto" << endl;
-        cout << "\t[4] Remover um Produto" << endl;
+        cout << "\t[3] Relatorio de Fornecedores" << endl;
+        cout << "\t[4] Atualizar um Produto" << endl;
+        cout << "\t[5] Remover um Produto" << endl;
         cout << "\t[-1] Voltar para Menu Anterior" << endl;
 
         cout << "\nDigite uma opcao: ";
-        opcao = LerOpcao(1, 4, -1);
+        opcao = LerOpcao(1, 5, -1);
 
         switch (opcao){
             case 1:
@@ -141,16 +149,19 @@ void MenuGeral(Seccao sec, vector<Produto*> &vec){
                 RelatorioSeccao(sec, vec);
                 break;
             case 3:
-                AtualizarGeral(sec, vec);
+                RelatorioFornecedores(sec, vec);
                 break;
             case 4:
+                AtualizarGeral(sec, vec);
+                break;
+            case 5:
                 RemoverGeral(sec, vec);
                 break;
             case -1:
                 return;
         }
         cout << "\nPressione ENTER para voltar ao Menu" << endl;
-        getchar();
+        limparBuffer();
         getchar();
     }
 }
@@ -218,6 +229,28 @@ void RelatorioSeccao(Seccao sec, vector<Produto*> &vec){
         cout << endl;
     }
 } // End RelatorioSeccao()
+
+
+void RelatorioFornecedores(Seccao sec, vector<Produto*> &vec){
+
+    cout << "\nRelatorio de Fornecedores da Seccao " << ToStrSeccao(sec) << "\n\n";
+
+    if (vec.size() == 0){
+        cout << "NAO HA NENHUM PRODUTO CADASTRADO!" << endl;
+        return;
+    }
+
+    cout << "NOME FORNECEDOR" << "\t\t\t\t" << "PAIS SEDE" << "\t\t" << "ESTADO SEDE" 
+         << "\t\t" << "CIDADE SEDE" << endl;
+
+    for (auto&& it : vec)
+    {
+        cout << it->fornecedor.nome << "\t\t\t\t\t" << it->fornecedor.pais_sede
+             << "\t\t\t" << it->fornecedor.estado_sede
+             << "\t\t\t" << it->fornecedor.cidade_sede << endl;
+    }
+}// End RelatorioFornecedores()
+
 
 void AtualizarGeral(Seccao sec, vector<Produto*> &vec){
     int codigo;
@@ -299,7 +332,6 @@ void RemoverGeral(Seccao sec, vector<Produto*> &vec){
         cout << "\nDigite uma opcao: ";
         continuar = LerOpcao(0, 1, 0);
     }
-
 }// End RemoverGeral()
 
 string ToStrSeccao(Seccao sec){
