@@ -131,7 +131,7 @@ void MenuGeral(Seccao sec, vector<Produto*> &vec){
         FazLinhas(LINHAS);
 
         cout << "\t[1] Cadastrar um Novo Produto" << endl;
-        cout << "\t[2] Relatorio de Secao" << endl;
+        cout << "\t[2] Relatorio de Seccao" << endl;
         cout << "\t[3] Relatorio de Fornecedores" << endl;
         cout << "\t[4] Atualizar um Produto" << endl;
         cout << "\t[5] Remover um Produto" << endl;
