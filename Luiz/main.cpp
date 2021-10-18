@@ -8,6 +8,7 @@
 #define LINHAS 40
 
 using namespace std;
+using namespace spmkt;
 
 // Funções Suporte
 extern void FazLinhas(int numLinhas);
