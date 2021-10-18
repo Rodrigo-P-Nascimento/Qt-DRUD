@@ -233,21 +233,25 @@ void RelatorioSeccao(Seccao sec, vector<Produto*> &vec){
 
 void RelatorioFornecedores(Seccao sec, vector<Produto*> &vec){
 
-    cout << "\nRelatorio de Fornecedores da Seccao " << ToStrSeccao(sec) << "\n\n";
+    limparTela();
+
+    FazLinhas(LINHAS);
+    cout << "Relatorio de Fornecedores da Seccao " << ToStrSeccao(sec) << endl;
+    FazLinhas(LINHAS);
 
     if (vec.size() == 0){
         cout << "NAO HA NENHUM PRODUTO CADASTRADO!" << endl;
         return;
     }
 
-    cout << "NOME FORNECEDOR" << "\t\t\t\t" << "PAIS SEDE" << "\t\t" << "ESTADO SEDE" 
-         << "\t\t" << "CIDADE SEDE" << endl;
+    cout << "NOME FORNECEDOR" << "\t\t\t\t\t\t\t\t" << "PAIS SEDE" << "\t\t\t" << "ESTADO SEDE" 
+         << "\t\t\t" << "CIDADE SEDE" << endl;
 
     for (auto&& it : vec)
     {
-        cout << it->fornecedor.nome << "\t\t\t\t\t" << it->fornecedor.pais_sede
-             << "\t\t\t" << it->fornecedor.estado_sede
-             << "\t\t\t" << it->fornecedor.cidade_sede << endl;
+        cout << it->fornecedor.nome << "\t\t\t\t\t\t\t\t" << it->fornecedor.pais_sede
+             << "\t\t\t\t" << it->fornecedor.estado_sede
+             << "\t\t\t\t" << it->fornecedor.cidade_sede << endl;
     }
 }// End RelatorioFornecedores()
 
