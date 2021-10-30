@@ -11,11 +11,13 @@ CONFIG += c++11
 SOURCES += \
     cadastromercearia.cpp \
     main.cpp \
-    menu.cpp
+    menu.cpp \
+    produtos.cpp
 
 HEADERS += \
     cadastromercearia.h \
-    menu.h
+    menu.h \
+    produtos.h
 
 FORMS += \
     cadastromercearia.ui \

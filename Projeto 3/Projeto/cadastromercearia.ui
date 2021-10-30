@@ -24,7 +24,7 @@
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLineEdit" name="lineEdit"/>
+      <widget class="QLineEdit" name="LINE_NOME_MERC"/>
      </item>
      <item row="4" column="0">
       <widget class="QLabel" name="label_2">
@@ -34,7 +34,7 @@
       </widget>
      </item>
      <item row="4" column="1">
-      <widget class="QDoubleSpinBox" name="doubleSpinBox">
+      <widget class="QDoubleSpinBox" name="DOUBLE_SPIN_MERC">
        <property name="decimals">
         <number>2</number>
        </property>
@@ -51,7 +51,7 @@
       </widget>
      </item>
      <item row="3" column="1">
-      <widget class="QSpinBox" name="spinBox">
+      <widget class="QSpinBox" name="SPIN_MERC">
        <property name="maximum">
         <number>9999</number>
        </property>
@@ -65,7 +65,27 @@
       </widget>
      </item>
      <item row="5" column="1">
-      <widget class="QDateEdit" name="dateEdit"/>
+      <widget class="QDateEdit" name="DAFA_MERC">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="calendarPopup">
+        <bool>false</bool>
+       </property>
+       <property name="currentSectionIndex">
+        <number>0</number>
+       </property>
+       <property name="timeSpec">
+        <enum>Qt::LocalTime</enum>
+       </property>
+       <property name="date">
+        <date>
+         <year>2000</year>
+         <month>1</month>
+         <day>1</day>
+        </date>
+       </property>
+      </widget>
      </item>
      <item row="6" column="0">
       <widget class="QLabel" name="label_5">
@@ -75,7 +95,7 @@
       </widget>
      </item>
      <item row="6" column="1">
-      <widget class="QDateEdit" name="dateEdit_2"/>
+      <widget class="QDateEdit" name="DAVA_MERC"/>
      </item>
      <item row="7" column="0">
       <widget class="QLabel" name="label_6">
@@ -85,7 +105,7 @@
       </widget>
      </item>
      <item row="7" column="1">
-      <widget class="QSpinBox" name="spinBox_2">
+      <widget class="QSpinBox" name="SPIN2_MERC">
        <property name="maximum">
         <number>1000</number>
        </property>
@@ -170,7 +190,7 @@
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="lineEdit_2"/>
+      <widget class="QLineEdit" name="LINE_NOME_FORNECEDOR"/>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_8">
@@ -180,7 +200,7 @@
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEdit_3"/>
+      <widget class="QLineEdit" name="LINE_PAIS"/>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="label_9">
@@ -197,10 +217,10 @@
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLineEdit" name="lineEdit_4"/>
+      <widget class="QLineEdit" name="LINE_ESTADO"/>
      </item>
      <item row="3" column="1">
-      <widget class="QLineEdit" name="lineEdit_5"/>
+      <widget class="QLineEdit" name="LINE_CIDADE"/>
      </item>
     </layout>
    </item>
@@ -233,14 +253,14 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="BTN_SALVAR_MERC">
        <property name="text">
         <string>Salvar</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="BTN_CANCELAR_MERC">
        <property name="text">
         <string>Cancelar</string>
        </property>
@@ -250,6 +270,20 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>LINE_NOME_MERC</tabstop>
+  <tabstop>SPIN_MERC</tabstop>
+  <tabstop>DOUBLE_SPIN_MERC</tabstop>
+  <tabstop>DAFA_MERC</tabstop>
+  <tabstop>DAVA_MERC</tabstop>
+  <tabstop>SPIN2_MERC</tabstop>
+  <tabstop>LINE_NOME_FORNECEDOR</tabstop>
+  <tabstop>LINE_PAIS</tabstop>
+  <tabstop>LINE_ESTADO</tabstop>
+  <tabstop>LINE_CIDADE</tabstop>
+  <tabstop>BTN_SALVAR_MERC</tabstop>
+  <tabstop>BTN_CANCELAR_MERC</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

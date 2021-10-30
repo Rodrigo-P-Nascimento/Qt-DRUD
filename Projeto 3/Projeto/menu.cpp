@@ -1,6 +1,7 @@
 #include "menu.h"
 #include "ui_menu.h"
 #include "cadastromercearia.h"
+#include "ui_cadastromercearia.h"
 #include <iostream>
 #include <string>
 

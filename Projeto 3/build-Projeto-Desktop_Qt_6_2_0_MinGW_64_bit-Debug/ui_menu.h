@@ -34,9 +34,9 @@ public:
     QWidget *gridLayoutWidget_2;
     QGridLayout *gridLayout_2;
     QPushButton *BTN_CADS_MERC;
-    QPushButton *pushButton_7;
-    QPushButton *pushButton_9;
-    QPushButton *pushButton_8;
+    QPushButton *BTN_REMV_MERC;
+    QPushButton *BTN_IMRT_MERC;
+    QPushButton *BTN_ATLZ_MERC;
     QWidget *tab_2;
     QWidget *tab_3;
     QWidget *tab_4;
@@ -77,20 +77,20 @@ public:
 
         gridLayout_2->addWidget(BTN_CADS_MERC, 0, 0, 1, 1);
 
-        pushButton_7 = new QPushButton(gridLayoutWidget_2);
-        pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
+        BTN_REMV_MERC = new QPushButton(gridLayoutWidget_2);
+        BTN_REMV_MERC->setObjectName(QString::fromUtf8("BTN_REMV_MERC"));
 
-        gridLayout_2->addWidget(pushButton_7, 3, 0, 1, 1);
+        gridLayout_2->addWidget(BTN_REMV_MERC, 3, 0, 1, 1);
 
-        pushButton_9 = new QPushButton(gridLayoutWidget_2);
-        pushButton_9->setObjectName(QString::fromUtf8("pushButton_9"));
+        BTN_IMRT_MERC = new QPushButton(gridLayoutWidget_2);
+        BTN_IMRT_MERC->setObjectName(QString::fromUtf8("BTN_IMRT_MERC"));
 
-        gridLayout_2->addWidget(pushButton_9, 2, 0, 1, 1);
+        gridLayout_2->addWidget(BTN_IMRT_MERC, 2, 0, 1, 1);
 
-        pushButton_8 = new QPushButton(gridLayoutWidget_2);
-        pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
+        BTN_ATLZ_MERC = new QPushButton(gridLayoutWidget_2);
+        BTN_ATLZ_MERC->setObjectName(QString::fromUtf8("BTN_ATLZ_MERC"));
 
-        gridLayout_2->addWidget(pushButton_8, 1, 0, 1, 1);
+        gridLayout_2->addWidget(BTN_ATLZ_MERC, 1, 0, 1, 1);
 
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
@@ -130,9 +130,9 @@ public:
         Menu->setWindowTitle(QCoreApplication::translate("Menu", "Menu", nullptr));
         label->setText(QCoreApplication::translate("Menu", "Escolha uma das sec\303\247\303\265es para trabalhar", nullptr));
         BTN_CADS_MERC->setText(QCoreApplication::translate("Menu", "Cadastrar", nullptr));
-        pushButton_7->setText(QCoreApplication::translate("Menu", "Remover", nullptr));
-        pushButton_9->setText(QCoreApplication::translate("Menu", "Imprimir Relatorio", nullptr));
-        pushButton_8->setText(QCoreApplication::translate("Menu", "Atualizar", nullptr));
+        BTN_REMV_MERC->setText(QCoreApplication::translate("Menu", "Remover", nullptr));
+        BTN_IMRT_MERC->setText(QCoreApplication::translate("Menu", "Imprimir Relatorio", nullptr));
+        BTN_ATLZ_MERC->setText(QCoreApplication::translate("Menu", "Atualizar", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("Menu", "Mercearia", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("Menu", "Padaria", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("Menu", "Frios/A\303\247ougue", nullptr));

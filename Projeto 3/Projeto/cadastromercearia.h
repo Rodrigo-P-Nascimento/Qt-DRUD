@@ -15,6 +15,10 @@ public:
     explicit CadastroMercearia(QWidget *parent = nullptr);
     ~CadastroMercearia();
 
+private slots:
+    void on_BTN_SALVAR_MERC_clicked();
+    void on_BTN_CANCELAR_MERC_clicked();
+
 private:
     Ui::CadastroMercearia *ui;
 };

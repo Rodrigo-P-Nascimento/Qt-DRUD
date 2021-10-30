@@ -9,6 +9,7 @@
 #ifndef UI_CADASTROMERCEARIA_H
 #define UI_CADASTROMERCEARIA_H
 
+#include <QtCore/QDate>
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDateEdit>
@@ -31,17 +32,17 @@ public:
     QVBoxLayout *verticalLayout;
     QFormLayout *formLayout;
     QLabel *label;
-    QLineEdit *lineEdit;
+    QLineEdit *LINE_NOME_MERC;
     QLabel *label_2;
-    QDoubleSpinBox *doubleSpinBox;
+    QDoubleSpinBox *DOUBLE_SPIN_MERC;
     QLabel *label_3;
-    QSpinBox *spinBox;
+    QSpinBox *SPIN_MERC;
     QLabel *label_4;
-    QDateEdit *dateEdit;
+    QDateEdit *DAFA_MERC;
     QLabel *label_5;
-    QDateEdit *dateEdit_2;
+    QDateEdit *DAVA_MERC;
     QLabel *label_6;
-    QSpinBox *spinBox_2;
+    QSpinBox *SPIN2_MERC;
     QLabel *label_11;
     QSpacerItem *verticalSpacer_2;
     QSpacerItem *verticalSpacer_3;
@@ -49,18 +50,18 @@ public:
     QSpacerItem *verticalSpacer_4;
     QFormLayout *formLayout_2;
     QLabel *label_7;
-    QLineEdit *lineEdit_2;
+    QLineEdit *LINE_NOME_FORNECEDOR;
     QLabel *label_8;
-    QLineEdit *lineEdit_3;
+    QLineEdit *LINE_PAIS;
     QLabel *label_9;
     QLabel *label_10;
-    QLineEdit *lineEdit_4;
-    QLineEdit *lineEdit_5;
+    QLineEdit *LINE_ESTADO;
+    QLineEdit *LINE_CIDADE;
     QSpacerItem *verticalSpacer;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *BTN_SALVAR_MERC;
+    QPushButton *BTN_CANCELAR_MERC;
 
     void setupUi(QDialog *CadastroMercearia)
     {
@@ -76,64 +77,69 @@ public:
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label);
 
-        lineEdit = new QLineEdit(CadastroMercearia);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        LINE_NOME_MERC = new QLineEdit(CadastroMercearia);
+        LINE_NOME_MERC->setObjectName(QString::fromUtf8("LINE_NOME_MERC"));
 
-        formLayout->setWidget(2, QFormLayout::FieldRole, lineEdit);
+        formLayout->setWidget(2, QFormLayout::FieldRole, LINE_NOME_MERC);
 
         label_2 = new QLabel(CadastroMercearia);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         formLayout->setWidget(4, QFormLayout::LabelRole, label_2);
 
-        doubleSpinBox = new QDoubleSpinBox(CadastroMercearia);
-        doubleSpinBox->setObjectName(QString::fromUtf8("doubleSpinBox"));
-        doubleSpinBox->setDecimals(2);
-        doubleSpinBox->setMaximum(100000000.000000000000000);
+        DOUBLE_SPIN_MERC = new QDoubleSpinBox(CadastroMercearia);
+        DOUBLE_SPIN_MERC->setObjectName(QString::fromUtf8("DOUBLE_SPIN_MERC"));
+        DOUBLE_SPIN_MERC->setDecimals(2);
+        DOUBLE_SPIN_MERC->setMaximum(100000000.000000000000000);
 
-        formLayout->setWidget(4, QFormLayout::FieldRole, doubleSpinBox);
+        formLayout->setWidget(4, QFormLayout::FieldRole, DOUBLE_SPIN_MERC);
 
         label_3 = new QLabel(CadastroMercearia);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
         formLayout->setWidget(3, QFormLayout::LabelRole, label_3);
 
-        spinBox = new QSpinBox(CadastroMercearia);
-        spinBox->setObjectName(QString::fromUtf8("spinBox"));
-        spinBox->setMaximum(9999);
+        SPIN_MERC = new QSpinBox(CadastroMercearia);
+        SPIN_MERC->setObjectName(QString::fromUtf8("SPIN_MERC"));
+        SPIN_MERC->setMaximum(9999);
 
-        formLayout->setWidget(3, QFormLayout::FieldRole, spinBox);
+        formLayout->setWidget(3, QFormLayout::FieldRole, SPIN_MERC);
 
         label_4 = new QLabel(CadastroMercearia);
         label_4->setObjectName(QString::fromUtf8("label_4"));
 
         formLayout->setWidget(5, QFormLayout::LabelRole, label_4);
 
-        dateEdit = new QDateEdit(CadastroMercearia);
-        dateEdit->setObjectName(QString::fromUtf8("dateEdit"));
+        DAFA_MERC = new QDateEdit(CadastroMercearia);
+        DAFA_MERC->setObjectName(QString::fromUtf8("DAFA_MERC"));
+        DAFA_MERC->setEnabled(true);
+        DAFA_MERC->setCalendarPopup(false);
+        DAFA_MERC->setCurrentSectionIndex(0);
+        DAFA_MERC->setTimeSpec(Qt::LocalTime);
+        DAFA_MERC->setDate(QDate(2000, 1, 1));
 
-        formLayout->setWidget(5, QFormLayout::FieldRole, dateEdit);
+        formLayout->setWidget(5, QFormLayout::FieldRole, DAFA_MERC);
 
         label_5 = new QLabel(CadastroMercearia);
         label_5->setObjectName(QString::fromUtf8("label_5"));
 
         formLayout->setWidget(6, QFormLayout::LabelRole, label_5);
 
-        dateEdit_2 = new QDateEdit(CadastroMercearia);
-        dateEdit_2->setObjectName(QString::fromUtf8("dateEdit_2"));
+        DAVA_MERC = new QDateEdit(CadastroMercearia);
+        DAVA_MERC->setObjectName(QString::fromUtf8("DAVA_MERC"));
 
-        formLayout->setWidget(6, QFormLayout::FieldRole, dateEdit_2);
+        formLayout->setWidget(6, QFormLayout::FieldRole, DAVA_MERC);
 
         label_6 = new QLabel(CadastroMercearia);
         label_6->setObjectName(QString::fromUtf8("label_6"));
 
         formLayout->setWidget(7, QFormLayout::LabelRole, label_6);
 
-        spinBox_2 = new QSpinBox(CadastroMercearia);
-        spinBox_2->setObjectName(QString::fromUtf8("spinBox_2"));
-        spinBox_2->setMaximum(1000);
+        SPIN2_MERC = new QSpinBox(CadastroMercearia);
+        SPIN2_MERC->setObjectName(QString::fromUtf8("SPIN2_MERC"));
+        SPIN2_MERC->setMaximum(1000);
 
-        formLayout->setWidget(7, QFormLayout::FieldRole, spinBox_2);
+        formLayout->setWidget(7, QFormLayout::FieldRole, SPIN2_MERC);
 
         label_11 = new QLabel(CadastroMercearia);
         label_11->setObjectName(QString::fromUtf8("label_11"));
@@ -172,20 +178,20 @@ public:
 
         formLayout_2->setWidget(0, QFormLayout::LabelRole, label_7);
 
-        lineEdit_2 = new QLineEdit(CadastroMercearia);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        LINE_NOME_FORNECEDOR = new QLineEdit(CadastroMercearia);
+        LINE_NOME_FORNECEDOR->setObjectName(QString::fromUtf8("LINE_NOME_FORNECEDOR"));
 
-        formLayout_2->setWidget(0, QFormLayout::FieldRole, lineEdit_2);
+        formLayout_2->setWidget(0, QFormLayout::FieldRole, LINE_NOME_FORNECEDOR);
 
         label_8 = new QLabel(CadastroMercearia);
         label_8->setObjectName(QString::fromUtf8("label_8"));
 
         formLayout_2->setWidget(1, QFormLayout::LabelRole, label_8);
 
-        lineEdit_3 = new QLineEdit(CadastroMercearia);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+        LINE_PAIS = new QLineEdit(CadastroMercearia);
+        LINE_PAIS->setObjectName(QString::fromUtf8("LINE_PAIS"));
 
-        formLayout_2->setWidget(1, QFormLayout::FieldRole, lineEdit_3);
+        formLayout_2->setWidget(1, QFormLayout::FieldRole, LINE_PAIS);
 
         label_9 = new QLabel(CadastroMercearia);
         label_9->setObjectName(QString::fromUtf8("label_9"));
@@ -197,15 +203,15 @@ public:
 
         formLayout_2->setWidget(3, QFormLayout::LabelRole, label_10);
 
-        lineEdit_4 = new QLineEdit(CadastroMercearia);
-        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
+        LINE_ESTADO = new QLineEdit(CadastroMercearia);
+        LINE_ESTADO->setObjectName(QString::fromUtf8("LINE_ESTADO"));
 
-        formLayout_2->setWidget(2, QFormLayout::FieldRole, lineEdit_4);
+        formLayout_2->setWidget(2, QFormLayout::FieldRole, LINE_ESTADO);
 
-        lineEdit_5 = new QLineEdit(CadastroMercearia);
-        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
+        LINE_CIDADE = new QLineEdit(CadastroMercearia);
+        LINE_CIDADE->setObjectName(QString::fromUtf8("LINE_CIDADE"));
 
-        formLayout_2->setWidget(3, QFormLayout::FieldRole, lineEdit_5);
+        formLayout_2->setWidget(3, QFormLayout::FieldRole, LINE_CIDADE);
 
 
         verticalLayout->addLayout(formLayout_2);
@@ -220,19 +226,30 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        pushButton = new QPushButton(CadastroMercearia);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        BTN_SALVAR_MERC = new QPushButton(CadastroMercearia);
+        BTN_SALVAR_MERC->setObjectName(QString::fromUtf8("BTN_SALVAR_MERC"));
 
-        horizontalLayout->addWidget(pushButton);
+        horizontalLayout->addWidget(BTN_SALVAR_MERC);
 
-        pushButton_2 = new QPushButton(CadastroMercearia);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        BTN_CANCELAR_MERC = new QPushButton(CadastroMercearia);
+        BTN_CANCELAR_MERC->setObjectName(QString::fromUtf8("BTN_CANCELAR_MERC"));
 
-        horizontalLayout->addWidget(pushButton_2);
+        horizontalLayout->addWidget(BTN_CANCELAR_MERC);
 
 
         verticalLayout->addLayout(horizontalLayout);
 
+        QWidget::setTabOrder(LINE_NOME_MERC, SPIN_MERC);
+        QWidget::setTabOrder(SPIN_MERC, DOUBLE_SPIN_MERC);
+        QWidget::setTabOrder(DOUBLE_SPIN_MERC, DAFA_MERC);
+        QWidget::setTabOrder(DAFA_MERC, DAVA_MERC);
+        QWidget::setTabOrder(DAVA_MERC, SPIN2_MERC);
+        QWidget::setTabOrder(SPIN2_MERC, LINE_NOME_FORNECEDOR);
+        QWidget::setTabOrder(LINE_NOME_FORNECEDOR, LINE_PAIS);
+        QWidget::setTabOrder(LINE_PAIS, LINE_ESTADO);
+        QWidget::setTabOrder(LINE_ESTADO, LINE_CIDADE);
+        QWidget::setTabOrder(LINE_CIDADE, BTN_SALVAR_MERC);
+        QWidget::setTabOrder(BTN_SALVAR_MERC, BTN_CANCELAR_MERC);
 
         retranslateUi(CadastroMercearia);
 
@@ -254,8 +271,8 @@ public:
         label_8->setText(QCoreApplication::translate("CadastroMercearia", "Pa\303\255s Sede", nullptr));
         label_9->setText(QCoreApplication::translate("CadastroMercearia", "Estado Sede", nullptr));
         label_10->setText(QCoreApplication::translate("CadastroMercearia", "Cidade Sede", nullptr));
-        pushButton->setText(QCoreApplication::translate("CadastroMercearia", "Salvar", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("CadastroMercearia", "Cancelar", nullptr));
+        BTN_SALVAR_MERC->setText(QCoreApplication::translate("CadastroMercearia", "Salvar", nullptr));
+        BTN_CANCELAR_MERC->setText(QCoreApplication::translate("CadastroMercearia", "Cancelar", nullptr));
     } // retranslateUi
 
 };
