@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/imagens">
+        <file>Imagens/adicionar.png</file>
+        <file>Imagens/lixeira.png</file>
+        <file>Imagens/recarregar.png</file>
+        <file>Imagens/relatorio.png</file>
+    </qresource>
+</RCC>
