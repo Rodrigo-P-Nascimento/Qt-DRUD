@@ -38,41 +38,117 @@
        <attribute name="title">
         <string>Mercearia</string>
        </attribute>
-       <widget class="QWidget" name="gridLayoutWidget_2">
+       <widget class="QWidget" name="formLayoutWidget">
         <property name="geometry">
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>171</width>
-          <height>221</height>
+          <width>211</width>
+          <height>131</height>
          </rect>
         </property>
-        <layout class="QGridLayout" name="gridLayout_2">
+        <layout class="QFormLayout" name="formLayout">
          <item row="0" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="maximumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>../Imagens/adicionar.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
           <widget class="QPushButton" name="BTN_CADS_MERC">
            <property name="text">
             <string>Cadastrar</string>
            </property>
           </widget>
          </item>
-         <item row="3" column="0">
-          <widget class="QPushButton" name="BTN_REMV_MERC">
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="maximumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
            <property name="text">
-            <string>Remover</string>
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>../Imagens/recarregar.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="BTN_ATLZ_MERC">
+           <property name="text">
+            <string>Atualizar</string>
            </property>
           </widget>
          </item>
          <item row="2" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="maximumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>../Imagens/relatorio.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
           <widget class="QPushButton" name="BTN_IMRT_MERC">
            <property name="text">
             <string>Imprimir Relatorio</string>
            </property>
           </widget>
          </item>
-         <item row="1" column="0">
-          <widget class="QPushButton" name="BTN_ATLZ_MERC">
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="maximumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
            <property name="text">
-            <string>Atualizar</string>
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>../Imagens/lixeira.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QPushButton" name="BTN_REMV_MERC">
+           <property name="text">
+            <string>Remover</string>
            </property>
           </widget>
          </item>

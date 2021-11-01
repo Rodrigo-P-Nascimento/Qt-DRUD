@@ -11,7 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -31,12 +31,16 @@ public:
     QLabel *label;
     QTabWidget *tabWidget;
     QWidget *tab;
-    QWidget *gridLayoutWidget_2;
-    QGridLayout *gridLayout_2;
+    QWidget *formLayoutWidget;
+    QFormLayout *formLayout;
+    QLabel *label_2;
     QPushButton *BTN_CADS_MERC;
-    QPushButton *BTN_REMV_MERC;
-    QPushButton *BTN_IMRT_MERC;
+    QLabel *label_3;
     QPushButton *BTN_ATLZ_MERC;
+    QLabel *label_4;
+    QPushButton *BTN_IMRT_MERC;
+    QLabel *label_5;
+    QPushButton *BTN_REMV_MERC;
     QWidget *tab_2;
     QWidget *tab_3;
     QWidget *tab_4;
@@ -66,31 +70,63 @@ public:
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
-        gridLayoutWidget_2 = new QWidget(tab);
-        gridLayoutWidget_2->setObjectName(QString::fromUtf8("gridLayoutWidget_2"));
-        gridLayoutWidget_2->setGeometry(QRect(10, 10, 171, 221));
-        gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        BTN_CADS_MERC = new QPushButton(gridLayoutWidget_2);
+        formLayoutWidget = new QWidget(tab);
+        formLayoutWidget->setObjectName(QString::fromUtf8("formLayoutWidget"));
+        formLayoutWidget->setGeometry(QRect(10, 10, 211, 131));
+        formLayout = new QFormLayout(formLayoutWidget);
+        formLayout->setObjectName(QString::fromUtf8("formLayout"));
+        formLayout->setContentsMargins(0, 0, 0, 0);
+        label_2 = new QLabel(formLayoutWidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setMaximumSize(QSize(20, 20));
+        label_2->setPixmap(QPixmap(QString::fromUtf8("../Imagens/adicionar.png")));
+        label_2->setScaledContents(true);
+
+        formLayout->setWidget(0, QFormLayout::LabelRole, label_2);
+
+        BTN_CADS_MERC = new QPushButton(formLayoutWidget);
         BTN_CADS_MERC->setObjectName(QString::fromUtf8("BTN_CADS_MERC"));
 
-        gridLayout_2->addWidget(BTN_CADS_MERC, 0, 0, 1, 1);
+        formLayout->setWidget(0, QFormLayout::FieldRole, BTN_CADS_MERC);
 
-        BTN_REMV_MERC = new QPushButton(gridLayoutWidget_2);
-        BTN_REMV_MERC->setObjectName(QString::fromUtf8("BTN_REMV_MERC"));
+        label_3 = new QLabel(formLayoutWidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setMaximumSize(QSize(20, 20));
+        label_3->setPixmap(QPixmap(QString::fromUtf8("../Imagens/recarregar.png")));
+        label_3->setScaledContents(true);
 
-        gridLayout_2->addWidget(BTN_REMV_MERC, 3, 0, 1, 1);
+        formLayout->setWidget(1, QFormLayout::LabelRole, label_3);
 
-        BTN_IMRT_MERC = new QPushButton(gridLayoutWidget_2);
-        BTN_IMRT_MERC->setObjectName(QString::fromUtf8("BTN_IMRT_MERC"));
-
-        gridLayout_2->addWidget(BTN_IMRT_MERC, 2, 0, 1, 1);
-
-        BTN_ATLZ_MERC = new QPushButton(gridLayoutWidget_2);
+        BTN_ATLZ_MERC = new QPushButton(formLayoutWidget);
         BTN_ATLZ_MERC->setObjectName(QString::fromUtf8("BTN_ATLZ_MERC"));
 
-        gridLayout_2->addWidget(BTN_ATLZ_MERC, 1, 0, 1, 1);
+        formLayout->setWidget(1, QFormLayout::FieldRole, BTN_ATLZ_MERC);
+
+        label_4 = new QLabel(formLayoutWidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setMaximumSize(QSize(20, 20));
+        label_4->setPixmap(QPixmap(QString::fromUtf8("../Imagens/relatorio.png")));
+        label_4->setScaledContents(true);
+
+        formLayout->setWidget(2, QFormLayout::LabelRole, label_4);
+
+        BTN_IMRT_MERC = new QPushButton(formLayoutWidget);
+        BTN_IMRT_MERC->setObjectName(QString::fromUtf8("BTN_IMRT_MERC"));
+
+        formLayout->setWidget(2, QFormLayout::FieldRole, BTN_IMRT_MERC);
+
+        label_5 = new QLabel(formLayoutWidget);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setMaximumSize(QSize(20, 20));
+        label_5->setPixmap(QPixmap(QString::fromUtf8("../Imagens/lixeira.png")));
+        label_5->setScaledContents(true);
+
+        formLayout->setWidget(3, QFormLayout::LabelRole, label_5);
+
+        BTN_REMV_MERC = new QPushButton(formLayoutWidget);
+        BTN_REMV_MERC->setObjectName(QString::fromUtf8("BTN_REMV_MERC"));
+
+        formLayout->setWidget(3, QFormLayout::FieldRole, BTN_REMV_MERC);
 
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
@@ -129,10 +165,14 @@ public:
     {
         Menu->setWindowTitle(QCoreApplication::translate("Menu", "Menu", nullptr));
         label->setText(QCoreApplication::translate("Menu", "Escolha uma das sec\303\247\303\265es para trabalhar", nullptr));
+        label_2->setText(QString());
         BTN_CADS_MERC->setText(QCoreApplication::translate("Menu", "Cadastrar", nullptr));
-        BTN_REMV_MERC->setText(QCoreApplication::translate("Menu", "Remover", nullptr));
-        BTN_IMRT_MERC->setText(QCoreApplication::translate("Menu", "Imprimir Relatorio", nullptr));
+        label_3->setText(QString());
         BTN_ATLZ_MERC->setText(QCoreApplication::translate("Menu", "Atualizar", nullptr));
+        label_4->setText(QString());
+        BTN_IMRT_MERC->setText(QCoreApplication::translate("Menu", "Imprimir Relatorio", nullptr));
+        label_5->setText(QString());
+        BTN_REMV_MERC->setText(QCoreApplication::translate("Menu", "Remover", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("Menu", "Mercearia", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("Menu", "Padaria", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("Menu", "Frios/A\303\247ougue", nullptr));
