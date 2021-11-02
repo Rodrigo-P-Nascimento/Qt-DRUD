@@ -41,6 +41,7 @@ public:
     QPushButton *BTN_IMRT_MERC;
     QLabel *label_5;
     QPushButton *BTN_REMV_MERC;
+    QLabel *label_6;
     QWidget *tab_2;
     QWidget *tab_3;
     QWidget *tab_4;
@@ -79,7 +80,7 @@ public:
         label_2 = new QLabel(formLayoutWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setMaximumSize(QSize(20, 20));
-        label_2->setPixmap(QPixmap(QString::fromUtf8("../Imagens/adicionar.png")));
+        label_2->setPixmap(QPixmap(QString::fromUtf8(":/imagens/Imagens/adicionar.png")));
         label_2->setScaledContents(true);
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_2);
@@ -92,7 +93,7 @@ public:
         label_3 = new QLabel(formLayoutWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setMaximumSize(QSize(20, 20));
-        label_3->setPixmap(QPixmap(QString::fromUtf8("../Imagens/recarregar.png")));
+        label_3->setPixmap(QPixmap(QString::fromUtf8(":/imagens/Imagens/recarregar.png")));
         label_3->setScaledContents(true);
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_3);
@@ -105,7 +106,7 @@ public:
         label_4 = new QLabel(formLayoutWidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setMaximumSize(QSize(20, 20));
-        label_4->setPixmap(QPixmap(QString::fromUtf8("../Imagens/relatorio.png")));
+        label_4->setPixmap(QPixmap(QString::fromUtf8(":/imagens/Imagens/relatorio.png")));
         label_4->setScaledContents(true);
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label_4);
@@ -118,7 +119,7 @@ public:
         label_5 = new QLabel(formLayoutWidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setMaximumSize(QSize(20, 20));
-        label_5->setPixmap(QPixmap(QString::fromUtf8("../Imagens/lixeira.png")));
+        label_5->setPixmap(QPixmap(QString::fromUtf8(":/imagens/Imagens/lixeira.png")));
         label_5->setScaledContents(true);
 
         formLayout->setWidget(3, QFormLayout::LabelRole, label_5);
@@ -128,6 +129,18 @@ public:
 
         formLayout->setWidget(3, QFormLayout::FieldRole, BTN_REMV_MERC);
 
+        label_6 = new QLabel(tab);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(470, 160, 300, 300));
+        label_6->setMinimumSize(QSize(300, 300));
+        label_6->setMaximumSize(QSize(300, 300));
+        label_6->setLayoutDirection(Qt::LeftToRight);
+        label_6->setAutoFillBackground(false);
+        label_6->setFrameShape(QFrame::NoFrame);
+        label_6->setFrameShadow(QFrame::Plain);
+        label_6->setPixmap(QPixmap(QString::fromUtf8(":/imagens/Imagens/mercearia.png")));
+        label_6->setScaledContents(true);
+        label_6->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
@@ -173,6 +186,7 @@ public:
         BTN_IMRT_MERC->setText(QCoreApplication::translate("Menu", "Imprimir Relatorio", nullptr));
         label_5->setText(QString());
         BTN_REMV_MERC->setText(QCoreApplication::translate("Menu", "Remover", nullptr));
+        label_6->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("Menu", "Mercearia", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("Menu", "Padaria", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("Menu", "Frios/A\303\247ougue", nullptr));

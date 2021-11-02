@@ -212,6 +212,7 @@ Makefile: ../Projeto/Projeto.pro C:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++/qmake.
 		C:/Qt/6.2.0/mingw81_64/lib/Qt6Core.prl \
 		C:/Qt/6.2.0/mingw81_64/lib/Qt6EntryPoint.prl \
 		C:/Qt/6.2.0/mingw81_64/mkspecs/features/build_pass.prf \
+		../Projeto/arquivos.qrc \
 		debug/qmake_qmake_qm_files.qrc \
 		release/qmake_qmake_qm_files.qrc
 	$(QMAKE) -o Makefile ..\Projeto\Projeto.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -357,6 +358,7 @@ C:/Qt/6.2.0/mingw81_64/lib/Qt6Gui.prl:
 C:/Qt/6.2.0/mingw81_64/lib/Qt6Core.prl:
 C:/Qt/6.2.0/mingw81_64/lib/Qt6EntryPoint.prl:
 C:/Qt/6.2.0/mingw81_64/mkspecs/features/build_pass.prf:
+../Projeto/arquivos.qrc:
 debug/qmake_qmake_qm_files.qrc:
 release/qmake_qmake_qm_files.qrc:
 qmake: FORCE
