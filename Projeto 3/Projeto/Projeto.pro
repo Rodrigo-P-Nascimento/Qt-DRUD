@@ -12,7 +12,8 @@ SOURCES += \
     cadastromercearia.cpp \
     main.cpp \
     menu.cpp \
-    produtos.cpp
+    produtos.cpp \
+    variaveis.cpp
 
 HEADERS += \
     cadastromercearia.h \

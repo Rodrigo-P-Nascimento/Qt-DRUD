@@ -41,7 +41,6 @@ public:
     QPushButton *BTN_IMRT_MERC;
     QLabel *label_5;
     QPushButton *BTN_REMV_MERC;
-    QLabel *label_6;
     QWidget *tab_2;
     QWidget *tab_3;
     QWidget *tab_4;
@@ -129,18 +128,6 @@ public:
 
         formLayout->setWidget(3, QFormLayout::FieldRole, BTN_REMV_MERC);
 
-        label_6 = new QLabel(tab);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(470, 160, 300, 300));
-        label_6->setMinimumSize(QSize(300, 300));
-        label_6->setMaximumSize(QSize(300, 300));
-        label_6->setLayoutDirection(Qt::LeftToRight);
-        label_6->setAutoFillBackground(false);
-        label_6->setFrameShape(QFrame::NoFrame);
-        label_6->setFrameShadow(QFrame::Plain);
-        label_6->setPixmap(QPixmap(QString::fromUtf8(":/imagens/Imagens/mercearia.png")));
-        label_6->setScaledContents(true);
-        label_6->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
@@ -186,7 +173,6 @@ public:
         BTN_IMRT_MERC->setText(QCoreApplication::translate("Menu", "Imprimir Relatorio", nullptr));
         label_5->setText(QString());
         BTN_REMV_MERC->setText(QCoreApplication::translate("Menu", "Remover", nullptr));
-        label_6->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("Menu", "Mercearia", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("Menu", "Padaria", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("Menu", "Frios/A\303\247ougue", nullptr));

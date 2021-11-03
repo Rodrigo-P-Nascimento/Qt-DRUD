@@ -2,8 +2,7 @@
 #include "ui_menu.h"
 #include "cadastromercearia.h"
 #include "ui_cadastromercearia.h"
-#include <iostream>
-#include <string>
+#include "produtos.h"
 
 Menu::Menu(QWidget *parent)
     : QMainWindow(parent)
@@ -16,7 +15,6 @@ Menu::~Menu()
 {
     delete ui;
 }
-
 
 void Menu::on_BTN_CADS_MERC_clicked()
 {

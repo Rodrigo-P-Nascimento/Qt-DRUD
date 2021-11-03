@@ -1,6 +1,7 @@
 #include "cadastromercearia.h"
 #include "ui_cadastromercearia.h"
-#include "produtos.cpp"
+#include "QMessageBox"
+#include "variaveis.cpp"
 
 CadastroMercearia::CadastroMercearia(QWidget *parent) :
     QDialog(parent),
@@ -28,6 +29,10 @@ void CadastroMercearia::on_BTN_SALVAR_MERC_clicked(){
                              "\nData Fabricação: "+dataFa+"\nData Validade: "+dataVA+
                              "\nUnidade(s): "+unidade+"\n\nFornecedor: "+nomeFornecedor+
                              "\nPais: "+pais+"\nEstado: "+estado+"\nCidade: "+cidade);
+    mercearia.push_back(new Mercearia(nomeProduto, codigo, preco, unidade, dataFa, dataVA));
+    //Debugar a saida manos
+    qDebug()  << "Nome: " << mercearia[mercearia.size()-1]->getNome() <<" Codigo: " <<mercearia[mercearia.size()-1]->getCodigo();
+
 }
 void CadastroMercearia::on_BTN_CANCELAR_MERC_clicked(){
     ui->LINE_NOME_MERC->clear();

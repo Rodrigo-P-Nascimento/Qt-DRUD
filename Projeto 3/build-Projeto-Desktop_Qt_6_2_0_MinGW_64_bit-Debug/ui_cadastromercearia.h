@@ -272,7 +272,7 @@ public:
         label_9->setText(QCoreApplication::translate("CadastroMercearia", "Estado Sede", nullptr));
         label_10->setText(QCoreApplication::translate("CadastroMercearia", "Cidade Sede", nullptr));
         BTN_SALVAR_MERC->setText(QCoreApplication::translate("CadastroMercearia", "Salvar", nullptr));
-        BTN_CANCELAR_MERC->setText(QCoreApplication::translate("CadastroMercearia", "Cancelar", nullptr));
+        BTN_CANCELAR_MERC->setText(QCoreApplication::translate("CadastroMercearia", "Limpar", nullptr));
     } // retranslateUi
 
 };

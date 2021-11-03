@@ -34,7 +34,7 @@ int main(){
     vector<Produto*> padaria;
     vector<Produto*> bebidas;
     vector<Produto*> limpeza;
-    
+
     int opcao, ativo=1;
     
     while(ativo){

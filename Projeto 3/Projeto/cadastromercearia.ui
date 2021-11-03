@@ -262,7 +262,7 @@
      <item>
       <widget class="QPushButton" name="BTN_CANCELAR_MERC">
        <property name="text">
-        <string>Cancelar</string>
+        <string>Limpar</string>
        </property>
       </widget>
      </item>
