@@ -3,6 +3,7 @@
 #include "cadastromercearia.h"
 #include "ui_cadastromercearia.h"
 #include "produtos.h"
+#include <menu.cpp>
 
 Menu::Menu(QWidget *parent)
     : QMainWindow(parent)
