@@ -275,7 +275,7 @@ release/moc_cadastromercearia.cpp: ../Projeto/cadastromercearia.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qloggingcategory.h \
 		release/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
-	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "C:/Users/rodri/Documents/GitHub/ProjetoLP1/Projeto 3/build-Projeto-Desktop_Qt_6_2_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"C:/Users/rodri/Documents/GitHub/ProjetoLP1/Projeto 3/Projeto" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtWidgets -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\Projeto\cadastromercearia.h -o release\moc_cadastromercearia.cpp
+	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "C:/Users/taylo/OneDrive/Documentos/GitHub/ProjetoLP1/Projeto 3/build-Projeto-Desktop_Qt_6_2_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"C:/Users/taylo/OneDrive/Documentos/GitHub/ProjetoLP1/Projeto 3/Projeto" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtWidgets -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\Projeto\cadastromercearia.h -o release\moc_cadastromercearia.cpp
 
 release/moc_menu.cpp: ../Projeto/menu.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QMainWindow \
@@ -411,7 +411,7 @@ release/moc_menu.cpp: ../Projeto/menu.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtGui/qicon.h \
 		release/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
-	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "C:/Users/rodri/Documents/GitHub/ProjetoLP1/Projeto 3/build-Projeto-Desktop_Qt_6_2_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"C:/Users/rodri/Documents/GitHub/ProjetoLP1/Projeto 3/Projeto" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtWidgets -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\Projeto\menu.h -o release\moc_menu.cpp
+	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "C:/Users/taylo/OneDrive/Documentos/GitHub/ProjetoLP1/Projeto 3/build-Projeto-Desktop_Qt_6_2_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"C:/Users/taylo/OneDrive/Documentos/GitHub/ProjetoLP1/Projeto 3/Projeto" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtWidgets -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\Projeto\menu.h -o release\moc_menu.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -629,12 +629,13 @@ release/cadastromercearia.o: ../Projeto/cadastromercearia.cpp ../Projeto/cadastr
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QSpacerItem \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QSpinBox \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QVBoxLayout \
+		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QMessageBox \
+		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qmessagebox.h \
 		../Projeto/variaveis.cpp \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVector \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qvector.h \
 		../Projeto/produtos.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QMessageBox \
-		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qmessagebox.h
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\cadastromercearia.o ..\Projeto\cadastromercearia.cpp
 
 release/main.o: ../Projeto/main.cpp ../Projeto/menu.h \
@@ -769,10 +770,6 @@ release/main.o: ../Projeto/main.cpp ../Projeto/menu.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qloggingcategory.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qtabwidget.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtGui/qicon.h \
-		../Projeto/produtos.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QMessageBox \
-		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qmessagebox.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qdialog.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QApplication \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qapplication.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcoreapplication.h \
@@ -978,15 +975,9 @@ release/menu.o: ../Projeto/menu.cpp ../Projeto/menu.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QTabWidget \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QWidget \
-		../Projeto/variaveis.cpp \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVector \
-		C:/Qt/6.2.0/mingw81_64/include/QtCore/qvector.h \
-		../Projeto/produtos.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QMessageBox \
-		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qmessagebox.h \
-		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qdialog.h \
 		../Projeto/cadastromercearia.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QDialog \
+		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qdialog.h \
 		ui_cadastromercearia.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QDate \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdatetime.h \
@@ -1006,7 +997,10 @@ release/menu.o: ../Projeto/menu.cpp ../Projeto/menu.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtGui/qpen.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtGui/qtextoption.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QSpacerItem \
-		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QSpinBox
+		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QSpinBox \
+		../Projeto/produtos.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QMessageBox \
+		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\menu.o ..\Projeto\menu.cpp
 
 release/produtos.o: ../Projeto/produtos.cpp ../Projeto/produtos.h \
