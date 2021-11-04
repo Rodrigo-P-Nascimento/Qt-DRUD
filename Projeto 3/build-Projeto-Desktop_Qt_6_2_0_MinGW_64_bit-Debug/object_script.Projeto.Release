@@ -1,0 +1,10 @@
+release/cadastro.o
+release/main.o
+release/menu.o
+release/produtos.o
+release/verifica.o
+release/qrc_arquivos.o
+release/qrc_qmake_qmake_qm_files.o
+release/moc_cadastro.o
+release/moc_menu.o
+release/moc_verifica.o

@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'cadastromercearia.ui'
+** Form generated from reading UI file 'cadastro.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.2.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_CADASTROMERCEARIA_H
-#define UI_CADASTROMERCEARIA_H
+#ifndef UI_CADASTRO_H
+#define UI_CADASTRO_H
 
 #include <QtCore/QDate>
 #include <QtCore/QVariant>
@@ -17,6 +17,7 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QFormLayout>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -31,23 +32,33 @@ class Ui_CadastroMercearia
 {
 public:
     QVBoxLayout *verticalLayout;
-    QFormLayout *formLayout;
-    QLabel *label;
-    QLineEdit *LINE_NOME_MERC;
+    QGridLayout *gridLayout;
+    QSpinBox *SPIN_UNIDADE;
+    QLabel *LABEL_GAS;
+    QDoubleSpinBox *SPIN_PRECO;
+    QComboBox *COMBO_GLUTEN;
+    QLabel *LABEL_ALCOOLICA;
+    QDateEdit *DAFA;
+    QDoubleSpinBox *SPIN_VOLUME;
+    QLineEdit *LINE_NOME;
     QLabel *label_2;
-    QDoubleSpinBox *DOUBLE_SPIN_MERC;
-    QLabel *label_3;
-    QSpinBox *SPIN_MERC;
     QLabel *label_4;
-    QDateEdit *DAFA_MERC;
-    QLabel *label_5;
-    QDateEdit *DAVA_MERC;
-    QLabel *label_6;
-    QSpinBox *SPIN2_MERC;
-    QLabel *label_11;
-    QSpacerItem *verticalSpacer_2;
     QLabel *LABEL_PESO;
+    QSpinBox *SPIN_CODIGO;
+    QLabel *label_5;
     QDoubleSpinBox *SPIN_PESO;
+    QComboBox *COMBO_ALCOOLICA;
+    QLabel *label_11;
+    QLabel *LABEL_UNIDADE;
+    QLabel *label_3;
+    QDateEdit *DAVA;
+    QComboBox *COMBO_GAS;
+    QSpacerItem *verticalSpacer_2;
+    QLabel *LABEL_VOLUME;
+    QLabel *label;
+    QLabel *LABEL_GLUTEN;
+    QLabel *LABEL_FRAGRANCIA;
+    QLineEdit *LINE_FRAGRANCIA;
     QSpacerItem *verticalSpacer_3;
     QLabel *label_12;
     QSpacerItem *verticalSpacer_4;
@@ -71,80 +82,102 @@ public:
         if (CadastroMercearia->objectName().isEmpty())
             CadastroMercearia->setObjectName(QString::fromUtf8("CadastroMercearia"));
         CadastroMercearia->setEnabled(true);
-        CadastroMercearia->resize(746, 529);
+        CadastroMercearia->resize(746, 582);
         verticalLayout = new QVBoxLayout(CadastroMercearia);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        formLayout = new QFormLayout();
-        formLayout->setObjectName(QString::fromUtf8("formLayout"));
-        label = new QLabel(CadastroMercearia);
-        label->setObjectName(QString::fromUtf8("label"));
+        gridLayout = new QGridLayout();
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        SPIN_UNIDADE = new QSpinBox(CadastroMercearia);
+        SPIN_UNIDADE->setObjectName(QString::fromUtf8("SPIN_UNIDADE"));
+        SPIN_UNIDADE->setEnabled(true);
+        SPIN_UNIDADE->setMaximum(1000);
 
-        formLayout->setWidget(2, QFormLayout::LabelRole, label);
+        gridLayout->addWidget(SPIN_UNIDADE, 7, 1, 1, 1);
 
-        LINE_NOME_MERC = new QLineEdit(CadastroMercearia);
-        LINE_NOME_MERC->setObjectName(QString::fromUtf8("LINE_NOME_MERC"));
+        LABEL_GAS = new QLabel(CadastroMercearia);
+        LABEL_GAS->setObjectName(QString::fromUtf8("LABEL_GAS"));
 
-        formLayout->setWidget(2, QFormLayout::FieldRole, LINE_NOME_MERC);
+        gridLayout->addWidget(LABEL_GAS, 12, 0, 1, 1);
+
+        SPIN_PRECO = new QDoubleSpinBox(CadastroMercearia);
+        SPIN_PRECO->setObjectName(QString::fromUtf8("SPIN_PRECO"));
+        SPIN_PRECO->setDecimals(2);
+        SPIN_PRECO->setMaximum(100000000.000000000000000);
+
+        gridLayout->addWidget(SPIN_PRECO, 4, 1, 1, 1);
+
+        COMBO_GLUTEN = new QComboBox(CadastroMercearia);
+        COMBO_GLUTEN->addItem(QString());
+        COMBO_GLUTEN->addItem(QString());
+        COMBO_GLUTEN->addItem(QString());
+        COMBO_GLUTEN->setObjectName(QString::fromUtf8("COMBO_GLUTEN"));
+
+        gridLayout->addWidget(COMBO_GLUTEN, 9, 1, 1, 1);
+
+        LABEL_ALCOOLICA = new QLabel(CadastroMercearia);
+        LABEL_ALCOOLICA->setObjectName(QString::fromUtf8("LABEL_ALCOOLICA"));
+
+        gridLayout->addWidget(LABEL_ALCOOLICA, 11, 0, 1, 1);
+
+        DAFA = new QDateEdit(CadastroMercearia);
+        DAFA->setObjectName(QString::fromUtf8("DAFA"));
+        DAFA->setEnabled(true);
+        DAFA->setCalendarPopup(false);
+        DAFA->setCurrentSectionIndex(0);
+        DAFA->setTimeSpec(Qt::LocalTime);
+        DAFA->setDate(QDate(2000, 1, 1));
+
+        gridLayout->addWidget(DAFA, 5, 1, 1, 1);
+
+        SPIN_VOLUME = new QDoubleSpinBox(CadastroMercearia);
+        SPIN_VOLUME->setObjectName(QString::fromUtf8("SPIN_VOLUME"));
+
+        gridLayout->addWidget(SPIN_VOLUME, 10, 1, 1, 1);
+
+        LINE_NOME = new QLineEdit(CadastroMercearia);
+        LINE_NOME->setObjectName(QString::fromUtf8("LINE_NOME"));
+
+        gridLayout->addWidget(LINE_NOME, 2, 1, 1, 1);
 
         label_2 = new QLabel(CadastroMercearia);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
-        formLayout->setWidget(4, QFormLayout::LabelRole, label_2);
-
-        DOUBLE_SPIN_MERC = new QDoubleSpinBox(CadastroMercearia);
-        DOUBLE_SPIN_MERC->setObjectName(QString::fromUtf8("DOUBLE_SPIN_MERC"));
-        DOUBLE_SPIN_MERC->setDecimals(2);
-        DOUBLE_SPIN_MERC->setMaximum(100000000.000000000000000);
-
-        formLayout->setWidget(4, QFormLayout::FieldRole, DOUBLE_SPIN_MERC);
-
-        label_3 = new QLabel(CadastroMercearia);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-
-        formLayout->setWidget(3, QFormLayout::LabelRole, label_3);
-
-        SPIN_MERC = new QSpinBox(CadastroMercearia);
-        SPIN_MERC->setObjectName(QString::fromUtf8("SPIN_MERC"));
-        SPIN_MERC->setMaximum(9999);
-
-        formLayout->setWidget(3, QFormLayout::FieldRole, SPIN_MERC);
+        gridLayout->addWidget(label_2, 4, 0, 1, 1);
 
         label_4 = new QLabel(CadastroMercearia);
         label_4->setObjectName(QString::fromUtf8("label_4"));
 
-        formLayout->setWidget(5, QFormLayout::LabelRole, label_4);
+        gridLayout->addWidget(label_4, 5, 0, 1, 1);
 
-        DAFA_MERC = new QDateEdit(CadastroMercearia);
-        DAFA_MERC->setObjectName(QString::fromUtf8("DAFA_MERC"));
-        DAFA_MERC->setEnabled(true);
-        DAFA_MERC->setCalendarPopup(false);
-        DAFA_MERC->setCurrentSectionIndex(0);
-        DAFA_MERC->setTimeSpec(Qt::LocalTime);
-        DAFA_MERC->setDate(QDate(2000, 1, 1));
+        LABEL_PESO = new QLabel(CadastroMercearia);
+        LABEL_PESO->setObjectName(QString::fromUtf8("LABEL_PESO"));
 
-        formLayout->setWidget(5, QFormLayout::FieldRole, DAFA_MERC);
+        gridLayout->addWidget(LABEL_PESO, 8, 0, 1, 1);
+
+        SPIN_CODIGO = new QSpinBox(CadastroMercearia);
+        SPIN_CODIGO->setObjectName(QString::fromUtf8("SPIN_CODIGO"));
+        SPIN_CODIGO->setMaximum(9999);
+
+        gridLayout->addWidget(SPIN_CODIGO, 3, 1, 1, 1);
 
         label_5 = new QLabel(CadastroMercearia);
         label_5->setObjectName(QString::fromUtf8("label_5"));
 
-        formLayout->setWidget(6, QFormLayout::LabelRole, label_5);
+        gridLayout->addWidget(label_5, 6, 0, 1, 1);
 
-        DAVA_MERC = new QDateEdit(CadastroMercearia);
-        DAVA_MERC->setObjectName(QString::fromUtf8("DAVA_MERC"));
+        SPIN_PESO = new QDoubleSpinBox(CadastroMercearia);
+        SPIN_PESO->setObjectName(QString::fromUtf8("SPIN_PESO"));
+        SPIN_PESO->setEnabled(true);
 
-        formLayout->setWidget(6, QFormLayout::FieldRole, DAVA_MERC);
+        gridLayout->addWidget(SPIN_PESO, 8, 1, 1, 1);
 
-        label_6 = new QLabel(CadastroMercearia);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
+        COMBO_ALCOOLICA = new QComboBox(CadastroMercearia);
+        COMBO_ALCOOLICA->addItem(QString());
+        COMBO_ALCOOLICA->addItem(QString());
+        COMBO_ALCOOLICA->addItem(QString());
+        COMBO_ALCOOLICA->setObjectName(QString::fromUtf8("COMBO_ALCOOLICA"));
 
-        formLayout->setWidget(7, QFormLayout::LabelRole, label_6);
-
-        SPIN2_MERC = new QSpinBox(CadastroMercearia);
-        SPIN2_MERC->setObjectName(QString::fromUtf8("SPIN2_MERC"));
-        SPIN2_MERC->setEnabled(true);
-        SPIN2_MERC->setMaximum(1000);
-
-        formLayout->setWidget(7, QFormLayout::FieldRole, SPIN2_MERC);
+        gridLayout->addWidget(COMBO_ALCOOLICA, 11, 1, 1, 1);
 
         label_11 = new QLabel(CadastroMercearia);
         label_11->setObjectName(QString::fromUtf8("label_11"));
@@ -153,25 +186,65 @@ public:
         font.setBold(true);
         label_11->setFont(font);
 
-        formLayout->setWidget(0, QFormLayout::LabelRole, label_11);
+        gridLayout->addWidget(label_11, 0, 0, 1, 1);
+
+        LABEL_UNIDADE = new QLabel(CadastroMercearia);
+        LABEL_UNIDADE->setObjectName(QString::fromUtf8("LABEL_UNIDADE"));
+
+        gridLayout->addWidget(LABEL_UNIDADE, 7, 0, 1, 1);
+
+        label_3 = new QLabel(CadastroMercearia);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        gridLayout->addWidget(label_3, 3, 0, 1, 1);
+
+        DAVA = new QDateEdit(CadastroMercearia);
+        DAVA->setObjectName(QString::fromUtf8("DAVA"));
+
+        gridLayout->addWidget(DAVA, 6, 1, 1, 1);
+
+        COMBO_GAS = new QComboBox(CadastroMercearia);
+        COMBO_GAS->addItem(QString());
+        COMBO_GAS->addItem(QString());
+        COMBO_GAS->addItem(QString());
+        COMBO_GAS->setObjectName(QString::fromUtf8("COMBO_GAS"));
+
+        gridLayout->addWidget(COMBO_GAS, 12, 1, 1, 1);
 
         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        formLayout->setItem(1, QFormLayout::LabelRole, verticalSpacer_2);
+        gridLayout->addItem(verticalSpacer_2, 1, 0, 1, 1);
 
-        LABEL_PESO = new QLabel(CadastroMercearia);
-        LABEL_PESO->setObjectName(QString::fromUtf8("LABEL_PESO"));
+        LABEL_VOLUME = new QLabel(CadastroMercearia);
+        LABEL_VOLUME->setObjectName(QString::fromUtf8("LABEL_VOLUME"));
 
-        formLayout->setWidget(8, QFormLayout::LabelRole, LABEL_PESO);
+        gridLayout->addWidget(LABEL_VOLUME, 10, 0, 1, 1);
 
-        SPIN_PESO = new QDoubleSpinBox(CadastroMercearia);
-        SPIN_PESO->setObjectName(QString::fromUtf8("SPIN_PESO"));
-        SPIN_PESO->setEnabled(true);
+        label = new QLabel(CadastroMercearia);
+        label->setObjectName(QString::fromUtf8("label"));
 
-        formLayout->setWidget(8, QFormLayout::FieldRole, SPIN_PESO);
+        gridLayout->addWidget(label, 2, 0, 1, 1);
+
+        LABEL_GLUTEN = new QLabel(CadastroMercearia);
+        LABEL_GLUTEN->setObjectName(QString::fromUtf8("LABEL_GLUTEN"));
+        QFont font1;
+        font1.setKerning(false);
+        LABEL_GLUTEN->setFont(font1);
+
+        gridLayout->addWidget(LABEL_GLUTEN, 9, 0, 1, 1);
+
+        LABEL_FRAGRANCIA = new QLabel(CadastroMercearia);
+        LABEL_FRAGRANCIA->setObjectName(QString::fromUtf8("LABEL_FRAGRANCIA"));
+
+        gridLayout->addWidget(LABEL_FRAGRANCIA, 13, 0, 1, 1);
+
+        LINE_FRAGRANCIA = new QLineEdit(CadastroMercearia);
+        LINE_FRAGRANCIA->setObjectName(QString::fromUtf8("LINE_FRAGRANCIA"));
+
+        gridLayout->addWidget(LINE_FRAGRANCIA, 13, 1, 1, 1);
 
 
-        verticalLayout->addLayout(formLayout);
+        verticalLayout->addLayout(gridLayout);
 
         verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -505,12 +578,12 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
-        QWidget::setTabOrder(LINE_NOME_MERC, SPIN_MERC);
-        QWidget::setTabOrder(SPIN_MERC, DOUBLE_SPIN_MERC);
-        QWidget::setTabOrder(DOUBLE_SPIN_MERC, DAFA_MERC);
-        QWidget::setTabOrder(DAFA_MERC, DAVA_MERC);
-        QWidget::setTabOrder(DAVA_MERC, SPIN2_MERC);
-        QWidget::setTabOrder(SPIN2_MERC, LINE_NOME_FORNECEDOR);
+        QWidget::setTabOrder(LINE_NOME, SPIN_CODIGO);
+        QWidget::setTabOrder(SPIN_CODIGO, SPIN_PRECO);
+        QWidget::setTabOrder(SPIN_PRECO, DAFA);
+        QWidget::setTabOrder(DAFA, DAVA);
+        QWidget::setTabOrder(DAVA, SPIN_UNIDADE);
+        QWidget::setTabOrder(SPIN_UNIDADE, LINE_NOME_FORNECEDOR);
         QWidget::setTabOrder(LINE_NOME_FORNECEDOR, LINE_ESTADO);
         QWidget::setTabOrder(LINE_ESTADO, LINE_CIDADE);
         QWidget::setTabOrder(LINE_CIDADE, BTN_SALVAR_MERC);
@@ -524,17 +597,34 @@ public:
     void retranslateUi(QDialog *CadastroMercearia)
     {
         CadastroMercearia->setWindowTitle(QCoreApplication::translate("CadastroMercearia", "Cadastrar", nullptr));
-        label->setText(QCoreApplication::translate("CadastroMercearia", "Nome do Produto", nullptr));
-        label_2->setText(QCoreApplication::translate("CadastroMercearia", "Pre\303\247o", nullptr));
-        label_3->setText(QCoreApplication::translate("CadastroMercearia", "C\303\263digo", nullptr));
-        label_4->setText(QCoreApplication::translate("CadastroMercearia", "Data de Fabrica\303\247\303\243o", nullptr));
-        label_5->setText(QCoreApplication::translate("CadastroMercearia", "Data de Validade", nullptr));
-        label_6->setText(QCoreApplication::translate("CadastroMercearia", "Unidades", nullptr));
 #if QT_CONFIG(tooltip)
-        SPIN2_MERC->setToolTip(QString());
+        SPIN_UNIDADE->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
-        label_11->setText(QCoreApplication::translate("CadastroMercearia", "Dados do Produto", nullptr));
+        LABEL_GAS->setText(QCoreApplication::translate("CadastroMercearia", "\303\211 gaseificada?", nullptr));
+        COMBO_GLUTEN->setItemText(0, QCoreApplication::translate("CadastroMercearia", "Selecionar", nullptr));
+        COMBO_GLUTEN->setItemText(1, QCoreApplication::translate("CadastroMercearia", "Sim", nullptr));
+        COMBO_GLUTEN->setItemText(2, QCoreApplication::translate("CadastroMercearia", "N\303\243o", nullptr));
+
+        LABEL_ALCOOLICA->setText(QCoreApplication::translate("CadastroMercearia", "\303\211 alco\303\263lica?", nullptr));
+        label_2->setText(QCoreApplication::translate("CadastroMercearia", "Pre\303\247o", nullptr));
+        label_4->setText(QCoreApplication::translate("CadastroMercearia", "Data de Fabrica\303\247\303\243o", nullptr));
         LABEL_PESO->setText(QCoreApplication::translate("CadastroMercearia", "Peso", nullptr));
+        label_5->setText(QCoreApplication::translate("CadastroMercearia", "Data de Validade", nullptr));
+        COMBO_ALCOOLICA->setItemText(0, QCoreApplication::translate("CadastroMercearia", "Selecionar", nullptr));
+        COMBO_ALCOOLICA->setItemText(1, QCoreApplication::translate("CadastroMercearia", "Sim", nullptr));
+        COMBO_ALCOOLICA->setItemText(2, QCoreApplication::translate("CadastroMercearia", "N\303\243o", nullptr));
+
+        label_11->setText(QCoreApplication::translate("CadastroMercearia", "Dados do Produto", nullptr));
+        LABEL_UNIDADE->setText(QCoreApplication::translate("CadastroMercearia", "Unidades", nullptr));
+        label_3->setText(QCoreApplication::translate("CadastroMercearia", "C\303\263digo", nullptr));
+        COMBO_GAS->setItemText(0, QCoreApplication::translate("CadastroMercearia", "Selecionar", nullptr));
+        COMBO_GAS->setItemText(1, QCoreApplication::translate("CadastroMercearia", "Sim", nullptr));
+        COMBO_GAS->setItemText(2, QCoreApplication::translate("CadastroMercearia", "N\303\243o", nullptr));
+
+        LABEL_VOLUME->setText(QCoreApplication::translate("CadastroMercearia", "Volume/ml", nullptr));
+        label->setText(QCoreApplication::translate("CadastroMercearia", "Nome do Produto", nullptr));
+        LABEL_GLUTEN->setText(QCoreApplication::translate("CadastroMercearia", "Gl\303\272ten?", nullptr));
+        LABEL_FRAGRANCIA->setText(QCoreApplication::translate("CadastroMercearia", "Fragrancia?", nullptr));
         label_12->setText(QCoreApplication::translate("CadastroMercearia", "Dados do Fornecedor", nullptr));
         label_7->setText(QCoreApplication::translate("CadastroMercearia", "Nome do Fornecedor", nullptr));
         label_8->setText(QCoreApplication::translate("CadastroMercearia", "Pa\303\255s Sede", nullptr));
@@ -803,4 +893,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // UI_CADASTROMERCEARIA_H
+#endif // UI_CADASTRO_H

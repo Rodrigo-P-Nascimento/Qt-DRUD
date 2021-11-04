@@ -1,5 +1,5 @@
-#ifndef CADASTROMERCEARIA_H
-#define CADASTROMERCEARIA_H
+#ifndef CADASTRO_H
+#define CADASTRO_H
 
 #include <QDialog>
 
@@ -23,4 +23,4 @@ private:
     Ui::CadastroMercearia *ui;
 };
 
-#endif // CADASTROMERCEARIA_H
+#endif // CADASTRO_H

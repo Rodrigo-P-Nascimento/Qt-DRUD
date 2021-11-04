@@ -1,0 +1,10 @@
+debug/cadastro.o
+debug/main.o
+debug/menu.o
+debug/produtos.o
+debug/verifica.o
+debug/qrc_arquivos.o
+debug/qrc_qmake_qmake_qm_files.o
+debug/moc_cadastro.o
+debug/moc_menu.o
+debug/moc_verifica.o

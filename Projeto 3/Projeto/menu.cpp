@@ -1,9 +1,8 @@
 #include "menu.h"
 #include "ui_menu.h"
-#include "cadastromercearia.h"
-#include "ui_cadastromercearia.h"
+#include "verifica.h"
+#include "ui_verifica.h"
 #include "produtos.h"
-#include <menu.cpp>
 
 Menu::Menu(QWidget *parent)
     : QMainWindow(parent)
@@ -19,7 +18,7 @@ Menu::~Menu()
 
 void Menu::on_BTN_CADS_MERC_clicked()
 {
-    CadastroMercearia cm;
-    cm.exec();
+    Verifica *verif = new Verifica();
+    verif->show();
 }
 

@@ -9,20 +9,23 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    cadastromercearia.cpp \
+    cadastro.cpp \
     main.cpp \
     menu.cpp \
     produtos.cpp \
-    variaveis.cpp
+    variaveis.cpp \
+    verifica.cpp
 
 HEADERS += \
-    cadastromercearia.h \
+    cadastro.h \
     menu.h \
-    produtos.h
+    produtos.h \
+    verifica.h
 
 FORMS += \
-    cadastromercearia.ui \
-    menu.ui
+    cadastro.ui \
+    menu.ui \
+    verifica.ui
 
 TRANSLATIONS += \
     Projeto_pt_BR.ts

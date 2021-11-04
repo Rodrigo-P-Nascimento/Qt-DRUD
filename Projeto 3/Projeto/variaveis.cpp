@@ -3,6 +3,7 @@
 #include "produtos.h"
 #include <QDebug>
 
+static QString secao;
 static QVector<Produto *>mercearia;
 static QVector<Produto *>padaria;
 static QVector<Produto *>frios;

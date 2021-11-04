@@ -2,12 +2,15 @@
 <ui version="4.0">
  <class>CadastroMercearia</class>
  <widget class="QDialog" name="CadastroMercearia">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>625</width>
-    <height>439</height>
+    <width>746</width>
+    <height>582</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,26 +18,29 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QFormLayout" name="formLayout">
-     <item row="2" column="0">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Nome do Produto</string>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="7" column="1">
+      <widget class="QSpinBox" name="SPIN_UNIDADE">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="LINE_NOME_MERC"/>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_2">
+     <item row="12" column="0">
+      <widget class="QLabel" name="LABEL_GAS">
        <property name="text">
-        <string>Preço</string>
+        <string>É gaseificada?</string>
        </property>
       </widget>
      </item>
      <item row="4" column="1">
-      <widget class="QDoubleSpinBox" name="DOUBLE_SPIN_MERC">
+      <widget class="QDoubleSpinBox" name="SPIN_PRECO">
        <property name="decimals">
         <number>2</number>
        </property>
@@ -43,29 +49,34 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string>Código</string>
-       </property>
+     <item row="9" column="1">
+      <widget class="QComboBox" name="COMBO_GLUTEN">
+       <item>
+        <property name="text">
+         <string>Selecionar</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sim</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Não</string>
+        </property>
+       </item>
       </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QSpinBox" name="SPIN_MERC">
-       <property name="maximum">
-        <number>9999</number>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QLabel" name="label_4">
+     <item row="11" column="0">
+      <widget class="QLabel" name="LABEL_ALCOOLICA">
        <property name="text">
-        <string>Data de Fabricação</string>
+        <string>É alcoólica?</string>
        </property>
       </widget>
      </item>
      <item row="5" column="1">
-      <widget class="QDateEdit" name="DAFA_MERC">
+      <widget class="QDateEdit" name="DAFA">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -87,6 +98,40 @@
        </property>
       </widget>
      </item>
+     <item row="10" column="1">
+      <widget class="QDoubleSpinBox" name="SPIN_VOLUME"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="LINE_NOME"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Preço</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Data de Fabricação</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="LABEL_PESO">
+       <property name="text">
+        <string>Peso</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QSpinBox" name="SPIN_CODIGO">
+       <property name="maximum">
+        <number>9999</number>
+       </property>
+      </widget>
+     </item>
      <item row="6" column="0">
       <widget class="QLabel" name="label_5">
        <property name="text">
@@ -94,21 +139,30 @@
        </property>
       </widget>
      </item>
-     <item row="6" column="1">
-      <widget class="QDateEdit" name="DAVA_MERC"/>
-     </item>
-     <item row="7" column="0">
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string>Unidades</string>
+     <item row="8" column="1">
+      <widget class="QDoubleSpinBox" name="SPIN_PESO">
+       <property name="enabled">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
-     <item row="7" column="1">
-      <widget class="QSpinBox" name="SPIN2_MERC">
-       <property name="maximum">
-        <number>1000</number>
-       </property>
+     <item row="11" column="1">
+      <widget class="QComboBox" name="COMBO_ALCOOLICA">
+       <item>
+        <property name="text">
+         <string>Selecionar</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sim</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Não</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item row="0" column="0">
@@ -125,6 +179,42 @@
        </property>
       </widget>
      </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="LABEL_UNIDADE">
+       <property name="text">
+        <string>Unidades</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Código</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QDateEdit" name="DAVA"/>
+     </item>
+     <item row="12" column="1">
+      <widget class="QComboBox" name="COMBO_GAS">
+       <item>
+        <property name="text">
+         <string>Selecionar</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sim</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Não</string>
+        </property>
+       </item>
+      </widget>
+     </item>
      <item row="1" column="0">
       <spacer name="verticalSpacer_2">
        <property name="orientation">
@@ -137,6 +227,42 @@
         </size>
        </property>
       </spacer>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="LABEL_VOLUME">
+       <property name="text">
+        <string>Volume/ml</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Nome do Produto</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="LABEL_GLUTEN">
+       <property name="font">
+        <font>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>Glúten?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="0">
+      <widget class="QLabel" name="LABEL_FRAGRANCIA">
+       <property name="text">
+        <string>Fragrancia?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="1">
+      <widget class="QLineEdit" name="LINE_FRAGRANCIA"/>
      </item>
     </layout>
    </item>
@@ -1522,12 +1648,12 @@
   </layout>
  </widget>
  <tabstops>
-  <tabstop>LINE_NOME_MERC</tabstop>
-  <tabstop>SPIN_MERC</tabstop>
-  <tabstop>DOUBLE_SPIN_MERC</tabstop>
-  <tabstop>DAFA_MERC</tabstop>
-  <tabstop>DAVA_MERC</tabstop>
-  <tabstop>SPIN2_MERC</tabstop>
+  <tabstop>LINE_NOME</tabstop>
+  <tabstop>SPIN_CODIGO</tabstop>
+  <tabstop>SPIN_PRECO</tabstop>
+  <tabstop>DAFA</tabstop>
+  <tabstop>DAVA</tabstop>
+  <tabstop>SPIN_UNIDADE</tabstop>
   <tabstop>LINE_NOME_FORNECEDOR</tabstop>
   <tabstop>LINE_ESTADO</tabstop>
   <tabstop>LINE_CIDADE</tabstop>
