@@ -104,9 +104,6 @@
    <addaction name="menuArquivo"/>
   </widget>
   <action name="actionbtn_cadastrar">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
    <property name="icon">
     <iconset resource="arquivos.qrc">
      <normaloff>:/imagens/Imagens/adicionar.png</normaloff>:/imagens/Imagens/adicionar.png</iconset>
@@ -116,9 +113,6 @@
    </property>
   </action>
   <action name="actionbtn_atualizar">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
    <property name="icon">
     <iconset resource="arquivos.qrc">
      <normaloff>:/imagens/Imagens/recarregar.png</normaloff>:/imagens/Imagens/recarregar.png</iconset>
@@ -128,9 +122,6 @@
    </property>
   </action>
   <action name="actionbtn_relatorio">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
    <property name="icon">
     <iconset resource="arquivos.qrc">
      <normaloff>:/imagens/Imagens/relatorio.png</normaloff>:/imagens/Imagens/relatorio.png</iconset>
@@ -140,9 +131,6 @@
    </property>
   </action>
   <action name="actionbtn_remover">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
    <property name="icon">
     <iconset resource="arquivos.qrc">
      <normaloff>:/imagens/Imagens/lixeira.png</normaloff>:/imagens/Imagens/lixeira.png</iconset>
