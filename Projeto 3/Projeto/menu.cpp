@@ -16,7 +16,7 @@ Menu::~Menu()
     delete ui;
 }
 
-void Menu::on_BTN_CADS_MERC_clicked()
+void Menu::on_actionbtn_cadastrar_triggered()
 {
     Verifica *verif = new Verifica();
     verif->show();

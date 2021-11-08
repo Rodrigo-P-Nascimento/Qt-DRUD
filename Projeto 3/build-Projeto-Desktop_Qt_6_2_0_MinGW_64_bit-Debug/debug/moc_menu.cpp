@@ -23,18 +23,19 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Menu_t {
     const uint offsetsAndSize[6];
-    char stringdata0[31];
+    char stringdata0[39];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_Menu_t, stringdata0) + ofs), len 
 static const qt_meta_stringdata_Menu_t qt_meta_stringdata_Menu = {
     {
 QT_MOC_LITERAL(0, 4), // "Menu"
-QT_MOC_LITERAL(5, 24), // "on_BTN_CADS_MERC_clicked"
-QT_MOC_LITERAL(30, 0) // ""
+QT_MOC_LITERAL(5, 32), // "on_actionbtn_cadastrar_triggered"
+QT_MOC_LITERAL(38, 0) // ""
 
     },
-    "Menu\0on_BTN_CADS_MERC_clicked\0"
+    "Menu\0on_actionbtn_cadastrar_triggered\0"
+    ""
 };
 #undef QT_MOC_LITERAL
 
@@ -66,7 +67,7 @@ void Menu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
         auto *_t = static_cast<Menu *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_BTN_CADS_MERC_clicked(); break;
+        case 0: _t->on_actionbtn_cadastrar_triggered(); break;
         default: ;
         }
     }

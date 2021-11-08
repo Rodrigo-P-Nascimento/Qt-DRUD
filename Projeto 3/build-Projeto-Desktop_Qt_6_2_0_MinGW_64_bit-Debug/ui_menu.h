@@ -10,14 +10,15 @@
 #define UI_MENU_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -26,33 +27,53 @@ QT_BEGIN_NAMESPACE
 class Ui_Menu
 {
 public:
+    QAction *actionbtn_cadastrar;
+    QAction *actionbtn_atualizar;
+    QAction *actionbtn_relatorio;
+    QAction *actionbtn_remover;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QLabel *label;
     QTabWidget *tabWidget;
     QWidget *tab;
-    QWidget *formLayoutWidget;
-    QFormLayout *formLayout;
-    QLabel *label_2;
-    QPushButton *BTN_CADS_MERC;
-    QLabel *label_3;
-    QPushButton *BTN_ATLZ_MERC;
-    QLabel *label_4;
-    QPushButton *BTN_IMRT_MERC;
-    QLabel *label_5;
-    QPushButton *BTN_REMV_MERC;
     QWidget *tab_2;
     QWidget *tab_3;
     QWidget *tab_4;
     QWidget *tab_5;
-    QMenuBar *menubar;
     QStatusBar *statusbar;
+    QToolBar *toolBar;
+    QMenuBar *menuBar;
+    QMenu *menuArquivo;
 
     void setupUi(QMainWindow *Menu)
     {
         if (Menu->objectName().isEmpty())
             Menu->setObjectName(QString::fromUtf8("Menu"));
-        Menu->resize(800, 600);
+        Menu->resize(525, 295);
+        actionbtn_cadastrar = new QAction(Menu);
+        actionbtn_cadastrar->setObjectName(QString::fromUtf8("actionbtn_cadastrar"));
+        actionbtn_cadastrar->setCheckable(true);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/imagens/Imagens/adicionar.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionbtn_cadastrar->setIcon(icon);
+        actionbtn_atualizar = new QAction(Menu);
+        actionbtn_atualizar->setObjectName(QString::fromUtf8("actionbtn_atualizar"));
+        actionbtn_atualizar->setCheckable(true);
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/imagens/Imagens/recarregar.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionbtn_atualizar->setIcon(icon1);
+        actionbtn_relatorio = new QAction(Menu);
+        actionbtn_relatorio->setObjectName(QString::fromUtf8("actionbtn_relatorio"));
+        actionbtn_relatorio->setCheckable(true);
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/imagens/Imagens/relatorio.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionbtn_relatorio->setIcon(icon2);
+        actionbtn_remover = new QAction(Menu);
+        actionbtn_remover->setObjectName(QString::fromUtf8("actionbtn_remover"));
+        actionbtn_remover->setCheckable(true);
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/imagens/Imagens/lixeira.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionbtn_remover->setIcon(icon3);
         centralwidget = new QWidget(Menu);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -70,64 +91,6 @@ public:
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
-        formLayoutWidget = new QWidget(tab);
-        formLayoutWidget->setObjectName(QString::fromUtf8("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(10, 10, 211, 131));
-        formLayout = new QFormLayout(formLayoutWidget);
-        formLayout->setObjectName(QString::fromUtf8("formLayout"));
-        formLayout->setContentsMargins(0, 0, 0, 0);
-        label_2 = new QLabel(formLayoutWidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setMaximumSize(QSize(20, 20));
-        label_2->setPixmap(QPixmap(QString::fromUtf8(":/imagens/Imagens/adicionar.png")));
-        label_2->setScaledContents(true);
-
-        formLayout->setWidget(0, QFormLayout::LabelRole, label_2);
-
-        BTN_CADS_MERC = new QPushButton(formLayoutWidget);
-        BTN_CADS_MERC->setObjectName(QString::fromUtf8("BTN_CADS_MERC"));
-
-        formLayout->setWidget(0, QFormLayout::FieldRole, BTN_CADS_MERC);
-
-        label_3 = new QLabel(formLayoutWidget);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setMaximumSize(QSize(20, 20));
-        label_3->setPixmap(QPixmap(QString::fromUtf8(":/imagens/Imagens/recarregar.png")));
-        label_3->setScaledContents(true);
-
-        formLayout->setWidget(1, QFormLayout::LabelRole, label_3);
-
-        BTN_ATLZ_MERC = new QPushButton(formLayoutWidget);
-        BTN_ATLZ_MERC->setObjectName(QString::fromUtf8("BTN_ATLZ_MERC"));
-
-        formLayout->setWidget(1, QFormLayout::FieldRole, BTN_ATLZ_MERC);
-
-        label_4 = new QLabel(formLayoutWidget);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setMaximumSize(QSize(20, 20));
-        label_4->setPixmap(QPixmap(QString::fromUtf8(":/imagens/Imagens/relatorio.png")));
-        label_4->setScaledContents(true);
-
-        formLayout->setWidget(2, QFormLayout::LabelRole, label_4);
-
-        BTN_IMRT_MERC = new QPushButton(formLayoutWidget);
-        BTN_IMRT_MERC->setObjectName(QString::fromUtf8("BTN_IMRT_MERC"));
-
-        formLayout->setWidget(2, QFormLayout::FieldRole, BTN_IMRT_MERC);
-
-        label_5 = new QLabel(formLayoutWidget);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setMaximumSize(QSize(20, 20));
-        label_5->setPixmap(QPixmap(QString::fromUtf8(":/imagens/Imagens/lixeira.png")));
-        label_5->setScaledContents(true);
-
-        formLayout->setWidget(3, QFormLayout::LabelRole, label_5);
-
-        BTN_REMV_MERC = new QPushButton(formLayoutWidget);
-        BTN_REMV_MERC->setObjectName(QString::fromUtf8("BTN_REMV_MERC"));
-
-        formLayout->setWidget(3, QFormLayout::FieldRole, BTN_REMV_MERC);
-
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
@@ -145,13 +108,29 @@ public:
         verticalLayout->addWidget(tabWidget);
 
         Menu->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(Menu);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 20));
-        Menu->setMenuBar(menubar);
         statusbar = new QStatusBar(Menu);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
+        statusbar->setEnabled(true);
         Menu->setStatusBar(statusbar);
+        toolBar = new QToolBar(Menu);
+        toolBar->setObjectName(QString::fromUtf8("toolBar"));
+        Menu->addToolBar(Qt::TopToolBarArea, toolBar);
+        menuBar = new QMenuBar(Menu);
+        menuBar->setObjectName(QString::fromUtf8("menuBar"));
+        menuBar->setGeometry(QRect(0, 0, 525, 20));
+        menuArquivo = new QMenu(menuBar);
+        menuArquivo->setObjectName(QString::fromUtf8("menuArquivo"));
+        Menu->setMenuBar(menuBar);
+
+        toolBar->addAction(actionbtn_cadastrar);
+        toolBar->addAction(actionbtn_atualizar);
+        toolBar->addAction(actionbtn_relatorio);
+        toolBar->addAction(actionbtn_remover);
+        menuBar->addAction(menuArquivo->menuAction());
+        menuArquivo->addAction(actionbtn_cadastrar);
+        menuArquivo->addAction(actionbtn_atualizar);
+        menuArquivo->addAction(actionbtn_relatorio);
+        menuArquivo->addAction(actionbtn_remover);
 
         retranslateUi(Menu);
 
@@ -163,21 +142,19 @@ public:
 
     void retranslateUi(QMainWindow *Menu)
     {
-        Menu->setWindowTitle(QCoreApplication::translate("Menu", "Menu", nullptr));
+        Menu->setWindowTitle(QCoreApplication::translate("Menu", "Mercearia", nullptr));
+        actionbtn_cadastrar->setText(QCoreApplication::translate("Menu", "Cadastrar", nullptr));
+        actionbtn_atualizar->setText(QCoreApplication::translate("Menu", "Atualizar", nullptr));
+        actionbtn_relatorio->setText(QCoreApplication::translate("Menu", "Relatorio", nullptr));
+        actionbtn_remover->setText(QCoreApplication::translate("Menu", "Remover", nullptr));
         label->setText(QCoreApplication::translate("Menu", "Escolha uma das sec\303\247\303\265es para trabalhar", nullptr));
-        label_2->setText(QString());
-        BTN_CADS_MERC->setText(QCoreApplication::translate("Menu", "Cadastrar", nullptr));
-        label_3->setText(QString());
-        BTN_ATLZ_MERC->setText(QCoreApplication::translate("Menu", "Atualizar", nullptr));
-        label_4->setText(QString());
-        BTN_IMRT_MERC->setText(QCoreApplication::translate("Menu", "Imprimir Relatorio", nullptr));
-        label_5->setText(QString());
-        BTN_REMV_MERC->setText(QCoreApplication::translate("Menu", "Remover", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("Menu", "Mercearia", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("Menu", "Padaria", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("Menu", "Frios/A\303\247ougue", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("Menu", "Bebidas", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QCoreApplication::translate("Menu", "Limpeza", nullptr));
+        toolBar->setWindowTitle(QCoreApplication::translate("Menu", "toolBar", nullptr));
+        menuArquivo->setTitle(QCoreApplication::translate("Menu", "Arquivo", nullptr));
     } // retranslateUi
 
 };

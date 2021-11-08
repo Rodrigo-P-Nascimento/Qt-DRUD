@@ -16,7 +16,7 @@ public:
     ~Menu();
 
 private slots:
-    void on_BTN_CADS_MERC_clicked();
+    void on_actionbtn_cadastrar_triggered();
 
 private:
     Ui::Menu *ui;

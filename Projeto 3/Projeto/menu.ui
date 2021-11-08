@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>525</width>
+    <height>295</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Menu</string>
+   <string>Mercearia</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -38,122 +38,6 @@
        <attribute name="title">
         <string>Mercearia</string>
        </attribute>
-       <widget class="QWidget" name="formLayoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>211</width>
-          <height>131</height>
-         </rect>
-        </property>
-        <layout class="QFormLayout" name="formLayout">
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_2">
-           <property name="maximumSize">
-            <size>
-             <width>20</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="arquivos.qrc">:/imagens/Imagens/adicionar.png</pixmap>
-           </property>
-           <property name="scaledContents">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QPushButton" name="BTN_CADS_MERC">
-           <property name="text">
-            <string>Cadastrar</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_3">
-           <property name="maximumSize">
-            <size>
-             <width>20</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="arquivos.qrc">:/imagens/Imagens/recarregar.png</pixmap>
-           </property>
-           <property name="scaledContents">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QPushButton" name="BTN_ATLZ_MERC">
-           <property name="text">
-            <string>Atualizar</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_4">
-           <property name="maximumSize">
-            <size>
-             <width>20</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="arquivos.qrc">:/imagens/Imagens/relatorio.png</pixmap>
-           </property>
-           <property name="scaledContents">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QPushButton" name="BTN_IMRT_MERC">
-           <property name="text">
-            <string>Imprimir Relatorio</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_5">
-           <property name="maximumSize">
-            <size>
-             <width>20</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="arquivos.qrc">:/imagens/Imagens/lixeira.png</pixmap>
-           </property>
-           <property name="scaledContents">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QPushButton" name="BTN_REMV_MERC">
-           <property name="text">
-            <string>Remover</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
@@ -179,17 +63,94 @@
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
+  <widget class="QStatusBar" name="statusbar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionbtn_cadastrar"/>
+   <addaction name="actionbtn_atualizar"/>
+   <addaction name="actionbtn_relatorio"/>
+   <addaction name="actionbtn_remover"/>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>525</width>
      <height>20</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuArquivo">
+    <property name="title">
+     <string>Arquivo</string>
+    </property>
+    <addaction name="actionbtn_cadastrar"/>
+    <addaction name="actionbtn_atualizar"/>
+    <addaction name="actionbtn_relatorio"/>
+    <addaction name="actionbtn_remover"/>
+   </widget>
+   <addaction name="menuArquivo"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionbtn_cadastrar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="arquivos.qrc">
+     <normaloff>:/imagens/Imagens/adicionar.png</normaloff>:/imagens/Imagens/adicionar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cadastrar</string>
+   </property>
+  </action>
+  <action name="actionbtn_atualizar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="arquivos.qrc">
+     <normaloff>:/imagens/Imagens/recarregar.png</normaloff>:/imagens/Imagens/recarregar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Atualizar</string>
+   </property>
+  </action>
+  <action name="actionbtn_relatorio">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="arquivos.qrc">
+     <normaloff>:/imagens/Imagens/relatorio.png</normaloff>:/imagens/Imagens/relatorio.png</iconset>
+   </property>
+   <property name="text">
+    <string>Relatorio</string>
+   </property>
+  </action>
+  <action name="actionbtn_remover">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="arquivos.qrc">
+     <normaloff>:/imagens/Imagens/lixeira.png</normaloff>:/imagens/Imagens/lixeira.png</iconset>
+   </property>
+   <property name="text">
+    <string>Remover</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="arquivos.qrc"/>
