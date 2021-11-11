@@ -2,6 +2,7 @@
 #define VERIFICA_H
 
 #include <QWidget>
+#include "cadastro.h"
 
 namespace Ui {
 class Verifica;

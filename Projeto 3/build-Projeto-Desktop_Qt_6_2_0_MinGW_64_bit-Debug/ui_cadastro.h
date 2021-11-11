@@ -31,7 +31,7 @@ QT_BEGIN_NAMESPACE
 class Ui_CadastroMercearia
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QLabel *label_11;
     QFormLayout *formLayout_10;
@@ -91,8 +91,9 @@ public:
     QSpacerItem *verticalSpacer;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
-    QPushButton *BTN_SALVAR_MERC;
-    QPushButton *BTN_CANCELAR_MERC;
+    QLabel *LABEL_AVISO;
+    QPushButton *BTN_SALVAR;
+    QPushButton *BTN_LIMPAR;
 
     void setupUi(QDialog *CadastroMercearia)
     {
@@ -100,13 +101,14 @@ public:
             CadastroMercearia->setObjectName(QString::fromUtf8("CadastroMercearia"));
         CadastroMercearia->setEnabled(true);
         CadastroMercearia->resize(644, 545);
-        widget = new QWidget(CadastroMercearia);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(11, 11, 621, 531));
-        verticalLayout = new QVBoxLayout(widget);
+        CadastroMercearia->setModal(true);
+        layoutWidget = new QWidget(CadastroMercearia);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(11, 11, 621, 531));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label_11 = new QLabel(widget);
+        label_11 = new QLabel(layoutWidget);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         QFont font;
         font.setPointSize(14);
@@ -117,12 +119,12 @@ public:
 
         formLayout_10 = new QFormLayout();
         formLayout_10->setObjectName(QString::fromUtf8("formLayout_10"));
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QString::fromUtf8("label"));
 
         formLayout_10->setWidget(0, QFormLayout::LabelRole, label);
 
-        LINE_NOME = new QLineEdit(widget);
+        LINE_NOME = new QLineEdit(layoutWidget);
         LINE_NOME->setObjectName(QString::fromUtf8("LINE_NOME"));
 
         formLayout_10->setWidget(0, QFormLayout::FieldRole, LINE_NOME);
@@ -134,12 +136,12 @@ public:
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         formLayout_3 = new QFormLayout();
         formLayout_3->setObjectName(QString::fromUtf8("formLayout_3"));
-        label_3 = new QLabel(widget);
+        label_3 = new QLabel(layoutWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
         formLayout_3->setWidget(0, QFormLayout::LabelRole, label_3);
 
-        SPIN_CODIGO = new QSpinBox(widget);
+        SPIN_CODIGO = new QSpinBox(layoutWidget);
         SPIN_CODIGO->setObjectName(QString::fromUtf8("SPIN_CODIGO"));
         SPIN_CODIGO->setMaximum(9999);
 
@@ -150,12 +152,12 @@ public:
 
         formLayout = new QFormLayout();
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_2);
 
-        SPIN_PRECO = new QDoubleSpinBox(widget);
+        SPIN_PRECO = new QDoubleSpinBox(layoutWidget);
         SPIN_PRECO->setObjectName(QString::fromUtf8("SPIN_PRECO"));
         SPIN_PRECO->setDecimals(2);
         SPIN_PRECO->setMaximum(100000000.000000000000000);
@@ -172,12 +174,12 @@ public:
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         formLayout_4 = new QFormLayout();
         formLayout_4->setObjectName(QString::fromUtf8("formLayout_4"));
-        label_4 = new QLabel(widget);
+        label_4 = new QLabel(layoutWidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
 
         formLayout_4->setWidget(0, QFormLayout::LabelRole, label_4);
 
-        DAFA = new QDateEdit(widget);
+        DAFA = new QDateEdit(layoutWidget);
         DAFA->setObjectName(QString::fromUtf8("DAFA"));
         DAFA->setEnabled(true);
         DAFA->setCalendarPopup(false);
@@ -192,12 +194,12 @@ public:
 
         formLayout_5 = new QFormLayout();
         formLayout_5->setObjectName(QString::fromUtf8("formLayout_5"));
-        label_5 = new QLabel(widget);
+        label_5 = new QLabel(layoutWidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
 
         formLayout_5->setWidget(0, QFormLayout::LabelRole, label_5);
 
-        DAVA = new QDateEdit(widget);
+        DAVA = new QDateEdit(layoutWidget);
         DAVA->setObjectName(QString::fromUtf8("DAVA"));
 
         formLayout_5->setWidget(0, QFormLayout::FieldRole, DAVA);
@@ -212,12 +214,12 @@ public:
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         formLayout_6 = new QFormLayout();
         formLayout_6->setObjectName(QString::fromUtf8("formLayout_6"));
-        LABEL_UNIDADE = new QLabel(widget);
+        LABEL_UNIDADE = new QLabel(layoutWidget);
         LABEL_UNIDADE->setObjectName(QString::fromUtf8("LABEL_UNIDADE"));
 
         formLayout_6->setWidget(0, QFormLayout::LabelRole, LABEL_UNIDADE);
 
-        SPIN_UNIDADE = new QSpinBox(widget);
+        SPIN_UNIDADE = new QSpinBox(layoutWidget);
         SPIN_UNIDADE->setObjectName(QString::fromUtf8("SPIN_UNIDADE"));
         SPIN_UNIDADE->setEnabled(true);
         SPIN_UNIDADE->setMaximum(1000);
@@ -229,12 +231,12 @@ public:
 
         formLayout_7 = new QFormLayout();
         formLayout_7->setObjectName(QString::fromUtf8("formLayout_7"));
-        LABEL_PESO = new QLabel(widget);
+        LABEL_PESO = new QLabel(layoutWidget);
         LABEL_PESO->setObjectName(QString::fromUtf8("LABEL_PESO"));
 
         formLayout_7->setWidget(0, QFormLayout::LabelRole, LABEL_PESO);
 
-        SPIN_PESO = new QDoubleSpinBox(widget);
+        SPIN_PESO = new QDoubleSpinBox(layoutWidget);
         SPIN_PESO->setObjectName(QString::fromUtf8("SPIN_PESO"));
         SPIN_PESO->setEnabled(true);
 
@@ -248,12 +250,12 @@ public:
 
         formLayout_11 = new QFormLayout();
         formLayout_11->setObjectName(QString::fromUtf8("formLayout_11"));
-        LABEL_VOLUME = new QLabel(widget);
+        LABEL_VOLUME = new QLabel(layoutWidget);
         LABEL_VOLUME->setObjectName(QString::fromUtf8("LABEL_VOLUME"));
 
         formLayout_11->setWidget(0, QFormLayout::LabelRole, LABEL_VOLUME);
 
-        SPIN_VOLUME = new QDoubleSpinBox(widget);
+        SPIN_VOLUME = new QDoubleSpinBox(layoutWidget);
         SPIN_VOLUME->setObjectName(QString::fromUtf8("SPIN_VOLUME"));
 
         formLayout_11->setWidget(0, QFormLayout::FieldRole, SPIN_VOLUME);
@@ -265,7 +267,7 @@ public:
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         formLayout_12 = new QFormLayout();
         formLayout_12->setObjectName(QString::fromUtf8("formLayout_12"));
-        LABEL_GLUTEN = new QLabel(widget);
+        LABEL_GLUTEN = new QLabel(layoutWidget);
         LABEL_GLUTEN->setObjectName(QString::fromUtf8("LABEL_GLUTEN"));
         QFont font1;
         font1.setKerning(false);
@@ -273,7 +275,7 @@ public:
 
         formLayout_12->setWidget(0, QFormLayout::LabelRole, LABEL_GLUTEN);
 
-        COMBO_GLUTEN = new QComboBox(widget);
+        COMBO_GLUTEN = new QComboBox(layoutWidget);
         COMBO_GLUTEN->addItem(QString());
         COMBO_GLUTEN->addItem(QString());
         COMBO_GLUTEN->addItem(QString());
@@ -286,12 +288,12 @@ public:
 
         formLayout_8 = new QFormLayout();
         formLayout_8->setObjectName(QString::fromUtf8("formLayout_8"));
-        LABEL_ALCOOLICA = new QLabel(widget);
+        LABEL_ALCOOLICA = new QLabel(layoutWidget);
         LABEL_ALCOOLICA->setObjectName(QString::fromUtf8("LABEL_ALCOOLICA"));
 
         formLayout_8->setWidget(0, QFormLayout::LabelRole, LABEL_ALCOOLICA);
 
-        COMBO_ALCOOLICA = new QComboBox(widget);
+        COMBO_ALCOOLICA = new QComboBox(layoutWidget);
         COMBO_ALCOOLICA->addItem(QString());
         COMBO_ALCOOLICA->addItem(QString());
         COMBO_ALCOOLICA->addItem(QString());
@@ -304,12 +306,12 @@ public:
 
         formLayout_9 = new QFormLayout();
         formLayout_9->setObjectName(QString::fromUtf8("formLayout_9"));
-        LABEL_GAS = new QLabel(widget);
+        LABEL_GAS = new QLabel(layoutWidget);
         LABEL_GAS->setObjectName(QString::fromUtf8("LABEL_GAS"));
 
         formLayout_9->setWidget(0, QFormLayout::LabelRole, LABEL_GAS);
 
-        COMBO_GAS = new QComboBox(widget);
+        COMBO_GAS = new QComboBox(layoutWidget);
         COMBO_GAS->addItem(QString());
         COMBO_GAS->addItem(QString());
         COMBO_GAS->addItem(QString());
@@ -325,12 +327,12 @@ public:
 
         formLayout_13 = new QFormLayout();
         formLayout_13->setObjectName(QString::fromUtf8("formLayout_13"));
-        LABEL_FRAGRANCIA = new QLabel(widget);
+        LABEL_FRAGRANCIA = new QLabel(layoutWidget);
         LABEL_FRAGRANCIA->setObjectName(QString::fromUtf8("LABEL_FRAGRANCIA"));
 
         formLayout_13->setWidget(0, QFormLayout::LabelRole, LABEL_FRAGRANCIA);
 
-        LINE_FRAGRANCIA = new QLineEdit(widget);
+        LINE_FRAGRANCIA = new QLineEdit(layoutWidget);
         LINE_FRAGRANCIA->setObjectName(QString::fromUtf8("LINE_FRAGRANCIA"));
 
         formLayout_13->setWidget(0, QFormLayout::FieldRole, LINE_FRAGRANCIA);
@@ -342,7 +344,7 @@ public:
 
         verticalLayout->addItem(verticalSpacer_5);
 
-        label_12 = new QLabel(widget);
+        label_12 = new QLabel(layoutWidget);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setFont(font);
 
@@ -350,12 +352,12 @@ public:
 
         formLayout_2 = new QFormLayout();
         formLayout_2->setObjectName(QString::fromUtf8("formLayout_2"));
-        label_7 = new QLabel(widget);
+        label_7 = new QLabel(layoutWidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
 
         formLayout_2->setWidget(0, QFormLayout::LabelRole, label_7);
 
-        LINE_NOME_FORNECEDOR = new QLineEdit(widget);
+        LINE_NOME_FORNECEDOR = new QLineEdit(layoutWidget);
         LINE_NOME_FORNECEDOR->setObjectName(QString::fromUtf8("LINE_NOME_FORNECEDOR"));
 
         formLayout_2->setWidget(0, QFormLayout::FieldRole, LINE_NOME_FORNECEDOR);
@@ -365,12 +367,12 @@ public:
 
         formLayout_14 = new QFormLayout();
         formLayout_14->setObjectName(QString::fromUtf8("formLayout_14"));
-        label_8 = new QLabel(widget);
+        label_8 = new QLabel(layoutWidget);
         label_8->setObjectName(QString::fromUtf8("label_8"));
 
         formLayout_14->setWidget(0, QFormLayout::LabelRole, label_8);
 
-        COMBOBOX_PAIS = new QComboBox(widget);
+        COMBOBOX_PAIS = new QComboBox(layoutWidget);
         COMBOBOX_PAIS->addItem(QString());
         COMBOBOX_PAIS->addItem(QString());
         COMBOBOX_PAIS->addItem(QString());
@@ -630,12 +632,12 @@ public:
 
         formLayout_15 = new QFormLayout();
         formLayout_15->setObjectName(QString::fromUtf8("formLayout_15"));
-        label_9 = new QLabel(widget);
+        label_9 = new QLabel(layoutWidget);
         label_9->setObjectName(QString::fromUtf8("label_9"));
 
         formLayout_15->setWidget(0, QFormLayout::LabelRole, label_9);
 
-        LINE_ESTADO = new QLineEdit(widget);
+        LINE_ESTADO = new QLineEdit(layoutWidget);
         LINE_ESTADO->setObjectName(QString::fromUtf8("LINE_ESTADO"));
 
         formLayout_15->setWidget(0, QFormLayout::FieldRole, LINE_ESTADO);
@@ -645,12 +647,12 @@ public:
 
         formLayout_16 = new QFormLayout();
         formLayout_16->setObjectName(QString::fromUtf8("formLayout_16"));
-        label_10 = new QLabel(widget);
+        label_10 = new QLabel(layoutWidget);
         label_10->setObjectName(QString::fromUtf8("label_10"));
 
         formLayout_16->setWidget(0, QFormLayout::LabelRole, label_10);
 
-        LINE_CIDADE = new QLineEdit(widget);
+        LINE_CIDADE = new QLineEdit(layoutWidget);
         LINE_CIDADE->setObjectName(QString::fromUtf8("LINE_CIDADE"));
 
         formLayout_16->setWidget(0, QFormLayout::FieldRole, LINE_CIDADE);
@@ -668,15 +670,20 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        BTN_SALVAR_MERC = new QPushButton(widget);
-        BTN_SALVAR_MERC->setObjectName(QString::fromUtf8("BTN_SALVAR_MERC"));
+        LABEL_AVISO = new QLabel(layoutWidget);
+        LABEL_AVISO->setObjectName(QString::fromUtf8("LABEL_AVISO"));
 
-        horizontalLayout->addWidget(BTN_SALVAR_MERC);
+        horizontalLayout->addWidget(LABEL_AVISO);
 
-        BTN_CANCELAR_MERC = new QPushButton(widget);
-        BTN_CANCELAR_MERC->setObjectName(QString::fromUtf8("BTN_CANCELAR_MERC"));
+        BTN_SALVAR = new QPushButton(layoutWidget);
+        BTN_SALVAR->setObjectName(QString::fromUtf8("BTN_SALVAR"));
 
-        horizontalLayout->addWidget(BTN_CANCELAR_MERC);
+        horizontalLayout->addWidget(BTN_SALVAR);
+
+        BTN_LIMPAR = new QPushButton(layoutWidget);
+        BTN_LIMPAR->setObjectName(QString::fromUtf8("BTN_LIMPAR"));
+
+        horizontalLayout->addWidget(BTN_LIMPAR);
 
 
         verticalLayout->addLayout(horizontalLayout);
@@ -689,8 +696,8 @@ public:
         QWidget::setTabOrder(SPIN_UNIDADE, LINE_NOME_FORNECEDOR);
         QWidget::setTabOrder(LINE_NOME_FORNECEDOR, LINE_ESTADO);
         QWidget::setTabOrder(LINE_ESTADO, LINE_CIDADE);
-        QWidget::setTabOrder(LINE_CIDADE, BTN_SALVAR_MERC);
-        QWidget::setTabOrder(BTN_SALVAR_MERC, BTN_CANCELAR_MERC);
+        QWidget::setTabOrder(LINE_CIDADE, BTN_SALVAR);
+        QWidget::setTabOrder(BTN_SALVAR, BTN_LIMPAR);
 
         retranslateUi(CadastroMercearia);
 
@@ -984,8 +991,9 @@ public:
 
         label_9->setText(QCoreApplication::translate("CadastroMercearia", "Estado Sede:", nullptr));
         label_10->setText(QCoreApplication::translate("CadastroMercearia", "Cidade Sede:", nullptr));
-        BTN_SALVAR_MERC->setText(QCoreApplication::translate("CadastroMercearia", "Salvar", nullptr));
-        BTN_CANCELAR_MERC->setText(QCoreApplication::translate("CadastroMercearia", "Limpar", nullptr));
+        LABEL_AVISO->setText(QString());
+        BTN_SALVAR->setText(QCoreApplication::translate("CadastroMercearia", "Salvar", nullptr));
+        BTN_LIMPAR->setText(QCoreApplication::translate("CadastroMercearia", "Limpar", nullptr));
     } // retranslateUi
 
 };

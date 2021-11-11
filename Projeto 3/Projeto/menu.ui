@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>525</width>
-    <height>295</height>
+    <width>683</width>
+    <height>426</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -38,6 +38,19 @@
        <attribute name="title">
         <string>Mercearia</string>
        </attribute>
+       <widget class="QTableWidget" name="TABELA_MERC">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>11</y>
+          <width>641</width>
+          <height>251</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
@@ -88,7 +101,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>525</width>
+     <width>683</width>
      <height>20</height>
     </rect>
    </property>

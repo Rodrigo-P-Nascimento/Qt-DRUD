@@ -12,12 +12,14 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -36,6 +38,7 @@ public:
     QLabel *label;
     QTabWidget *tabWidget;
     QWidget *tab;
+    QTableWidget *TABELA_MERC;
     QWidget *tab_2;
     QWidget *tab_3;
     QWidget *tab_4;
@@ -49,7 +52,7 @@ public:
     {
         if (Menu->objectName().isEmpty())
             Menu->setObjectName(QString::fromUtf8("Menu"));
-        Menu->resize(525, 295);
+        Menu->resize(683, 426);
         actionbtn_cadastrar = new QAction(Menu);
         actionbtn_cadastrar->setObjectName(QString::fromUtf8("actionbtn_cadastrar"));
         QIcon icon;
@@ -87,6 +90,10 @@ public:
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
+        TABELA_MERC = new QTableWidget(tab);
+        TABELA_MERC->setObjectName(QString::fromUtf8("TABELA_MERC"));
+        TABELA_MERC->setEnabled(false);
+        TABELA_MERC->setGeometry(QRect(10, 11, 641, 251));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
@@ -113,7 +120,7 @@ public:
         Menu->addToolBar(Qt::TopToolBarArea, toolBar);
         menuBar = new QMenuBar(Menu);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 525, 20));
+        menuBar->setGeometry(QRect(0, 0, 683, 20));
         menuArquivo = new QMenu(menuBar);
         menuArquivo->setObjectName(QString::fromUtf8("menuArquivo"));
         Menu->setMenuBar(menuBar);

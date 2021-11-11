@@ -2,6 +2,9 @@
 #define MENU_H
 
 #include <QMainWindow>
+#include <QtSql>
+#include <QDebug>
+#include <QFileInfo>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Menu; }
@@ -17,6 +20,8 @@ public:
 
 private slots:
     void on_actionbtn_cadastrar_triggered();
+
+    void on_actionbtn_relatorio_triggered();
 
 private:
     Ui::Menu *ui;

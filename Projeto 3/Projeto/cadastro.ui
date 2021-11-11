@@ -16,7 +16,10 @@
   <property name="windowTitle">
    <string>Cadastrar</string>
   </property>
-  <widget class="QWidget" name="">
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>11</x>
@@ -1685,14 +1688,21 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="BTN_SALVAR_MERC">
+       <widget class="QLabel" name="LABEL_AVISO">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="BTN_SALVAR">
         <property name="text">
          <string>Salvar</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="BTN_CANCELAR_MERC">
+       <widget class="QPushButton" name="BTN_LIMPAR">
         <property name="text">
          <string>Limpar</string>
         </property>
@@ -1713,8 +1723,8 @@
   <tabstop>LINE_NOME_FORNECEDOR</tabstop>
   <tabstop>LINE_ESTADO</tabstop>
   <tabstop>LINE_CIDADE</tabstop>
-  <tabstop>BTN_SALVAR_MERC</tabstop>
-  <tabstop>BTN_CANCELAR_MERC</tabstop>
+  <tabstop>BTN_SALVAR</tabstop>
+  <tabstop>BTN_LIMPAR</tabstop>
  </tabstops>
  <resources/>
  <connections/>

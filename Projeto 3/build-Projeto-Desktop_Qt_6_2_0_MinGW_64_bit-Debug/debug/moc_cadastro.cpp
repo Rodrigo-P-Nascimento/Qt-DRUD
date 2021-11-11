@@ -23,20 +23,20 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_CadastroMercearia_t {
     const uint offsetsAndSize[8];
-    char stringdata0[75];
+    char stringdata0[63];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_CadastroMercearia_t, stringdata0) + ofs), len 
 static const qt_meta_stringdata_CadastroMercearia_t qt_meta_stringdata_CadastroMercearia = {
     {
 QT_MOC_LITERAL(0, 17), // "CadastroMercearia"
-QT_MOC_LITERAL(18, 26), // "on_BTN_SALVAR_MERC_clicked"
-QT_MOC_LITERAL(45, 0), // ""
-QT_MOC_LITERAL(46, 28) // "on_BTN_CANCELAR_MERC_clicked"
+QT_MOC_LITERAL(18, 21), // "on_BTN_SALVAR_clicked"
+QT_MOC_LITERAL(40, 0), // ""
+QT_MOC_LITERAL(41, 21) // "on_BTN_LIMPAR_clicked"
 
     },
-    "CadastroMercearia\0on_BTN_SALVAR_MERC_clicked\0"
-    "\0on_BTN_CANCELAR_MERC_clicked"
+    "CadastroMercearia\0on_BTN_SALVAR_clicked\0"
+    "\0on_BTN_LIMPAR_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -70,8 +70,8 @@ void CadastroMercearia::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         auto *_t = static_cast<CadastroMercearia *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_BTN_SALVAR_MERC_clicked(); break;
-        case 1: _t->on_BTN_CANCELAR_MERC_clicked(); break;
+        case 0: _t->on_BTN_SALVAR_clicked(); break;
+        case 1: _t->on_BTN_LIMPAR_clicked(); break;
         default: ;
         }
     }

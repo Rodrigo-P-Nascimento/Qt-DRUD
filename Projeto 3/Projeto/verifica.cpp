@@ -1,14 +1,14 @@
 #include "verifica.h"
 #include "ui_verifica.h"
-#include "variaveis.cpp"
-#include "cadastro.h"
-#include "ui_cadastro.h"
+
+static int sec;
 
 Verifica::Verifica(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Verifica)
 {
     ui->setupUi(this);
+
 }
 
 Verifica::~Verifica()
@@ -18,36 +18,41 @@ Verifica::~Verifica()
 
 void Verifica::on_radioButton_5_clicked()
 {
-    secao = "Mercearia";
+    //Mercearia
     ui->BTN_CONTINUAR->setEnabled(true);
+    sec = 1;
 }
 
 
 void Verifica::on_radioButton_4_clicked()
 {
-    secao = "Padaria";
+    //Padaria
     ui->BTN_CONTINUAR->setEnabled(true);
+    sec = 2;
 }
 
 
 void Verifica::on_radioButton_clicked()
 {
-    secao = "Frios";
+    ///Frios e Açougue
     ui->BTN_CONTINUAR->setEnabled(true);
+    sec = 3;
 }
 
 
 void Verifica::on_radioButton_2_clicked()
 {
-    secao = "Bebidas";
+    //Bebidas
     ui->BTN_CONTINUAR->setEnabled(true);
+    sec = 4;
 }
 
 
 void Verifica::on_radioButton_3_clicked()
 {
-    secao = "Limpeza";
+    //Limpeza
     ui->BTN_CONTINUAR->setEnabled(true);
+    sec = 5;
 }
 
 
@@ -60,7 +65,10 @@ void Verifica::on_BTN_CANCELAR_clicked()
 void Verifica::on_BTN_CONTINUAR_clicked()
 {
     close();
-    CadastroMercearia cm;
+
+    CadastroMercearia cm(this, sec);
     cm.exec();
+
 }
+
 

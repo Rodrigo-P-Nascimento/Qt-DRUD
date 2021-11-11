@@ -23,7 +23,7 @@ QT_BEGIN_NAMESPACE
 class Ui_Verifica
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_3;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
@@ -41,18 +41,19 @@ public:
     {
         if (Verifica->objectName().isEmpty())
             Verifica->setObjectName(QString::fromUtf8("Verifica"));
-        Verifica->resize(400, 300);
-        widget = new QWidget(Verifica);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(20, 30, 218, 193));
-        verticalLayout_3 = new QVBoxLayout(widget);
+        Verifica->setWindowModality(Qt::ApplicationModal);
+        Verifica->resize(260, 252);
+        layoutWidget = new QWidget(Verifica);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(20, 30, 218, 193));
+        verticalLayout_3 = new QVBoxLayout(layoutWidget);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QString::fromUtf8("label"));
         QFont font;
         font.setPointSize(20);
@@ -62,27 +63,27 @@ public:
 
         verticalLayout->addWidget(label);
 
-        radioButton_5 = new QRadioButton(widget);
+        radioButton_5 = new QRadioButton(layoutWidget);
         radioButton_5->setObjectName(QString::fromUtf8("radioButton_5"));
 
         verticalLayout->addWidget(radioButton_5);
 
-        radioButton_4 = new QRadioButton(widget);
+        radioButton_4 = new QRadioButton(layoutWidget);
         radioButton_4->setObjectName(QString::fromUtf8("radioButton_4"));
 
         verticalLayout->addWidget(radioButton_4);
 
-        radioButton = new QRadioButton(widget);
+        radioButton = new QRadioButton(layoutWidget);
         radioButton->setObjectName(QString::fromUtf8("radioButton"));
 
         verticalLayout->addWidget(radioButton);
 
-        radioButton_2 = new QRadioButton(widget);
+        radioButton_2 = new QRadioButton(layoutWidget);
         radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
 
         verticalLayout->addWidget(radioButton_2);
 
-        radioButton_3 = new QRadioButton(widget);
+        radioButton_3 = new QRadioButton(layoutWidget);
         radioButton_3->setObjectName(QString::fromUtf8("radioButton_3"));
 
         verticalLayout->addWidget(radioButton_3);
@@ -95,13 +96,13 @@ public:
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        BTN_CONTINUAR = new QPushButton(widget);
+        BTN_CONTINUAR = new QPushButton(layoutWidget);
         BTN_CONTINUAR->setObjectName(QString::fromUtf8("BTN_CONTINUAR"));
         BTN_CONTINUAR->setEnabled(false);
 
         horizontalLayout->addWidget(BTN_CONTINUAR);
 
-        BTN_CANCELAR = new QPushButton(widget);
+        BTN_CANCELAR = new QPushButton(layoutWidget);
         BTN_CANCELAR->setObjectName(QString::fromUtf8("BTN_CANCELAR"));
 
         horizontalLayout->addWidget(BTN_CANCELAR);
@@ -117,7 +118,7 @@ public:
 
     void retranslateUi(QWidget *Verifica)
     {
-        Verifica->setWindowTitle(QCoreApplication::translate("Verifica", "Form", nullptr));
+        Verifica->setWindowTitle(QCoreApplication::translate("Verifica", "Escolha a Se\303\247\303\243o", nullptr));
         label->setText(QCoreApplication::translate("Verifica", "Escolha a se\303\247\303\243o", nullptr));
         radioButton_5->setText(QCoreApplication::translate("Verifica", "Mercearia", nullptr));
         radioButton_4->setText(QCoreApplication::translate("Verifica", "Padaria", nullptr));
