@@ -4,7 +4,7 @@
 #include "ui_verifica.h"
 #include "produtos.h"
 
-
+static QSqlDatabase dbdados = QSqlDatabase::addDatabase("QSQLITE");
 
 Menu::Menu(QWidget *parent)
     : QMainWindow(parent)

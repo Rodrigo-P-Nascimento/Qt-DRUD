@@ -3,7 +3,6 @@
 #include "QMessageBox"
 
 static QSqlDatabase dbdados = QSqlDatabase::addDatabase("QSQLITE");
-static QDate date = QDate::currentDate();
 
 CadastroMercearia::CadastroMercearia(QWidget *parent, int secao) :
     QDialog(parent),
@@ -11,12 +10,13 @@ CadastroMercearia::CadastroMercearia(QWidget *parent, int secao) :
 {
     ui->setupUi(this);
 
+    QDate date = QDate::currentDate();
+
     ui->DAFA->setDate(date);
     ui->DAVA->setDate(date);
 
     dbdados.setDatabaseName("C:/Users/rodri/Documents/GitHub/ProjetoLP1/Projeto 3/Projeto/dados.db");
     //dbdados.setDatabaseName("./dados.db");
-
 
     if(!dbdados.open()){
         qDebug() << "Não foi possível abrir o DB";
@@ -45,30 +45,31 @@ void CadastroMercearia::on_BTN_SALVAR_clicked(){
         //SALVAR DADOS NA TABELA
 
         QString nome = ui->LINE_NOME->text();
-        QString cod = ui->SPIN_CODIGO->text();
-        QString prec = ui->SPIN_PRECO->text();
-        QString daFab = ui->DAFA->text();
-        QString daVal = ui->DAVA->text();
-        QString uni = ui->SPIN_UNIDADE->text();
-        QString name_For = ui->LINE_NOME_FORNECEDOR->text();
-        QString country = ui->COMBOBOX_PAIS->currentText();
-        QString estate = ui->LINE_ESTADO->text();
-        QString city = ui->LINE_CIDADE->text();
+        QString codigo = ui->SPIN_CODIGO->text();
+        QString preco = ui->SPIN_PRECO->text();
+        QString dataFab = ui->DAFA->text();
+        QString dataVal = ui->DAVA->text();
+        QString unidade = ui->SPIN_UNIDADE->text();
+        QString nome_for = ui->LINE_NOME_FORNECEDOR->text();
+        QString pais = ui->COMBOBOX_PAIS->currentText();
+        QString estado = ui->LINE_ESTADO->text();
+        QString cidade = ui->LINE_CIDADE->text();
 
         QSqlQuery query;
 
-        //query.prepare("insert into mercearia(nome,codigo,preco,dataFab,dataVal,unidade,nome_for,pais,estado,cidade) "
-                     // "values('"+nome+"','"+codigo+"','"+preco+"','"+dataFab+"','"+dataVal+"','"+unidade+"','"+nome_Fornecedor+"','"+pais+"','"+estado+"','"+cidade+"')");
-        query.prepare("insert into mercearia(nome) values('"+nome+"')");
-        query.prepare("insert into mercearia(codigo) values('"+cod+"')");
+        query.prepare("insert into mercearia(nome,codigo,preco,dataFab,dataVal,unidade,nome_for,pais_for,estado_for,cidade_for) "
+                      "values('"+nome+"','"+codigo+"','"+preco+"','"+dataFab+"','"+dataVal+"','"+unidade+"','"+nome_for+"','"+pais+"','"+estado+"','"+cidade+"')");
+
         if(query.exec()){
-            qDebug() << "Dados salvos";
+            QMessageBox::information(this, "Resultado", "Dados salvos com sucesso");
         }else{
             qDebug() << query.lastError().text();
             qDebug() << "Dados NÃO SALVOS";
         }
 }
 void CadastroMercearia::on_BTN_LIMPAR_clicked(){
+        QDate date = QDate::currentDate();
+
         ui->LINE_NOME->clear();
         ui->SPIN_CODIGO->setValue(0);
         ui->SPIN_PRECO->setValue(0);
