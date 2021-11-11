@@ -43,46 +43,48 @@ void Menu::on_actionbtn_cadastrar_triggered()
 void Menu::on_actionbtn_relatorio_triggered()
 {
 
-        /* if(bancoDeDados.isOpen()){
-            qDebug() << "Ta aberto em Relatorio";
+    if(dbdados.isOpen()){
+        ui->TABELA_MERC->setEnabled(true);
 
-            ui->TABELA_MERC->setEnabled(true);
+        QSqlQuery query;
+        query.prepare("select * from mercearia");
 
-            QSqlQuery query;
-            query.prepare("select * from Mercearia");
+        if(query.exec()){
+            int linha=0;
+            ui->TABELA_MERC->setColumnCount(10);
+            ui->TABELA_MERC->setColumnWidth(0, 100);
+            ui->TABELA_MERC->setColumnWidth(1, 60);
+            ui->TABELA_MERC->setColumnWidth(2, 50);
+            ui->TABELA_MERC->setColumnWidth(3, 110);
+            ui->TABELA_MERC->setColumnWidth(4, 100);
+            ui->TABELA_MERC->setColumnWidth(5, 60);
 
-            if(query.exec()){
-                int linha=0;
-                ui->TABELA_MERC->setColumnCount(10);
-                qDebug() << "Ta cheganfo ae";
-                //ui->tableWidget->setColumnWidth(0, 50);
+            while(query.next()){
+                ui->TABELA_MERC->insertRow(linha);
+                ui->TABELA_MERC->setItem(linha, 0, new QTableWidgetItem(query.value(0).toString()));
+                ui->TABELA_MERC->setItem(linha, 1, new QTableWidgetItem(query.value(1).toString()));
+                ui->TABELA_MERC->setItem(linha, 2, new QTableWidgetItem(query.value(2).toString()));
+                ui->TABELA_MERC->setItem(linha, 3, new QTableWidgetItem(query.value(3).toString()));
+                ui->TABELA_MERC->setItem(linha, 4, new QTableWidgetItem(query.value(4).toString()));
+                ui->TABELA_MERC->setItem(linha, 5, new QTableWidgetItem(query.value(5).toString()));
+                ui->TABELA_MERC->setItem(linha, 6, new QTableWidgetItem(query.value(6).toString()));
+                ui->TABELA_MERC->setItem(linha, 7, new QTableWidgetItem(query.value(7).toString()));
+                ui->TABELA_MERC->setItem(linha, 8, new QTableWidgetItem(query.value(8).toString()));
+                ui->TABELA_MERC->setItem(linha, 9, new QTableWidgetItem(query.value(9).toString()));
 
-                while(query.next()){
-                    ui->TABELA_MERC->insertRow(linha);
-                    ui->TABELA_MERC->setItem(linha, 0, new QTableWidgetItem(query.value(0).toString()));
-                    ui->TABELA_MERC->setItem(linha, 1, new QTableWidgetItem(query.value(1).toString()));
-                    ui->TABELA_MERC->setItem(linha, 2, new QTableWidgetItem(query.value(2).toString()));
-                    ui->TABELA_MERC->setItem(linha, 3, new QTableWidgetItem(query.value(3).toString()));
-                    ui->TABELA_MERC->setItem(linha, 4, new QTableWidgetItem(query.value(4).toString()));
-                    ui->TABELA_MERC->setItem(linha, 5, new QTableWidgetItem(query.value(5).toString()));
-                    ui->TABELA_MERC->setItem(linha, 6, new QTableWidgetItem(query.value(6).toString()));
-                    ui->TABELA_MERC->setItem(linha, 7, new QTableWidgetItem(query.value(7).toString()));
-                    ui->TABELA_MERC->setItem(linha, 8, new QTableWidgetItem(query.value(8).toString()));
-                    ui->TABELA_MERC->setItem(linha, 9, new QTableWidgetItem(query.value(9).toString()));
+                ui->TABELA_MERC->setRowHeight(linha, 20);
+                linha++;
+            }
+            QStringList cabecalho = {"Nome", "Código", "Preço", "Data de Fabricação", "Data de Validade", "Unidade",
+                                    "Fornecedor", "Pais", "Estado", "Cidade"};
+            ui->TABELA_MERC->setHorizontalHeaderLabels(cabecalho);
+            ui->TABELA_MERC->setSelectionBehavior(QAbstractItemView::SelectRows);
+            ui->TABELA_MERC->setAlternatingRowColors(true);
 
-                    ui->TABELA_MERC->setRowHeight(linha, 20);
-                    linha++;
-                }
-                QStringList cabecalho = {"Nome", "Código", "Preço", "Data de Fabricação", "Data de Validade", "Unidade",
-                                        "Fornecedor", "Pais Sede", "Estado Sede", "Cidade Sede"};
-                ui->TABELA_MERC->setHorizontalHeaderLabels(cabecalho);
-                ui->TABELA_MERC->setSelectionBehavior(QAbstractItemView::SelectRows);
-                ui->TABELA_MERC->setAlternatingRowColors(true);
-
-        }else{
-            qDebug() << query.lastError().text();
-            QMessageBox::information(this, "Aviso", "Banco de dados não esta aberto");
-        }
-    }*/
+    }else{
+        qDebug() << query.lastError().text();
+        QMessageBox::information(this, "Aviso", "Banco de dados não esta aberto");
+    }
+    }
 }
 

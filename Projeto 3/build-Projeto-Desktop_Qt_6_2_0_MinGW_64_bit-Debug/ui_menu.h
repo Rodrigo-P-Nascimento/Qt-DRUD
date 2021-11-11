@@ -52,7 +52,7 @@ public:
     {
         if (Menu->objectName().isEmpty())
             Menu->setObjectName(QString::fromUtf8("Menu"));
-        Menu->resize(683, 426);
+        Menu->resize(482, 399);
         actionbtn_cadastrar = new QAction(Menu);
         actionbtn_cadastrar->setObjectName(QString::fromUtf8("actionbtn_cadastrar"));
         QIcon icon;
@@ -93,7 +93,8 @@ public:
         TABELA_MERC = new QTableWidget(tab);
         TABELA_MERC->setObjectName(QString::fromUtf8("TABELA_MERC"));
         TABELA_MERC->setEnabled(false);
-        TABELA_MERC->setGeometry(QRect(10, 11, 641, 251));
+        TABELA_MERC->setGeometry(QRect(10, 11, 900, 251));
+        TABELA_MERC->setMinimumSize(QSize(900, 100));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
@@ -120,7 +121,7 @@ public:
         Menu->addToolBar(Qt::TopToolBarArea, toolBar);
         menuBar = new QMenuBar(Menu);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 683, 20));
+        menuBar->setGeometry(QRect(0, 0, 482, 20));
         menuArquivo = new QMenu(menuBar);
         menuArquivo->setObjectName(QString::fromUtf8("menuArquivo"));
         Menu->setMenuBar(menuBar);
