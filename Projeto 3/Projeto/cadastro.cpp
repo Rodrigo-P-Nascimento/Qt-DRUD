@@ -2,7 +2,7 @@
 #include "ui_cadastro.h"
 #include "QMessageBox"
 
-static QSqlDatabase dbdados = QSqlDatabase::addDatabase("QSQLITE");
+
 
 CadastroMercearia::CadastroMercearia(QWidget *parent, int secao) :
     QDialog(parent),
@@ -15,14 +15,7 @@ CadastroMercearia::CadastroMercearia(QWidget *parent, int secao) :
     ui->DAFA->setDate(date);
     ui->DAVA->setDate(date);
 
-    dbdados.setDatabaseName("C:/Users/rodri/Documents/GitHub/ProjetoLP1/Projeto 3/Projeto/dados.db");
-    //dbdados.setDatabaseName("./dados.db");
 
-    if(!dbdados.open()){
-        qDebug() << "Não foi possível abrir o DB";
-    }else{
-        qDebug() << "DB aberto";
-    }
 
     if(secao == 1){
         ui->LABEL_PESO->hide();
@@ -84,6 +77,5 @@ void CadastroMercearia::on_BTN_LIMPAR_clicked(){
 }
 CadastroMercearia::~CadastroMercearia()
 {
-    dbdados.close();
     delete ui;
 }

@@ -12,7 +12,14 @@ Menu::Menu(QWidget *parent)
 {
     ui->setupUi(this);
 
+    dbdados.setDatabaseName("C:/Users/rodri/Documents/GitHub/ProjetoLP1/Projeto 3/Projeto/dados.db");
+    //dbdados.setDatabaseName("./dados.db");
 
+    if(!dbdados.open()){
+        qDebug() << "Não foi possível abrir o DB";
+    }else{
+        qDebug() << "DB aberto";
+    }
 
 
 }
@@ -24,9 +31,9 @@ Menu::~Menu()
 
 void Menu::on_actionbtn_cadastrar_triggered()
 {
-    //if(dbdados.isOpen()){
-        //qDebug() << "Não tá aberto para Cadastro";
-    //}
+    if(!dbdados.isOpen()){
+        qDebug() << "Não tá aberto para Cadastro";
+    }
 
     Verifica *verif = new Verifica();
     verif->show();
