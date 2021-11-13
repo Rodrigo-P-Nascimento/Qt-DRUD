@@ -2,6 +2,10 @@
 #define CADASTRO_H
 
 #include <QWidget>
+#include <QtSql>
+#include <QDebug>
+#include <QFileInfo>
+#include <QMessageBox>
 
 namespace Ui {
 class cadastro;

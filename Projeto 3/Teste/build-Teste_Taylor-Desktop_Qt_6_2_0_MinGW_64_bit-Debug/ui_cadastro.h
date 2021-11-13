@@ -114,7 +114,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 824, 618));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 827, 618));
         verticalLayout_2 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         scrollArea_2 = new QScrollArea(scrollAreaWidgetContents);
@@ -123,7 +123,7 @@ public:
         scrollArea_2->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 804, 598));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 807, 598));
         layoutWidget = new QWidget(scrollAreaWidgetContents_2);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
         layoutWidget->setGeometry(QRect(10, 10, 781, 581));
@@ -307,6 +307,8 @@ public:
         doubleSpinBox_Volume_por_Unidade = new QDoubleSpinBox(layoutWidget);
         doubleSpinBox_Volume_por_Unidade->setObjectName(QString::fromUtf8("doubleSpinBox_Volume_por_Unidade"));
         doubleSpinBox_Volume_por_Unidade->setEnabled(false);
+        doubleSpinBox_Volume_por_Unidade->setDecimals(2);
+        doubleSpinBox_Volume_por_Unidade->setMaximum(100.000000000000000);
 
         formLayout_8->setWidget(0, QFormLayout::FieldRole, doubleSpinBox_Volume_por_Unidade);
 
@@ -802,7 +804,7 @@ public:
         label_Data_de_Validade->setText(QCoreApplication::translate("cadastro", "Data de Validade:", nullptr));
         label_Unidades->setText(QCoreApplication::translate("cadastro", "Unidades:", nullptr));
         label_Peso->setText(QCoreApplication::translate("cadastro", "Peso:", nullptr));
-        label_Volume_por_Unidade->setText(QCoreApplication::translate("cadastro", "Volume/Unidade:", nullptr));
+        label_Volume_por_Unidade->setText(QCoreApplication::translate("cadastro", "Volume em litros/Unidade:", nullptr));
         label_Gluten->setText(QCoreApplication::translate("cadastro", "Gl\303\272ten:", nullptr));
         comboBox_Gluten->setItemText(0, QCoreApplication::translate("cadastro", "Selecionar", nullptr));
         comboBox_Gluten->setItemText(1, QCoreApplication::translate("cadastro", "Sim", nullptr));

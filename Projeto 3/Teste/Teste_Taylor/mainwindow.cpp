@@ -9,11 +9,22 @@
 #include "atualizar.h"
 #include "ui_atualizar.h"
 
+static QSqlDatabase dbdados = QSqlDatabase::addDatabase("QSQLITE");
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    dbdados.setDatabaseName("C:/Users/rodri/Documents/GitHub/ProjetoLP1/Projeto 3/Projeto/dados.db");
+    //dbdados.setDatabaseName("./dados.db");
+
+    if(!dbdados.open()){
+        qDebug() << "Não foi possível abrir o DB";
+    }else{
+        qDebug() << "DB aberto";
+    }
 }
 
 MainWindow::~MainWindow()

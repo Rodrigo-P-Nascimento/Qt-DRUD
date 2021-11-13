@@ -176,7 +176,7 @@ void cadastro::on_pushButton_Salvar_clicked()
 {
     QString nome_do_produto = ui->lineEdit_Nome_de_Produto->text();
     QString codigo = ui->spinBox_Codigo->text();
-    QString peco = ui->doubleSpinBox_Preco->text();
+    QString preco = ui->doubleSpinBox_Preco->text();
     QString data_de_fabricacao = ui->dateEdit_Data_de_Fabricacao->text();
     QString data_de_validade = ui->dateEdit_Data_de_Validade->text();
     QString unidade = ui->spinBox_Unidades->text();
@@ -191,6 +191,36 @@ void cadastro::on_pushButton_Salvar_clicked()
     QString pais = ui->comboBox_Pais_Sede->currentText();
     QString estado = ui->lineEdit_Estado_Sede->text();
     QString cidade = ui->lineEdit_Cidade_Sede->text();
+
+    QSqlQuery query;
+
+    QString secao = ui->comboBox_Secao->currentText();
+
+    if(secao == "Mercearia"){
+        query.prepare("insert into mercearia(nome,codigo,preco,dataFab,dataVal,unidade,nome_for,pais_for,estado_for,cidade_for) "
+                      "values('"+nome_do_produto+"','"+codigo+"','"+preco+"','"+data_de_fabricacao+"','"+data_de_validade+"','"+unidade+"','"+nome_do_fornecedor+"','"+pais+"','"+estado+"','"+cidade+"')");
+    }else if(secao == "Padaria"){
+        query.prepare("insert into padaria(nome,codigo,preco,dataFab,dataVal,peso,gluten,nome_for,pais_for,estado_for,cidade_for) "
+                      "values('"+nome_do_produto+"','"+codigo+"','"+preco+"','"+data_de_fabricacao+"','"+data_de_validade+"','"+peso+"','"+gluten+"','"+nome_do_fornecedor+"','"+pais+"','"+estado+"','"+cidade+"')");
+    }else if(secao == "Bebidas"){
+        query.prepare("insert into bebidas(nome,codigo,preco,dataFab,dataVal,unidade,volume,alcool,gas,nome_for,pais_for,estado_for,cidade_for) "
+                      "values('"+nome_do_produto+"','"+codigo+"','"+preco+"','"+data_de_fabricacao+"','"+data_de_validade+"','"+unidade+"','"+volume+"','"+alcoolica+"','"+gaseificada+"','"+nome_do_fornecedor+"','"+pais+"','"+estado+"','"+cidade+"')");
+    }else if(secao == "Açougue e Frios"){
+        query.prepare("insert into frios(nome,codigo,preco,dataFab,dataVal,peso,nome_for,pais_for,estado_for,cidade_for) "
+                      "values('"+nome_do_produto+"','"+codigo+"','"+preco+"','"+data_de_fabricacao+"','"+data_de_validade+"','"+peso+"','"+nome_do_fornecedor+"','"+pais+"','"+estado+"','"+cidade+"')");
+    }else if(secao == "Limpeza"){
+        query.prepare("insert into limpeza(nome,codigo,preco,dataFab,dataVal,unidade,fragrancia,nome_for,pais_for,estado_for,cidade_for) "
+                      "values('"+nome_do_produto+"','"+codigo+"','"+preco+"','"+data_de_fabricacao+"','"+data_de_validade+"','"+unidade+"','"+fragrancia+"','"+nome_do_fornecedor+"','"+pais+"','"+estado+"','"+cidade+"')");
+    }
+
+    if(query.exec()){
+        QMessageBox::information(this, "Bom trabalho!", "Dados salvos com sucesso");
+    }else{
+        qDebug() << query.lastError().text();
+        qDebug() << "Dados NÃO SALVOS";
+    }
+
+
 }
 
 void cadastro::on_pushButton_Limpar_clicked()
