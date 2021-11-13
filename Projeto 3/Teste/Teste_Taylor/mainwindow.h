@@ -18,7 +18,13 @@ public:
 private slots:
     void on_tabWidget_tabCloseRequested(int index);
 
-    void on_action_Novo_Produto_triggered();
+    void on_action_Cadastrar_triggered();
+
+    void on_action_Relatorio_Produtos_triggered();
+
+    void on_action_Relatorio_Fornecedor_triggered();
+
+    void on_action_Atualizar_Produto_triggered();
 
 private:
     Ui::MainWindow *ui;

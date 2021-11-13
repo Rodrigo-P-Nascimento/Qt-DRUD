@@ -28,6 +28,7 @@ public:
 private slots:
     void on_comboBox_Secao_currentTextChanged(const QString &arg1);
 
+    void on_pushButton_Salvar_clicked();
     void on_pushButton_Limpar_clicked();
 
 private:

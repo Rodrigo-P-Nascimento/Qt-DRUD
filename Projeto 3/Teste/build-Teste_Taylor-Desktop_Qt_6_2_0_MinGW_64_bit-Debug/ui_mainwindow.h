@@ -25,7 +25,7 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
-    QAction *action_Novo_Produto;
+    QAction *action_Cadastrar;
     QAction *action_Atualizar_Produto;
     QAction *action_Remover_Produto;
     QAction *action_Relatorio_Produtos;
@@ -48,11 +48,11 @@ public:
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(878, 600);
         MainWindow->setMinimumSize(QSize(800, 600));
-        action_Novo_Produto = new QAction(MainWindow);
-        action_Novo_Produto->setObjectName(QString::fromUtf8("action_Novo_Produto"));
+        action_Cadastrar = new QAction(MainWindow);
+        action_Cadastrar->setObjectName(QString::fromUtf8("action_Cadastrar"));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/imagem/Imagens/adicionar.png"), QSize(), QIcon::Normal, QIcon::Off);
-        action_Novo_Produto->setIcon(icon);
+        action_Cadastrar->setIcon(icon);
         action_Atualizar_Produto = new QAction(MainWindow);
         action_Atualizar_Produto->setObjectName(QString::fromUtf8("action_Atualizar_Produto"));
         QIcon icon1;
@@ -111,7 +111,7 @@ public:
         menubar->addAction(menu_Produto->menuAction());
         menubar->addAction(menu_Relatorio->menuAction());
         menubar->addAction(menu_Funcionario->menuAction());
-        menu_Produto->addAction(action_Novo_Produto);
+        menu_Produto->addAction(action_Cadastrar);
         menu_Produto->addAction(action_Atualizar_Produto);
         menu_Produto->addAction(action_Remover_Produto);
         menu_Relatorio->addAction(action_Relatorio_Produtos);
@@ -119,7 +119,7 @@ public:
         menu_Funcionario->addAction(action_Adicionar_Cargo);
         menu_Funcionario->addAction(action_Editar_Permissao);
         menu_Funcionario->addAction(action_Remover_Funcinario);
-        toolBar->addAction(action_Novo_Produto);
+        toolBar->addAction(action_Cadastrar);
         toolBar->addAction(action_Atualizar_Produto);
         toolBar->addAction(action_Relatorio_Produtos);
         toolBar->addAction(action_Remover_Produto);
@@ -135,7 +135,10 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        action_Novo_Produto->setText(QCoreApplication::translate("MainWindow", "Novo Produto", nullptr));
+        action_Cadastrar->setText(QCoreApplication::translate("MainWindow", "Cadastrar", nullptr));
+#if QT_CONFIG(tooltip)
+        action_Cadastrar->setToolTip(QCoreApplication::translate("MainWindow", "Cadastrar", nullptr));
+#endif // QT_CONFIG(tooltip)
         action_Atualizar_Produto->setText(QCoreApplication::translate("MainWindow", "Atualizar Produto", nullptr));
         action_Remover_Produto->setText(QCoreApplication::translate("MainWindow", "Remover Produto", nullptr));
         action_Relatorio_Produtos->setText(QCoreApplication::translate("MainWindow", "Relat\303\263rio Produtos", nullptr));

@@ -1,13 +1,15 @@
 #include "cadastro.h"
 #include "ui_cadastro.h"
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
 
 cadastro::cadastro(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::cadastro)
 {
     ui->setupUi(this);
+
+    QDate date = QDate::currentDate();
+    ui->dateEdit_Data_de_Fabricacao->setDate(date);
+    ui->dateEdit_Data_de_Validade->setDate(date);
 }
 
 cadastro::~cadastro()
@@ -85,11 +87,22 @@ void cadastro::enable_cadastro_padrao(){
 }
 
 void cadastro::enabled_acougue_e_frios(){
+    ui->spinBox_Unidades->setValue(0);
+    ui->doubleSpinBox_Volume_por_Unidade->setValue(0);
+    ui->comboBox_Gluten->setCurrentIndex(0);
+    ui->comboBox_Alcoolica->setCurrentIndex(0);
+    ui->comboBox_Gaseificada->setCurrentIndex(0);
+    ui->lineEdit_Fragrancia->clear();
+
     ui->label_Peso->setEnabled(true);
     ui->doubleSpinBox_Peso->setEnabled(true);
 }
 
 void cadastro::enabled_bebidas(){
+    ui->doubleSpinBox_Peso->setValue(0);
+    ui->comboBox_Gluten->setCurrentIndex(0);
+    ui->lineEdit_Fragrancia->clear();
+
     ui->label_Unidades->setEnabled(true);
     ui->spinBox_Unidades->setEnabled(true);
     ui->label_Volume_por_Unidade->setEnabled(true);
@@ -101,6 +114,12 @@ void cadastro::enabled_bebidas(){
 }
 
 void cadastro::enabled_limpeza(){
+    ui->doubleSpinBox_Peso->setValue(0);
+    ui->doubleSpinBox_Volume_por_Unidade->setValue(0);
+    ui->comboBox_Gluten->setCurrentIndex(0);
+    ui->comboBox_Alcoolica->setCurrentIndex(0);
+    ui->comboBox_Gaseificada->setCurrentIndex(0);
+
     ui->label_Unidades->setEnabled(true);
     ui->spinBox_Unidades->setEnabled(true);
     ui->label_Fragrancia->setEnabled(true);
@@ -108,11 +127,24 @@ void cadastro::enabled_limpeza(){
 }
 
 void cadastro::enabled_mercearia(){
+    ui->doubleSpinBox_Peso->setValue(0);
+    ui->doubleSpinBox_Volume_por_Unidade->setValue(0);
+    ui->comboBox_Gluten->setCurrentIndex(0);
+    ui->comboBox_Alcoolica->setCurrentIndex(0);
+    ui->comboBox_Gaseificada->setCurrentIndex(0);
+    ui->lineEdit_Fragrancia->clear();
+
     ui->label_Unidades->setEnabled(true);
     ui->spinBox_Unidades->setEnabled(true);
 }
 
 void cadastro::enabled_padaria(){
+    ui->spinBox_Unidades->setValue(0);
+    ui->doubleSpinBox_Volume_por_Unidade->setValue(0);
+    ui->comboBox_Alcoolica->setCurrentIndex(0);
+    ui->comboBox_Gaseificada->setCurrentIndex(0);
+    ui->lineEdit_Fragrancia->clear();
+
     ui->label_Peso->setEnabled(true);
     ui->doubleSpinBox_Peso->setEnabled(true);
     ui->label_Gluten->setEnabled(true);
@@ -140,10 +172,32 @@ void cadastro::on_comboBox_Secao_currentTextChanged(const QString &arg1)
     }
 }
 
+void cadastro::on_pushButton_Salvar_clicked()
+{
+    QString nome_do_produto = ui->lineEdit_Nome_de_Produto->text();
+    QString codigo = ui->spinBox_Codigo->text();
+    QString peco = ui->doubleSpinBox_Preco->text();
+    QString data_de_fabricacao = ui->dateEdit_Data_de_Fabricacao->text();
+    QString data_de_validade = ui->dateEdit_Data_de_Validade->text();
+    QString unidade = ui->spinBox_Unidades->text();
+    QString peso = ui->doubleSpinBox_Peso->text();
+    QString volume = ui->doubleSpinBox_Volume_por_Unidade->text();
+    QString gluten = ui->comboBox_Gluten->currentText();
+    QString alcoolica = ui->comboBox_Alcoolica->currentText();
+    QString gaseificada = ui->comboBox_Gaseificada->currentText();
+    QString fragrancia = ui->lineEdit_Fragrancia->text();
+
+    QString nome_do_fornecedor = ui->lineEdit_Nome_do_Fornecedor->text();
+    QString pais = ui->comboBox_Pais_Sede->currentText();
+    QString estado = ui->lineEdit_Estado_Sede->text();
+    QString cidade = ui->lineEdit_Cidade_Sede->text();
+}
+
 void cadastro::on_pushButton_Limpar_clicked()
 {
     QDate date = QDate::currentDate();
 
+    ui->comboBox_Secao->setCurrentIndex(0);
     ui->lineEdit_Nome_de_Produto->clear();
     ui->spinBox_Codigo->setValue(0);
     ui->doubleSpinBox_Preco->setValue(0);
@@ -161,4 +215,3 @@ void cadastro::on_pushButton_Limpar_clicked()
     ui->lineEdit_Estado_Sede->clear();
     ui->lineEdit_Cidade_Sede->clear();
 }
-
