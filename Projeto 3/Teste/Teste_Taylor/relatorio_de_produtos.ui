@@ -101,6 +101,9 @@
                </item>
                <item>
                 <widget class="QTableWidget" name="tableWidget_Produtos">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
                  <property name="editTriggers">
                   <set>QAbstractItemView::NoEditTriggers</set>
                  </property>
@@ -113,13 +116,6 @@
                 </widget>
                </item>
               </layout>
-             </item>
-             <item>
-              <widget class="QScrollBar" name="verticalScrollBar">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-              </widget>
              </item>
             </layout>
            </item>

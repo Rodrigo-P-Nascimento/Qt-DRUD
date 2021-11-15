@@ -18,6 +18,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -34,6 +35,7 @@ public:
     QAction *action_Editar_Permissao;
     QAction *action_Remover_Funcinario;
     QWidget *centralwidget;
+    QVBoxLayout *verticalLayout;
     QTabWidget *tabWidget;
     QStatusBar *statusbar;
     QMenuBar *menubar;
@@ -82,21 +84,25 @@ public:
         action_Remover_Funcinario->setIcon(icon2);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        verticalLayout = new QVBoxLayout(centralwidget);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(10, 10, 861, 500));
         tabWidget->setMinimumSize(QSize(800, 500));
         tabWidget->setElideMode(Qt::ElideLeft);
         tabWidget->setTabsClosable(true);
         tabWidget->setMovable(true);
         tabWidget->setTabBarAutoHide(false);
+
+        verticalLayout->addWidget(tabWidget);
+
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 878, 21));
+        menubar->setGeometry(QRect(0, 0, 878, 20));
         menu_Produto = new QMenu(menubar);
         menu_Produto->setObjectName(QString::fromUtf8("menu_Produto"));
         menu_Relatorio = new QMenu(menubar);

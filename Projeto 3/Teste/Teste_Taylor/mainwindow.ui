@@ -20,37 +20,33 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>861</width>
-      <height>500</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>800</width>
-      <height>500</height>
-     </size>
-    </property>
-    <property name="currentIndex">
-     <number>-1</number>
-    </property>
-    <property name="elideMode">
-     <enum>Qt::ElideLeft</enum>
-    </property>
-    <property name="tabsClosable">
-     <bool>true</bool>
-    </property>
-    <property name="movable">
-     <bool>true</bool>
-    </property>
-    <property name="tabBarAutoHide">
-     <bool>false</bool>
-    </property>
-   </widget>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="minimumSize">
+       <size>
+        <width>800</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
+      <property name="elideMode">
+       <enum>Qt::ElideLeft</enum>
+      </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
@@ -59,7 +55,7 @@
      <x>0</x>
      <y>0</y>
      <width>878</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_Produto">

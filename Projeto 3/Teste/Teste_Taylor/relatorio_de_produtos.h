@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QtSql>
 #include <QDebug>
+#include <QMessageBox>
 
 namespace Ui {
 class relatorio_de_produtos;
