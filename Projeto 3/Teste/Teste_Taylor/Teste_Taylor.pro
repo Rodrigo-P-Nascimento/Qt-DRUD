@@ -14,23 +14,23 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     produtos.cpp \
-    relatorio_de_fornecedores.cpp \
-    relatorio_de_produtos.cpp
+    relatorio_de_produtos.cpp \
+    remover.cpp
 
 HEADERS += \
     atualizar.h \
     cadastro.h \
     mainwindow.h \
     produtos.h \
-    relatorio_de_fornecedores.h \
-    relatorio_de_produtos.h
+    relatorio_de_produtos.h \
+    remover.h
 
 FORMS += \
     atualizar.ui \
     cadastro.ui \
     mainwindow.ui \
-    relatorio_de_fornecedores.ui \
-    relatorio_de_produtos.ui
+    relatorio_de_produtos.ui \
+    remover.ui
 
 TRANSLATIONS += \
     Teste_Taylor_pt_BR.ts

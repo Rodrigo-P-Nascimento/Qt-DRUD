@@ -25,9 +25,9 @@ private slots:
 
     void on_action_Relatorio_Produtos_triggered();
 
-    void on_action_Relatorio_Fornecedor_triggered();
-
     void on_action_Atualizar_Produto_triggered();
+
+    void on_action_Remover_Produto_triggered();
 
 private:
     Ui::MainWindow *ui;

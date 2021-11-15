@@ -4,10 +4,10 @@
 #include "ui_cadastro.h"
 #include "relatorio_de_produtos.h"
 #include "ui_relatorio_de_produtos.h"
-#include "relatorio_de_fornecedores.h"
-#include "ui_relatorio_de_fornecedores.h"
 #include "atualizar.h"
 #include "ui_atualizar.h"
+#include "remover.h"
+#include "ui_remover.h"
 
 static QSqlDatabase dbdados = QSqlDatabase::addDatabase("QSQLITE");
 
@@ -17,8 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //dbdados.setDatabaseName("C:/Users/taylo/OneDrive/Documentos/GitHub/ProjetoLP1/Projeto 3/Teste/Teste_Taylor/dados.db");
-    dbdados.setDatabaseName("C:/Users/rodri/Documents/GitHub/ProjetoLP1/Projeto 3/Teste/Teste_Taylor/dados.db");
+    dbdados.setDatabaseName("C:/Users/taylo/OneDrive/Documentos/GitHub/ProjetoLP1/Projeto 3/Teste/Teste_Taylor/dados.db");
+    //dbdados.setDatabaseName("C:/Users/rodri/Documents/GitHub/ProjetoLP1/Projeto 3/Teste/Teste_Taylor/dados.db");
     //dbdados.setDatabaseName("./dados.db");
 
     if(!dbdados.open()){
@@ -53,7 +53,8 @@ void MainWindow::on_action_Relatorio_Produtos_triggered()
     ui->tabWidget->addTab(new relatorio_de_produtos(), "Relatório de Produtos");
 }
 
-void MainWindow::on_action_Relatorio_Fornecedor_triggered()
+void MainWindow::on_action_Remover_Produto_triggered()
 {
-    ui->tabWidget->addTab(new relatorio_de_fornecedores(), "Relatório de Fornecedores");
+    ui->tabWidget->addTab(new remover(), "Remover Produto");
 }
+
