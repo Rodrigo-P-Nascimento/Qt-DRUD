@@ -17,7 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    dbdados.setDatabaseName("C:/Users/rodri/Documents/GitHub/ProjetoLP1/Projeto 3/Projeto/dados.db");
+    dbdados.setDatabaseName("C:/Users/taylo/OneDrive/Documentos/GitHub/ProjetoLP1/Projeto 3/Teste/Teste_Taylor/dados.db");
+    //dbdados.setDatabaseName("C:/Users/rodri/Documents/GitHub/ProjetoLP1/Projeto 3/Projeto/dados.db");
     //dbdados.setDatabaseName("./dados.db");
 
     if(!dbdados.open()){

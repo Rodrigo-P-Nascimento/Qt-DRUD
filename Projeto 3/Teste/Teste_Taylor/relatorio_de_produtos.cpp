@@ -12,3 +12,21 @@ relatorio_de_produtos::~relatorio_de_produtos()
 {
     delete ui;
 }
+
+void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
+{
+
+
+    if(arg1 == "Açougue e Frios"){
+
+    }else if(arg1 == "Bebidas"){
+
+    }else if(arg1 == "Limpeza"){
+
+    }else if(arg1 == "Mercearia"){
+
+    }else if(arg1 == "Padaria"){
+
+    }
+}
+
