@@ -253,3 +253,44 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
 
 }
 
+
+void relatorio_de_produtos::on_BTN_EXCLUIR_clicked()
+{
+    int linha = ui->tableWidget_Produtos->currentRow();
+    QString secao = ui->comboBox->currentText();
+    QString codigo = ui->tableWidget_Produtos->item(linha, 1)->text();
+
+    if (secao == "Açougue e Frios"){
+        secao = "frios";
+    }
+    else if (secao == "Bebidas"){
+        secao = "bebidas";
+    }
+    else if (secao == "Mercearia"){
+        secao = "mercearia";
+    }
+    else if (secao == "Padaria"){
+        secao = "padaria";
+    }
+    else if (secao == "Limpeza"){
+        secao = "limpeza";
+    }
+    qDebug() << secao;
+    qDebug() << codigo;
+
+    QSqlQuery query;
+    query.prepare("delete from "+secao+" where codigo="+codigo);
+    if (query.exec()){
+        ui->tableWidget_Produtos->removeRow(linha);
+    }
+    else {
+        qDebug() << "Erro ao excluir produto!";
+    }
+}
+
+
+void relatorio_de_produtos::on_BTN_EDITAR_clicked()
+{
+
+}
+

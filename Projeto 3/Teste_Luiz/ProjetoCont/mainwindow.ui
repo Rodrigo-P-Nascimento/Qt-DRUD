@@ -55,7 +55,7 @@
      <x>0</x>
      <y>0</y>
      <width>878</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_Produto">
@@ -63,14 +63,12 @@
      <string>Produto</string>
     </property>
     <addaction name="action_Cadastrar"/>
-    <addaction name="action_Atualizar_Produto"/>
-    <addaction name="action_Remover_Produto"/>
    </widget>
    <widget class="QMenu" name="menu_Relatorio">
     <property name="title">
-     <string>Relatório</string>
+     <string>Gerenciar</string>
     </property>
-    <addaction name="action_Relatorio_Produtos"/>
+    <addaction name="action_Gerenciar_Produtos"/>
    </widget>
    <widget class="QMenu" name="menu_Funcionario">
     <property name="title">
@@ -95,9 +93,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="action_Cadastrar"/>
-   <addaction name="action_Atualizar_Produto"/>
-   <addaction name="action_Relatorio_Produtos"/>
-   <addaction name="action_Remover_Produto"/>
+   <addaction name="action_Gerenciar_Produtos"/>
   </widget>
   <action name="action_Cadastrar">
    <property name="icon">
@@ -111,31 +107,13 @@
     <string>Cadastrar</string>
    </property>
   </action>
-  <action name="action_Atualizar_Produto">
-   <property name="icon">
-    <iconset resource="Arquivos_de_Recursos.qrc">
-     <normaloff>:/imagem/Imagens/recarregar.png</normaloff>:/imagem/Imagens/recarregar.png</iconset>
-   </property>
-   <property name="text">
-    <string>Atualizar Produto</string>
-   </property>
-  </action>
-  <action name="action_Remover_Produto">
-   <property name="icon">
-    <iconset resource="Arquivos_de_Recursos.qrc">
-     <normaloff>:/imagem/Imagens/lixeira.png</normaloff>:/imagem/Imagens/lixeira.png</iconset>
-   </property>
-   <property name="text">
-    <string>Remover Produto</string>
-   </property>
-  </action>
-  <action name="action_Relatorio_Produtos">
+  <action name="action_Gerenciar_Produtos">
    <property name="icon">
     <iconset resource="Arquivos_de_Recursos.qrc">
      <normaloff>:/imagem/Imagens/relatorio.png</normaloff>:/imagem/Imagens/relatorio.png</iconset>
    </property>
    <property name="text">
-    <string>Relatório Produtos</string>
+    <string>Gerenciar Produtos</string>
    </property>
   </action>
   <action name="action_Adicionar_Cargo">

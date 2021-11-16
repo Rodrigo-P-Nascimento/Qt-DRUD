@@ -21,6 +21,10 @@ public:
 private slots:
     void on_comboBox_currentTextChanged(const QString &arg1);
 
+    void on_BTN_EXCLUIR_clicked();
+
+    void on_BTN_EDITAR_clicked();
+
 private:
     Ui::relatorio_de_produtos *ui;
 };

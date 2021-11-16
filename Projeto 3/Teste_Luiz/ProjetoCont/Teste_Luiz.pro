@@ -9,28 +9,22 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    atualizar.cpp \
     cadastro.cpp \
     main.cpp \
     mainwindow.cpp \
     produtos.cpp \
-    relatorio_de_produtos.cpp \
-    remover.cpp
+    relatorio_de_produtos.cpp
 
 HEADERS += \
-    atualizar.h \
     cadastro.h \
     mainwindow.h \
     produtos.h \
-    relatorio_de_produtos.h \
-    remover.h
+    relatorio_de_produtos.h
 
 FORMS += \
-    atualizar.ui \
     cadastro.ui \
     mainwindow.ui \
-    relatorio_de_produtos.ui \
-    remover.ui
+    relatorio_de_produtos.ui
 
 TRANSLATIONS += \
     Teste_Taylor_pt_BR.ts

@@ -16,7 +16,9 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -32,13 +34,15 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QScrollArea *scrollArea_2;
     QWidget *scrollAreaWidgetContents_2;
-    QHBoxLayout *horizontalLayout_3;
-    QHBoxLayout *horizontalLayout;
-    QVBoxLayout *verticalLayout_3;
+    QVBoxLayout *verticalLayout;
     QFormLayout *formLayout;
     QLabel *label;
     QComboBox *comboBox;
     QTableWidget *tableWidget_Produtos;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *BTN_EXCLUIR;
+    QPushButton *BTN_EDITAR;
+    QSpacerItem *horizontalSpacer;
 
     void setupUi(QWidget *relatorio_de_produtos)
     {
@@ -63,12 +67,8 @@ public:
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
         scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 798, 598));
-        horizontalLayout_3 = new QHBoxLayout(scrollAreaWidgetContents_2);
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        verticalLayout_3 = new QVBoxLayout();
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        verticalLayout = new QVBoxLayout(scrollAreaWidgetContents_2);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         formLayout = new QFormLayout();
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
         label = new QLabel(scrollAreaWidgetContents_2);
@@ -88,7 +88,7 @@ public:
         formLayout->setWidget(0, QFormLayout::FieldRole, comboBox);
 
 
-        verticalLayout_3->addLayout(formLayout);
+        verticalLayout->addLayout(formLayout);
 
         tableWidget_Produtos = new QTableWidget(scrollAreaWidgetContents_2);
         tableWidget_Produtos->setObjectName(QString::fromUtf8("tableWidget_Produtos"));
@@ -97,13 +97,26 @@ public:
         tableWidget_Produtos->setAlternatingRowColors(true);
         tableWidget_Produtos->setSortingEnabled(false);
 
-        verticalLayout_3->addWidget(tableWidget_Produtos);
+        verticalLayout->addWidget(tableWidget_Produtos);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        BTN_EXCLUIR = new QPushButton(scrollAreaWidgetContents_2);
+        BTN_EXCLUIR->setObjectName(QString::fromUtf8("BTN_EXCLUIR"));
+
+        horizontalLayout->addWidget(BTN_EXCLUIR);
+
+        BTN_EDITAR = new QPushButton(scrollAreaWidgetContents_2);
+        BTN_EDITAR->setObjectName(QString::fromUtf8("BTN_EDITAR"));
+
+        horizontalLayout->addWidget(BTN_EDITAR);
+
+        horizontalSpacer = new QSpacerItem(378, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
 
 
-        horizontalLayout->addLayout(verticalLayout_3);
-
-
-        horizontalLayout_3->addLayout(horizontalLayout);
+        verticalLayout->addLayout(horizontalLayout);
 
         scrollArea_2->setWidget(scrollAreaWidgetContents_2);
 
@@ -130,6 +143,8 @@ public:
         comboBox->setItemText(4, QCoreApplication::translate("relatorio_de_produtos", "Mercearia", nullptr));
         comboBox->setItemText(5, QCoreApplication::translate("relatorio_de_produtos", "Padaria", nullptr));
 
+        BTN_EXCLUIR->setText(QCoreApplication::translate("relatorio_de_produtos", "Excluir", nullptr));
+        BTN_EDITAR->setText(QCoreApplication::translate("relatorio_de_produtos", "Editar", nullptr));
     } // retranslateUi
 
 };

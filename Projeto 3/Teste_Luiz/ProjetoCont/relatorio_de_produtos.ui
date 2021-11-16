@@ -55,73 +55,96 @@
             <height>598</height>
            </rect>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <layout class="QFormLayout" name="formLayout">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Seção:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="comboBox">
+               <item>
+                <property name="text">
+                 <string>Selecionar</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Açougue e Frios</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Bebidas</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Limpeza</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Mercearia</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Padaria</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableWidget_Produtos">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="alternatingRowColors">
+              <bool>true</bool>
+             </property>
+             <property name="sortingEnabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout">
              <item>
-              <layout class="QVBoxLayout" name="verticalLayout_3">
-               <item>
-                <layout class="QFormLayout" name="formLayout">
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label">
-                   <property name="text">
-                    <string>Seção:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QComboBox" name="comboBox">
-                   <item>
-                    <property name="text">
-                     <string>Selecionar</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>Açougue e Frios</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>Bebidas</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>Limpeza</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>Mercearia</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>Padaria</string>
-                    </property>
-                   </item>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <widget class="QTableWidget" name="tableWidget_Produtos">
-                 <property name="enabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="editTriggers">
-                  <set>QAbstractItemView::NoEditTriggers</set>
-                 </property>
-                 <property name="alternatingRowColors">
-                  <bool>true</bool>
-                 </property>
-                 <property name="sortingEnabled">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-              </layout>
+              <widget class="QPushButton" name="BTN_EXCLUIR">
+               <property name="text">
+                <string>Excluir</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="BTN_EDITAR">
+               <property name="text">
+                <string>Editar</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>378</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
              </item>
             </layout>
            </item>

@@ -27,9 +27,7 @@ class Ui_MainWindow
 {
 public:
     QAction *action_Cadastrar;
-    QAction *action_Atualizar_Produto;
-    QAction *action_Remover_Produto;
-    QAction *action_Relatorio_Produtos;
+    QAction *action_Gerenciar_Produtos;
     QAction *action_Adicionar_Cargo;
     QAction *action_Editar_Permissao;
     QAction *action_Remover_Funcinario;
@@ -54,30 +52,24 @@ public:
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/imagem/Imagens/adicionar.png"), QSize(), QIcon::Normal, QIcon::Off);
         action_Cadastrar->setIcon(icon);
-        action_Atualizar_Produto = new QAction(MainWindow);
-        action_Atualizar_Produto->setObjectName(QString::fromUtf8("action_Atualizar_Produto"));
+        action_Gerenciar_Produtos = new QAction(MainWindow);
+        action_Gerenciar_Produtos->setObjectName(QString::fromUtf8("action_Gerenciar_Produtos"));
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/imagem/Imagens/recarregar.png"), QSize(), QIcon::Normal, QIcon::Off);
-        action_Atualizar_Produto->setIcon(icon1);
-        action_Remover_Produto = new QAction(MainWindow);
-        action_Remover_Produto->setObjectName(QString::fromUtf8("action_Remover_Produto"));
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/imagem/Imagens/lixeira.png"), QSize(), QIcon::Normal, QIcon::Off);
-        action_Remover_Produto->setIcon(icon2);
-        action_Relatorio_Produtos = new QAction(MainWindow);
-        action_Relatorio_Produtos->setObjectName(QString::fromUtf8("action_Relatorio_Produtos"));
-        QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/imagem/Imagens/relatorio.png"), QSize(), QIcon::Normal, QIcon::Off);
-        action_Relatorio_Produtos->setIcon(icon3);
+        icon1.addFile(QString::fromUtf8(":/imagem/Imagens/relatorio.png"), QSize(), QIcon::Normal, QIcon::Off);
+        action_Gerenciar_Produtos->setIcon(icon1);
         action_Adicionar_Cargo = new QAction(MainWindow);
         action_Adicionar_Cargo->setObjectName(QString::fromUtf8("action_Adicionar_Cargo"));
         action_Adicionar_Cargo->setIcon(icon);
         action_Editar_Permissao = new QAction(MainWindow);
         action_Editar_Permissao->setObjectName(QString::fromUtf8("action_Editar_Permissao"));
-        action_Editar_Permissao->setIcon(icon1);
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/imagem/Imagens/recarregar.png"), QSize(), QIcon::Normal, QIcon::Off);
+        action_Editar_Permissao->setIcon(icon2);
         action_Remover_Funcinario = new QAction(MainWindow);
         action_Remover_Funcinario->setObjectName(QString::fromUtf8("action_Remover_Funcinario"));
-        action_Remover_Funcinario->setIcon(icon2);
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/imagem/Imagens/lixeira.png"), QSize(), QIcon::Normal, QIcon::Off);
+        action_Remover_Funcinario->setIcon(icon3);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -98,7 +90,7 @@ public:
         MainWindow->setStatusBar(statusbar);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 878, 21));
+        menubar->setGeometry(QRect(0, 0, 878, 20));
         menu_Produto = new QMenu(menubar);
         menu_Produto->setObjectName(QString::fromUtf8("menu_Produto"));
         menu_Relatorio = new QMenu(menubar);
@@ -114,16 +106,12 @@ public:
         menubar->addAction(menu_Relatorio->menuAction());
         menubar->addAction(menu_Funcionario->menuAction());
         menu_Produto->addAction(action_Cadastrar);
-        menu_Produto->addAction(action_Atualizar_Produto);
-        menu_Produto->addAction(action_Remover_Produto);
-        menu_Relatorio->addAction(action_Relatorio_Produtos);
+        menu_Relatorio->addAction(action_Gerenciar_Produtos);
         menu_Funcionario->addAction(action_Adicionar_Cargo);
         menu_Funcionario->addAction(action_Editar_Permissao);
         menu_Funcionario->addAction(action_Remover_Funcinario);
         toolBar->addAction(action_Cadastrar);
-        toolBar->addAction(action_Atualizar_Produto);
-        toolBar->addAction(action_Relatorio_Produtos);
-        toolBar->addAction(action_Remover_Produto);
+        toolBar->addAction(action_Gerenciar_Produtos);
 
         retranslateUi(MainWindow);
 
@@ -140,9 +128,7 @@ public:
 #if QT_CONFIG(tooltip)
         action_Cadastrar->setToolTip(QCoreApplication::translate("MainWindow", "Cadastrar", nullptr));
 #endif // QT_CONFIG(tooltip)
-        action_Atualizar_Produto->setText(QCoreApplication::translate("MainWindow", "Atualizar Produto", nullptr));
-        action_Remover_Produto->setText(QCoreApplication::translate("MainWindow", "Remover Produto", nullptr));
-        action_Relatorio_Produtos->setText(QCoreApplication::translate("MainWindow", "Relat\303\263rio Produtos", nullptr));
+        action_Gerenciar_Produtos->setText(QCoreApplication::translate("MainWindow", "Gerenciar Produtos", nullptr));
         action_Adicionar_Cargo->setText(QCoreApplication::translate("MainWindow", "Adicionar Cargo", nullptr));
         action_Editar_Permissao->setText(QCoreApplication::translate("MainWindow", "Editar Permiss\303\243o", nullptr));
         action_Remover_Funcinario->setText(QCoreApplication::translate("MainWindow", "Remover", nullptr));
