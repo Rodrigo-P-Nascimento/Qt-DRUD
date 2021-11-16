@@ -30,13 +30,19 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>780</width>
-        <height>580</height>
+        <width>818</width>
+        <height>618</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
         <widget class="QScrollArea" name="scrollArea_2">
+         <property name="minimumSize">
+          <size>
+           <width>800</width>
+           <height>600</height>
+          </size>
+         </property>
          <property name="widgetResizable">
           <bool>true</bool>
          </property>
@@ -45,11 +51,11 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>760</width>
-            <height>560</height>
+            <width>798</width>
+            <height>598</height>
            </rect>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_4">
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout">
              <item>
