@@ -3,6 +3,8 @@
 #include <QtSql>
 
 static QSqlQuery query;
+static QString section;
+static QString cod;
 
 editar::editar(QWidget *parent, QString secao, QString codigo) :
     QDialog(parent),
@@ -28,7 +30,6 @@ editar::editar(QWidget *parent, QString secao, QString codigo) :
     }
 
 
-
     query.prepare("select * from "+secao+" where codigo="+codigo);
     if(query.exec()){
         query.first();
@@ -52,6 +53,9 @@ editar::editar(QWidget *parent, QString secao, QString codigo) :
     }else if(secao == "padaria"){
         enabled_padaria();
     }
+
+    section = secao;
+    cod = codigo;
 }
 
 editar::~editar()
@@ -245,6 +249,39 @@ void editar::on_BTN_CALCELAR_clicked()
 
 void editar::on_BTN_SALVAR_clicked()
 {
+    QString nome, codigo, preco, dataFab, dataVal;
+    QString nome_for, pais_for, estado_for, cidade_for;
 
+    nome = ui->lineEdit_Nome_de_Produto->text();
+    codigo = ui->spinBox_Codigo->text();
+    preco = ui->doubleSpinBox_Preco->text();
+    dataFab = ui->dateEdit_Data_de_Fabricacao->text();
+    dataVal = ui->dateEdit_Data_de_Validade->text();
+
+    nome_for = ui->lineEdit_Nome_do_Fornecedor->text();
+    pais_for = ui->comboBox_Pais_Sede->currentText();
+    estado_for = ui->lineEdit_Estado_Sede->text();
+    cidade_for = ui->lineEdit_Cidade_Sede->text();
+
+    qDebug() << section;
+    qDebug() << cod;
+
+    query.prepare("update "+section+" set nome='"+nome+"', codigo='"+codigo+"', preco='"+preco+
+                  "', dataFab='"+dataFab+"', dataVal='"+dataVal+"'"
+                  ", nome_for='"+nome_for+"', pais_for='"+pais_for+"', estado_for='"+estado_for+
+                  "', cidade_for='"+cidade_for+"' where codigo="+cod);
+    if (!query.exec()){
+        qDebug() << "Erro ao atualizar dados do produto!";
+    }
+
+    if (section == "mercearia"){
+        QString unidades;
+
+        unidades = ui->spinBox_Unidades->text();
+
+        query.exec("update "+section+" set unidade="+unidades+" where codigo="+codigo);
+    }
+
+    this->close();
 }
 
