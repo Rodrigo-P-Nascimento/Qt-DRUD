@@ -1,0 +1,1833 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>editar</class>
+ <widget class="QDialog" name="editar">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>853</width>
+    <height>628</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>819</width>
+        <height>618</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QScrollArea" name="scrollArea_2">
+         <property name="minimumSize">
+          <size>
+           <width>800</width>
+           <height>600</height>
+          </size>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>799</width>
+            <height>598</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="font">
+                <font>
+                 <pointsize>14</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Dados do Produto</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QFormLayout" name="formLayout_17"/>
+             </item>
+             <item>
+              <layout class="QFormLayout" name="formLayout">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_Nome_do_Produto">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="text">
+                  <string>Nome do Produto:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="lineEdit_Nome_de_Produto">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout">
+               <item>
+                <layout class="QFormLayout" name="formLayout_2">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_Codigo">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Código:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QSpinBox" name="spinBox_Codigo">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="maximum">
+                    <number>99999</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QFormLayout" name="formLayout_3">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_Preco">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Preço:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_Preco">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <layout class="QFormLayout" name="formLayout_4">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_Data_de_Fabricacao">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Data de Fabricação:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QDateEdit" name="dateEdit_Data_de_Fabricacao">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QFormLayout" name="formLayout_5">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_Data_de_Validade">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Data de Validade:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QDateEdit" name="dateEdit_Data_de_Validade">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item>
+                <layout class="QFormLayout" name="formLayout_6">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_Unidades">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Unidades:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QSpinBox" name="spinBox_Unidades">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="maximum">
+                    <number>99999</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QFormLayout" name="formLayout_7">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_Peso">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Peso:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_Peso">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QFormLayout" name="formLayout_8">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_Volume_por_Unidade">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="text">
+                  <string>Volume em litros/Unidade:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QDoubleSpinBox" name="doubleSpinBox_Volume_por_Unidade">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="decimals">
+                  <number>2</number>
+                 </property>
+                 <property name="maximum">
+                  <double>999.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <item>
+                <layout class="QFormLayout" name="formLayout_9">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_Gluten">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Glúten:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QComboBox" name="comboBox_Gluten">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Selecionar</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Sim</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Não</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QFormLayout" name="formLayout_10">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_Alcoolica">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Alcoólica:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QComboBox" name="comboBox_Alcoolica">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Selecionar</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Sim</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Não</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QFormLayout" name="formLayout_11">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_Gaseificada">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="text">
+                    <string>Gaseificada:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QComboBox" name="comboBox_Gaseificada">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Selecionar</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Sim</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Não</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QFormLayout" name="formLayout_12">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_Fragrancia">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="text">
+                  <string>Fragrância:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="lineEdit_Fragrancia">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_Dados_do_Fornecedor">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>14</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Dados do Fornecedor</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QFormLayout" name="formLayout_15">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_Nome_do_Fornecedor">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="text">
+                  <string>Nome do Fornecedor:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="lineEdit_Nome_do_Fornecedor">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QFormLayout" name="formLayout_14">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_Pais_Sede">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="text">
+                  <string>País Sede:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QComboBox" name="comboBox_Pais_Sede">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>Selecionar</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Afeganistão</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>África do Sul</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Albânia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Alemanha</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Andorra</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Angola</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Anguilla</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Antilhas Holandesas</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Antárctida</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Antígua e Barbuda</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Argentina</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Argélia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Armênia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Aruba</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Arábia Saudita</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Austrália</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Áustria</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Azerbaijão</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Bahamas</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Bahrein</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Bangladesh</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Barbados</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Belize</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Benim</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Bermudas</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Bielorrússia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Bolívia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Botswana</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Brasil</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Brunei</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Bulgária</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Burkina Faso</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Burundi</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Butão</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Bélgica</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Bósnia e Herzegovina</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Cabo Verde</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Camarões</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Camboja</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Canadá</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Catar</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Cazaquistão</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Chade</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Chile</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>China</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Chipre</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Colômbia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Comores</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Coreia do Norte</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Coreia do Sul</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Costa do Marfim</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Costa Rica</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Croácia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Cuba</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Dinamarca</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Djibouti</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Dominica</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Egito</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>El Salvador</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Emirados Árabes Unidos</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Equador</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Eritreia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Escócia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Eslováquia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Eslovênia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Espanha</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Estados Federados da Micronésia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Estados Unidos</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Estônia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Etiópia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Fiji</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Filipinas</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Finlândia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>França</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Gabão</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Gana</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Geórgia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Gibraltar</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Granada</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Gronelândia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Grécia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Guadalupe</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Guam</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Guatemala</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Guernesei</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Guiana</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Guiana Francesa</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Guiné</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Guiné Equatorial</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Guiné-Bissau</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Gâmbia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Haiti</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Honduras</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Hong Kong</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Hungria</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilha Bouvet</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilha de Man</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilha do Natal</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilha Heard e Ilhas McDonald</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilha Norfolk</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilhas Cayman</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilhas Cocos (Keeling)</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilhas Cook</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilhas Feroé</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilhas Geórgia do Sul e Sandwich do Sul</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilhas Malvinas</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilhas Marshall</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilhas Menores Distantes dos Estados Unidos</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilhas Salomão</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilhas Virgens Americanas</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilhas Virgens Britânicas</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ilhas Åland</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Indonésia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Inglaterra</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Índia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Iraque</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Irlanda do Norte</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Irlanda</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Irã</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Islândia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Israel</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Itália</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Iêmen</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Jamaica</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Japão</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Jersey</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Jordânia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Kiribati</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Kuwait</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Laos</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Lesoto</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Letônia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Libéria</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Liechtenstein</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Lituânia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Luxemburgo</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Líbano</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Líbia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Macau</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Macedônia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Madagáscar</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Malawi</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Maldivas</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Mali</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Malta</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Malásia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Marianas Setentrionais</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Marrocos</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Martinica</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Mauritânia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Maurícia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Mayotte</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Moldávia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Mongólia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Montenegro</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Montserrat</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Moçambique</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Myanmar</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>México</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Mônaco</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Namíbia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Nauru</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Nepal</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Nicarágua</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Nigéria</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Niue</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Noruega</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Nova Caledônia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Nova Zelândia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Níger</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Omã</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Palau</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Palestina</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Panamá</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Papua-Nova Guiné</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Paquistão</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Paraguai</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>País de Gales</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Países Baixos</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Peru</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Pitcairn</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Polinésia Francesa</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Polônia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Porto Rico</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Portugal</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Quirguistão</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Quênia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Reino Unido</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>República Centro-Africana</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>República Checa</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>República Democrática do Congo</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>República do Congo</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>República Dominicana</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Reunião</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Romênia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ruanda</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Rússia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Saara Ocidental</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Saint Martin</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Saint-Barthélemy</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Saint-Pierre e Miquelon</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Samoa Americana</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Samoa</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Santa Helena, Ascensão e Tristão da Cunha</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Santa Lúcia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Senegal</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Serra Leoa</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Seychelles</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Singapura</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Somália</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Sri Lanka</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Suazilândia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Sudão</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Suriname</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Suécia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Suíça</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Svalbard e Jan Mayen</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>São Cristóvão e Nevis</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>São Marino</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>São Tomé e Príncipe</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>São Vicente e Granadinas</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Sérvia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Síria</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Tadjiquistão</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Tailândia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Taiwan</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Tanzânia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Terras Austrais e Antárticas Francesas</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Território Britânico do Oceano Índico</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Timor-Leste</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Togo</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Tonga</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Toquelau</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Trinidad e Tobago</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Tunísia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Turcas e Caicos</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Turquemenistão</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Turquia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Tuvalu</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ucrânia</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Uganda</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Uruguai</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Uzbequistão</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Vanuatu</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Vaticano</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Venezuela</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Vietname</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Wallis e Futuna</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Zimbabwe</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Zâmbia</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QFormLayout" name="formLayout_13">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_Estado_Sede">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="text">
+                  <string>Estado Sede:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="lineEdit_Estado_Sede">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QFormLayout" name="formLayout_16">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_Cidade_Sede">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="text">
+                  <string>Cidade Sede:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="lineEdit_Cidade_Sede">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_5">
+               <item>
+                <spacer name="horizontalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="BTN_SALVAR">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="text">
+                  <string>Salvar</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="BTN_CALCELAR">
+                 <property name="text">
+                  <string>Cancelar</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     cadastro.cpp \
+    editar.cpp \
     main.cpp \
     mainwindow.cpp \
     produtos.cpp \
@@ -17,12 +18,14 @@ SOURCES += \
 
 HEADERS += \
     cadastro.h \
+    editar.h \
     mainwindow.h \
     produtos.h \
     relatorio_de_produtos.h
 
 FORMS += \
     cadastro.ui \
+    editar.ui \
     mainwindow.ui \
     relatorio_de_produtos.ui
 

@@ -1,5 +1,6 @@
 #include "relatorio_de_produtos.h"
 #include "ui_relatorio_de_produtos.h"
+#include "editar.h"
 
 relatorio_de_produtos::relatorio_de_produtos(QWidget *parent) :
     QWidget(parent),
@@ -291,6 +292,19 @@ void relatorio_de_produtos::on_BTN_EXCLUIR_clicked()
 
 void relatorio_de_produtos::on_BTN_EDITAR_clicked()
 {
+    QString secao = ui->comboBox->currentText();
 
+    if (secao == "Selecionar"){
+        QMessageBox::information(this, "Seção não definida", "Escolha uma seção e um produto para poder realizar uma edição.");
+        return;
+    }
+
+    int linha = ui->tableWidget_Produtos->currentRow();
+    QString codigo = ui->tableWidget_Produtos->item(linha, 1)->text();
+
+    editar ed(this, secao, codigo);
+    ed.exec();
+
+    //Atualizar tabela de produtos após edição ****
 }
 

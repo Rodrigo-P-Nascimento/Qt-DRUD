@@ -1,4 +1,5 @@
 debug/cadastro.o
+debug/editar.o
 debug/main.o
 debug/mainwindow.o
 debug/produtos.o
@@ -6,5 +7,6 @@ debug/relatorio_de_produtos.o
 debug/qrc_Arquivos_de_Recursos.o
 debug/qrc_qmake_qmake_qm_files.o
 debug/moc_cadastro.o
+debug/moc_editar.o
 debug/moc_mainwindow.o
 debug/moc_relatorio_de_produtos.o
