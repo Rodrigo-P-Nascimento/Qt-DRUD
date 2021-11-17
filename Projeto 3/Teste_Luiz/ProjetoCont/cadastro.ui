@@ -24,8 +24,13 @@
        <rect>
         <x>0</x>
         <y>0</y>
+<<<<<<< Updated upstream
         <width>824</width>
         <height>518</height>
+=======
+        <width>827</width>
+        <height>618</height>
+>>>>>>> Stashed changes
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -45,8 +50,13 @@
            <rect>
             <x>0</x>
             <y>0</y>
+<<<<<<< Updated upstream
             <width>804</width>
             <height>498</height>
+=======
+            <width>807</width>
+            <height>598</height>
+>>>>>>> Stashed changes
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -127,6 +137,9 @@
                 <widget class="QLineEdit" name="lineEdit_Nome_de_Produto">
                  <property name="enabled">
                   <bool>false</bool>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(255, 255, 255);</string>
                  </property>
                 </widget>
                </item>

@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -33,6 +34,7 @@ public:
     QAction *action_Remover_Funcinario;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
+    QLabel *label;
     QTabWidget *tabWidget;
     QStatusBar *statusbar;
     QMenuBar *menubar;
@@ -47,6 +49,84 @@ public:
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(878, 600);
         MainWindow->setMinimumSize(QSize(800, 600));
+        MainWindow->setStyleSheet(QString::fromUtf8("#MainWindow{\n"
+"	background-color: rgb(8, 108, 162);\n"
+"}\n"
+"\n"
+"QToolBar {\n"
+"    background:rgb(8, 108, 162);\n"
+"    spacing: 3px; /* spacing between items in the tool bar */\n"
+"	padding: 5px 5px;\n"
+"	border-color: rgb(8, 108, 162);\n"
+"}\n"
+"\n"
+"QToolButton {\n"
+"  background: transparent; \n"
+"}\n"
+"\n"
+"QToolButton:pressed {\n"
+"    background-color: rgb(100, 171, 208);\n"
+"}\n"
+"\n"
+"#centralwidget{\n"
+"	background-color:rgb(100, 171, 208);\n"
+"	color: rgb(255, 255, 255);\n"
+"}\n"
+"QMenuBar {\n"
+"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(3, 69, 105);\n"
+"    spacing: 3px; /* spacing between menu bar items */\n"
+"}\n"
+"\n"
+"QMenuBar::item {\n"
+"    padding: 1px 4px;\n"
+"    background: transparent;\n"
+"    border-radius: 2px;\n"
+"}\n"
+"\n"
+"QMenuBar::item:selected { /* when selected using mouse or keyboard */\n"
+" background:rgb(4, 92, 139);\n"
+"}\n"
+"\n"
+"QMenuBar::item:pressed {\n"
+"    background:rgb(4, 92, 139);\n"
+"}\n"
+"#statusbar{\n"
+"  background-color: white;\n"
+"}\n"
+"\n"
+""
+                        "#tabWidget{\n"
+"	background-color: white;\n"
+"	border: 3px solid rgb(0, 85, 0);\n"
+"	border-radius: 10px;\n"
+"	border-color: rgb(255, 85, 0);\n"
+"}\n"
+"QTabWidget::pane {\n"
+"  border: 1px solid rgb(8, 108, 162);\n"
+"  border-bottom-left-radius: 10px;\n"
+"  border-bottom-right-radius: 10px;\n"
+"  top:-1px; \n"
+"  background: rgb(60, 157, 208); \n"
+"} \n"
+"\n"
+"QTabBar::tab {\n"
+"  background: rgb(3, 69, 105); \n"
+"  border: 1px solid rgb(8, 108, 162);\n"
+"  border-top-left-radius: 10px;\n"
+"  border-top-right-radius: 10px;\n"
+"  color: rgb(255, 255, 255);\n"
+"  padding: 5px;\n"
+"  width: 150px;\n"
+"  height:20px;\n"
+"} \n"
+"\n"
+"QTabBar::tab:selected { \n"
+"  background:rgb(100, 171, 208); \n"
+"  font: 100 10pt \"MS Shell Dlg 2\";\n"
+"  color: rgb(0, 0, 0);\n"
+"  margin-bottom: -1px; \n"
+"}"));
         action_Cadastrar = new QAction(MainWindow);
         action_Cadastrar->setObjectName(QString::fromUtf8("action_Cadastrar"));
         QIcon icon;
@@ -72,11 +152,23 @@ public:
         action_Remover_Funcinario->setIcon(icon3);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        centralwidget->setStyleSheet(QString::fromUtf8(""));
         verticalLayout = new QVBoxLayout(centralwidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        label = new QLabel(centralwidget);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        verticalLayout->addWidget(label);
+
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setMinimumSize(QSize(800, 500));
+        tabWidget->setMinimumSize(QSize(0, 500));
+        QFont font;
+        font.setBold(false);
+        tabWidget->setFont(font);
+        tabWidget->setStyleSheet(QString::fromUtf8("#tabWidget{\n"
+"	background-color: white;\n"
+"}"));
         tabWidget->setElideMode(Qt::ElideLeft);
         tabWidget->setTabsClosable(true);
         tabWidget->setMovable(true);
@@ -87,10 +179,15 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
+        statusbar->setStyleSheet(QString::fromUtf8("<h1>\n"
+"Vers\303\243o 1.0\n"
+"<h1>\n"
+"\n"
+""));
         MainWindow->setStatusBar(statusbar);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 878, 20));
+        menubar->setGeometry(QRect(0, 0, 878, 18));
         menu_Produto = new QMenu(menubar);
         menu_Produto->setObjectName(QString::fromUtf8("menu_Produto"));
         menu_Relatorio = new QMenu(menubar);
@@ -100,6 +197,8 @@ public:
         MainWindow->setMenuBar(menubar);
         toolBar = new QToolBar(MainWindow);
         toolBar->setObjectName(QString::fromUtf8("toolBar"));
+        toolBar->setMovable(false);
+        toolBar->setIconSize(QSize(30, 30));
         MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
 
         menubar->addAction(menu_Produto->menuAction());
@@ -123,7 +222,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Estoque Master 2000", nullptr));
         action_Cadastrar->setText(QCoreApplication::translate("MainWindow", "Cadastrar", nullptr));
 #if QT_CONFIG(tooltip)
         action_Cadastrar->setToolTip(QCoreApplication::translate("MainWindow", "Cadastrar", nullptr));
@@ -132,8 +231,9 @@ public:
         action_Adicionar_Cargo->setText(QCoreApplication::translate("MainWindow", "Adicionar Cargo", nullptr));
         action_Editar_Permissao->setText(QCoreApplication::translate("MainWindow", "Editar Permiss\303\243o", nullptr));
         action_Remover_Funcinario->setText(QCoreApplication::translate("MainWindow", "Remover", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Vers\303\243o 1.0", nullptr));
         menu_Produto->setTitle(QCoreApplication::translate("MainWindow", "Produto", nullptr));
-        menu_Relatorio->setTitle(QCoreApplication::translate("MainWindow", "Relat\303\263rio", nullptr));
+        menu_Relatorio->setTitle(QCoreApplication::translate("MainWindow", "Gerenciar", nullptr));
         menu_Funcionario->setTitle(QCoreApplication::translate("MainWindow", "Funcion\303\241rio", nullptr));
         toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
     } // retranslateUi

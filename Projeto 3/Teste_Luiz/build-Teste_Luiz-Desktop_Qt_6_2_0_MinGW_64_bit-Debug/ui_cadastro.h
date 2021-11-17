@@ -114,7 +114,11 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
+<<<<<<< Updated upstream
         scrollAreaWidgetContents->setGeometry(QRect(0, 0, 824, 518));
+=======
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 827, 618));
+>>>>>>> Stashed changes
         horizontalLayout_6 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
         scrollArea_2 = new QScrollArea(scrollAreaWidgetContents);
@@ -123,7 +127,11 @@ public:
         scrollArea_2->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
+<<<<<<< Updated upstream
         scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 804, 498));
+=======
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 807, 598));
+>>>>>>> Stashed changes
         verticalLayout_2 = new QVBoxLayout(scrollAreaWidgetContents_2);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_3 = new QVBoxLayout();
@@ -169,6 +177,7 @@ public:
         lineEdit_Nome_de_Produto = new QLineEdit(scrollAreaWidgetContents_2);
         lineEdit_Nome_de_Produto->setObjectName(QString::fromUtf8("lineEdit_Nome_de_Produto"));
         lineEdit_Nome_de_Produto->setEnabled(false);
+        lineEdit_Nome_de_Produto->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, lineEdit_Nome_de_Produto);
 
