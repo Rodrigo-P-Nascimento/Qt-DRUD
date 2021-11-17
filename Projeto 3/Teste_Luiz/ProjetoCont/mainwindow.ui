@@ -37,6 +37,7 @@ QToolButton {
 
 QToolButton:pressed {
     background-color: rgb(100, 171, 208);
+	border-radius: 3px;
 }
 
 #centralwidget{
@@ -127,6 +128,7 @@ QTabBar::tab:selected {
       <property name="styleSheet">
        <string notr="true">#tabWidget{
 	background-color: white;
+	border-radius: 10px;
 }</string>
       </property>
       <property name="currentIndex">
@@ -180,11 +182,11 @@ Versão 1.0
    </widget>
    <widget class="QMenu" name="menu_Funcionario">
     <property name="title">
-     <string>Funcionário</string>
+     <string>Sobre</string>
     </property>
-    <addaction name="action_Adicionar_Cargo"/>
-    <addaction name="action_Editar_Permissao"/>
-    <addaction name="action_Remover_Funcinario"/>
+    <addaction name="actionSobre_o_Grupo"/>
+    <addaction name="actionSobre_o_Qt"/>
+    <addaction name="actionAgradecimentos"/>
    </widget>
    <addaction name="menu_Produto"/>
    <addaction name="menu_Relatorio"/>
@@ -233,31 +235,19 @@ Versão 1.0
     <string>Gerenciar Produtos</string>
    </property>
   </action>
-  <action name="action_Adicionar_Cargo">
-   <property name="icon">
-    <iconset resource="Arquivos_de_Recursos.qrc">
-     <normaloff>:/imagem/Imagens/adicionar.png</normaloff>:/imagem/Imagens/adicionar.png</iconset>
-   </property>
+  <action name="actionSobre_o_Grupo">
    <property name="text">
-    <string>Adicionar Cargo</string>
+    <string>Sobre o Grupo</string>
    </property>
   </action>
-  <action name="action_Editar_Permissao">
-   <property name="icon">
-    <iconset resource="Arquivos_de_Recursos.qrc">
-     <normaloff>:/imagem/Imagens/recarregar.png</normaloff>:/imagem/Imagens/recarregar.png</iconset>
-   </property>
+  <action name="actionSobre_o_Qt">
    <property name="text">
-    <string>Editar Permissão</string>
+    <string>Sobre o Qt</string>
    </property>
   </action>
-  <action name="action_Remover_Funcinario">
-   <property name="icon">
-    <iconset resource="Arquivos_de_Recursos.qrc">
-     <normaloff>:/imagem/Imagens/lixeira.png</normaloff>:/imagem/Imagens/lixeira.png</iconset>
-   </property>
+  <action name="actionAgradecimentos">
    <property name="text">
-    <string>Remover</string>
+    <string>Agradecimentos</string>
    </property>
   </action>
  </widget>

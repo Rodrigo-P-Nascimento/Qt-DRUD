@@ -29,9 +29,9 @@ class Ui_MainWindow
 public:
     QAction *action_Cadastrar;
     QAction *action_Gerenciar_Produtos;
-    QAction *action_Adicionar_Cargo;
-    QAction *action_Editar_Permissao;
-    QAction *action_Remover_Funcinario;
+    QAction *actionSobre_o_Grupo;
+    QAction *actionSobre_o_Qt;
+    QAction *actionAgradecimentos;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QLabel *label;
@@ -66,6 +66,7 @@ public:
 "\n"
 "QToolButton:pressed {\n"
 "    background-color: rgb(100, 171, 208);\n"
+"	border-radius: 3px;\n"
 "}\n"
 "\n"
 "#centralwidget{\n"
@@ -92,11 +93,11 @@ public:
 "    background:rgb(4, 92, 139);\n"
 "}\n"
 "#statusbar{\n"
-"  background-color: white;\n"
+"  background-colo"
+                        "r: white;\n"
 "}\n"
 "\n"
-""
-                        "#tabWidget{\n"
+"#tabWidget{\n"
 "	background-color: white;\n"
 "	border: 3px solid rgb(0, 85, 0);\n"
 "	border-radius: 10px;\n"
@@ -137,19 +138,12 @@ public:
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/imagem/Imagens/relatorio.png"), QSize(), QIcon::Normal, QIcon::Off);
         action_Gerenciar_Produtos->setIcon(icon1);
-        action_Adicionar_Cargo = new QAction(MainWindow);
-        action_Adicionar_Cargo->setObjectName(QString::fromUtf8("action_Adicionar_Cargo"));
-        action_Adicionar_Cargo->setIcon(icon);
-        action_Editar_Permissao = new QAction(MainWindow);
-        action_Editar_Permissao->setObjectName(QString::fromUtf8("action_Editar_Permissao"));
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/imagem/Imagens/recarregar.png"), QSize(), QIcon::Normal, QIcon::Off);
-        action_Editar_Permissao->setIcon(icon2);
-        action_Remover_Funcinario = new QAction(MainWindow);
-        action_Remover_Funcinario->setObjectName(QString::fromUtf8("action_Remover_Funcinario"));
-        QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/imagem/Imagens/lixeira.png"), QSize(), QIcon::Normal, QIcon::Off);
-        action_Remover_Funcinario->setIcon(icon3);
+        actionSobre_o_Grupo = new QAction(MainWindow);
+        actionSobre_o_Grupo->setObjectName(QString::fromUtf8("actionSobre_o_Grupo"));
+        actionSobre_o_Qt = new QAction(MainWindow);
+        actionSobre_o_Qt->setObjectName(QString::fromUtf8("actionSobre_o_Qt"));
+        actionAgradecimentos = new QAction(MainWindow);
+        actionAgradecimentos->setObjectName(QString::fromUtf8("actionAgradecimentos"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setStyleSheet(QString::fromUtf8(""));
@@ -168,6 +162,7 @@ public:
         tabWidget->setFont(font);
         tabWidget->setStyleSheet(QString::fromUtf8("#tabWidget{\n"
 "	background-color: white;\n"
+"	border-radius: 10px;\n"
 "}"));
         tabWidget->setElideMode(Qt::ElideLeft);
         tabWidget->setTabsClosable(true);
@@ -206,9 +201,9 @@ public:
         menubar->addAction(menu_Funcionario->menuAction());
         menu_Produto->addAction(action_Cadastrar);
         menu_Relatorio->addAction(action_Gerenciar_Produtos);
-        menu_Funcionario->addAction(action_Adicionar_Cargo);
-        menu_Funcionario->addAction(action_Editar_Permissao);
-        menu_Funcionario->addAction(action_Remover_Funcinario);
+        menu_Funcionario->addAction(actionSobre_o_Grupo);
+        menu_Funcionario->addAction(actionSobre_o_Qt);
+        menu_Funcionario->addAction(actionAgradecimentos);
         toolBar->addAction(action_Cadastrar);
         toolBar->addAction(action_Gerenciar_Produtos);
 
@@ -228,13 +223,13 @@ public:
         action_Cadastrar->setToolTip(QCoreApplication::translate("MainWindow", "Cadastrar", nullptr));
 #endif // QT_CONFIG(tooltip)
         action_Gerenciar_Produtos->setText(QCoreApplication::translate("MainWindow", "Gerenciar Produtos", nullptr));
-        action_Adicionar_Cargo->setText(QCoreApplication::translate("MainWindow", "Adicionar Cargo", nullptr));
-        action_Editar_Permissao->setText(QCoreApplication::translate("MainWindow", "Editar Permiss\303\243o", nullptr));
-        action_Remover_Funcinario->setText(QCoreApplication::translate("MainWindow", "Remover", nullptr));
+        actionSobre_o_Grupo->setText(QCoreApplication::translate("MainWindow", "Sobre o Grupo", nullptr));
+        actionSobre_o_Qt->setText(QCoreApplication::translate("MainWindow", "Sobre o Qt", nullptr));
+        actionAgradecimentos->setText(QCoreApplication::translate("MainWindow", "Agradecimentos", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Vers\303\243o 1.0", nullptr));
         menu_Produto->setTitle(QCoreApplication::translate("MainWindow", "Produto", nullptr));
         menu_Relatorio->setTitle(QCoreApplication::translate("MainWindow", "Gerenciar", nullptr));
-        menu_Funcionario->setTitle(QCoreApplication::translate("MainWindow", "Funcion\303\241rio", nullptr));
+        menu_Funcionario->setTitle(QCoreApplication::translate("MainWindow", "Sobre", nullptr));
         toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
     } // retranslateUi
 
