@@ -57,7 +57,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 818, 618));
+        scrollAreaWidgetContents->setGeometry(QRect(0, -47, 818, 618));
         horizontalLayout_2 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         scrollArea_2 = new QScrollArea(scrollAreaWidgetContents);
@@ -103,11 +103,13 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         BTN_EXCLUIR = new QPushButton(scrollAreaWidgetContents_2);
         BTN_EXCLUIR->setObjectName(QString::fromUtf8("BTN_EXCLUIR"));
+        BTN_EXCLUIR->setEnabled(false);
 
         horizontalLayout->addWidget(BTN_EXCLUIR);
 
         BTN_EDITAR = new QPushButton(scrollAreaWidgetContents_2);
         BTN_EDITAR->setObjectName(QString::fromUtf8("BTN_EDITAR"));
+        BTN_EDITAR->setEnabled(false);
 
         horizontalLayout->addWidget(BTN_EDITAR);
 

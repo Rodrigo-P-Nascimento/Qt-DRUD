@@ -135,9 +135,25 @@ void editar::enable_cadastro_padrao(){
 
     ui->lineEdit_Nome_de_Produto->setText(query.value(0).toString());
     ui->spinBox_Codigo->setValue(query.value(1).toInt());
-    //ui->doubleSpinBox_Preco->setValue(query.value(2).toFloat());
-    //ui->dateEdit_Data_de_Fabricacao->setDateTime(query.value(3).toDateTime());
-    //ui->dateEdit_Data_de_Validade->setDate(query.value(4).toDate());
+
+    //Parte das Datas
+    QString ddf = query.value(3).toString();
+    QString ddv = query.value(4).toString();
+
+    QDate data1 = QDate::fromString(ddf,"dd/MM/yyyy");
+    QDate data2 = QDate::fromString(ddv,"dd/MM/yyyy");
+
+    ui->dateEdit_Data_de_Fabricacao->setDate(data1);
+    ui->dateEdit_Data_de_Validade->setDate(data2);
+    //-------------------------------------------------
+
+    //Parte do Preço
+    QString preco = query.value(2).toString();
+
+    double value1 = preco.replace(",", ".").toDouble();
+
+    ui->doubleSpinBox_Preco->setValue(value1);
+    //-------------------------------------------------
 }
 
 void editar::enabled_acougue_e_frios(){
@@ -150,6 +166,16 @@ void editar::enabled_acougue_e_frios(){
 
     ui->label_Peso->setEnabled(true);
     ui->doubleSpinBox_Peso->setEnabled(true);
+
+
+    //Parte do Peso
+    QString peso = query.value(5).toString();
+
+    double value1 = peso.replace(",", ".").toDouble();
+
+    ui->doubleSpinBox_Peso->setValue(value1);
+    //-------------------------------------------------
+
 
     ui->lineEdit_Nome_do_Fornecedor->setText(query.value(6).toString());
     ui->comboBox_Pais_Sede->setCurrentText(query.value(7).toString());
@@ -171,8 +197,17 @@ void editar::enabled_bebidas(){
     ui->label_Gaseificada->setEnabled(true);
     ui->comboBox_Gaseificada->setEnabled(true);
 
+
+    //Parte do Volume
+    QString volume = query.value(6).toString();
+
+    double value1 = volume.replace(",", ".").toDouble();
+
+    ui->doubleSpinBox_Volume_por_Unidade->setValue(value1);
+    //-------------------------------------------------
+
+
     ui->spinBox_Unidades->setValue(query.value(5).toInt());
-    //ui->doubleSpinBox_Volume_por_Unidade->setValue(query.value(6).toDouble());
     ui->comboBox_Alcoolica->setCurrentText(query.value(7).toString());
     ui->comboBox_Gaseificada->setCurrentText(query.value(8).toString());
     ui->lineEdit_Nome_do_Fornecedor->setText(query.value(9).toString());
@@ -231,7 +266,16 @@ void editar::enabled_padaria(){
     ui->label_Gluten->setEnabled(true);
     ui->comboBox_Gluten->setEnabled(true);
 
-    //ui->doubleSpinBox_Peso->setValue(query.value(5).toDouble());
+
+    //Parte do Peso e Preço
+    QString peso = query.value(5).toString();
+
+    double value1 = peso.replace(",", ".").toDouble();
+
+    ui->doubleSpinBox_Peso->setValue(value1);
+    //-------------------------------------------------
+
+
     ui->comboBox_Gluten->setCurrentText(query.value(6).toString());
     ui->lineEdit_Nome_do_Fornecedor->setText(query.value(7).toString());
     ui->comboBox_Pais_Sede->setCurrentText(query.value(8).toString());
@@ -263,8 +307,8 @@ void editar::on_BTN_SALVAR_clicked()
     estado_for = ui->lineEdit_Estado_Sede->text();
     cidade_for = ui->lineEdit_Cidade_Sede->text();
 
-    qDebug() << section;
-    qDebug() << cod;
+    //qDebug() << section;
+    //qDebug() << cod;
 
     query.prepare("update "+section+" set nome='"+nome+"', codigo='"+codigo+"', preco='"+preco+
                   "', dataFab='"+dataFab+"', dataVal='"+dataVal+"'"
@@ -281,6 +325,42 @@ void editar::on_BTN_SALVAR_clicked()
 
         query.exec("update "+section+" set unidade="+unidades+" where codigo="+codigo);
     }
+    else if (section == "frios"){
+        QString peso;
+
+        peso = ui->doubleSpinBox_Peso->text();
+
+        query.exec("update "+section+" set peso='"+peso+"' where codigo="+codigo);
+    }
+    else if (section == "bebidas"){
+        QString unidade, volume, alcool, gas;
+
+        unidade = ui->spinBox_Unidades->text();
+        volume = ui->doubleSpinBox_Volume_por_Unidade->text();
+        alcool = ui->comboBox_Alcoolica->currentText();
+        gas = ui->comboBox_Gaseificada->currentText();
+
+        query.exec("update "+section+" set unidade="+unidade+", volume='"+volume+
+                   "', alcool='"+alcool+"', gas='"+gas+"' where codigo="+codigo);
+    }
+    else if (section == "padaria"){
+        QString peso, gluten;
+
+        peso = ui->doubleSpinBox_Peso->text();
+        gluten = ui->comboBox_Gluten->currentText();
+
+        query.exec("update "+section+" set peso='"+peso+"', gluten='"+gluten+"' "
+                   "where codigo="+codigo);
+    }
+    else if (section == "limpeza"){
+        QString unidade, fragrancia;
+
+        unidade = ui->spinBox_Unidades->text();
+        fragrancia = ui->lineEdit_Fragrancia->text();
+
+        query.exec("update "+section+" set unidade="+unidade+", fragrancia='"+fragrancia+"' where codigo="+codigo);
+    }
+
 
     this->close();
 }

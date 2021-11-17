@@ -111,10 +111,11 @@ public:
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         scrollArea = new QScrollArea(editar);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
+        scrollArea->setEnabled(true);
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 819, 618));
+        scrollAreaWidgetContents->setGeometry(QRect(0, -3, 819, 618));
         horizontalLayout_6 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
         scrollArea_2 = new QScrollArea(scrollAreaWidgetContents);

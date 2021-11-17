@@ -1,6 +1,7 @@
 #include "relatorio_de_produtos.h"
 #include "ui_relatorio_de_produtos.h"
 #include "editar.h"
+#include <QMessageBox>
 
 relatorio_de_produtos::relatorio_de_produtos(QWidget *parent) :
     QWidget(parent),
@@ -25,6 +26,8 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
     mdl->removeColumns(0,mdl->columnCount());
 
     if(arg1 == "Açougue e Frios"){
+        ui->BTN_EDITAR->setEnabled(true);
+        ui->BTN_EXCLUIR->setEnabled(true);
         query.prepare("select * from frios");
 
         if(query.exec()){
@@ -69,6 +72,8 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
         }
 
     }else if(arg1 == "Bebidas"){
+        ui->BTN_EDITAR->setEnabled(true);
+        ui->BTN_EXCLUIR->setEnabled(true);
         query.prepare("select * from bebidas");
 
         if(query.exec()){
@@ -117,6 +122,8 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
             QMessageBox::information(this, "Aviso", "Banco de dados não esta aberto");
         }
     }else if(arg1 == "Limpeza"){
+        ui->BTN_EDITAR->setEnabled(true);
+        ui->BTN_EXCLUIR->setEnabled(true);
         query.prepare("select * from limpeza");
 
         if(query.exec()){
@@ -161,7 +168,8 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
             QMessageBox::information(this, "Aviso", "Banco de dados não esta aberto");
         }
     }else if(arg1 == "Mercearia"){
-
+        ui->BTN_EDITAR->setEnabled(true);
+        ui->BTN_EXCLUIR->setEnabled(true);
         query.prepare("select * from mercearia");
 
         if(query.exec()){
@@ -204,6 +212,8 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
             QMessageBox::information(this, "Aviso", "Banco de dados não esta aberto");
         }
     }else if(arg1 == "Padaria"){
+        ui->BTN_EDITAR->setEnabled(true);
+        ui->BTN_EXCLUIR->setEnabled(true);
         query.prepare("select * from padaria");
 
         if(query.exec()){
@@ -249,6 +259,8 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
             QMessageBox::information(this, "Aviso", "Banco de dados não esta aberto");
         }
     }else if(arg1 == "Selecionar"){
+        ui->BTN_EDITAR->setEnabled(false);
+        ui->BTN_EXCLUIR->setEnabled(false);
         ui->tableWidget_Produtos->setEnabled(false);
     }
 
@@ -256,8 +268,14 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
 
 
 void relatorio_de_produtos::on_BTN_EXCLUIR_clicked()
-{
+{   
     int linha = ui->tableWidget_Produtos->currentRow();
+
+    if (linha == -1){
+        QMessageBox::information(this, "Produto não selecionado", "Selecione um produto para poder realizar sua remoção.");
+        return;
+    }
+
     QString secao = ui->comboBox->currentText();
     QString codigo = ui->tableWidget_Produtos->item(linha, 1)->text();
 
@@ -276,8 +294,8 @@ void relatorio_de_produtos::on_BTN_EXCLUIR_clicked()
     else if (secao == "Limpeza"){
         secao = "limpeza";
     }
-    qDebug() << secao;
-    qDebug() << codigo;
+    //qDebug() << secao;
+    //qDebug() << codigo;
 
     QSqlQuery query;
     query.prepare("delete from "+secao+" where codigo="+codigo);
@@ -292,14 +310,14 @@ void relatorio_de_produtos::on_BTN_EXCLUIR_clicked()
 
 void relatorio_de_produtos::on_BTN_EDITAR_clicked()
 {
-    QString secao = ui->comboBox->currentText();
+    int linha = ui->tableWidget_Produtos->currentRow();
 
-    if (secao == "Selecionar"){
-        QMessageBox::information(this, "Seção não definida", "Escolha uma seção e um produto para poder realizar uma edição.");
+    if (linha == -1){
+        QMessageBox::information(this, "Produto não selecionado", "Selecione um produto para poder realizar sua edição.");
         return;
     }
 
-    int linha = ui->tableWidget_Produtos->currentRow();
+    QString secao = ui->comboBox->currentText();
     QString codigo = ui->tableWidget_Produtos->item(linha, 1)->text();
 
     editar ed(this, secao, codigo);
