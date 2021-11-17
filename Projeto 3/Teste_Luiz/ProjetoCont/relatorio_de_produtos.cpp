@@ -1,7 +1,5 @@
 #include "relatorio_de_produtos.h"
 #include "ui_relatorio_de_produtos.h"
-#include "editar.h"
-#include <QMessageBox>
 
 relatorio_de_produtos::relatorio_de_produtos(QWidget *parent) :
     QWidget(parent),
@@ -33,7 +31,7 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
         if(query.exec()){
             int linha=0;
             ui->tableWidget_Produtos->setColumnCount(10);
-            ui->tableWidget_Produtos->setColumnWidth(0, 100);
+            ui->tableWidget_Produtos->setColumnWidth(0, 150);
             ui->tableWidget_Produtos->setColumnWidth(1, 60);
             ui->tableWidget_Produtos->setColumnWidth(2, 50);
             ui->tableWidget_Produtos->setColumnWidth(3, 110);
@@ -63,6 +61,7 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
             }
             QStringList cabecalho = {"Nome", "Código", "Preço", "Data de Fabricação", "Data de Validade", "Peso", "Fornecedor", "País", "Estado", "Cidade"};
 
+            ui->tableWidget_Produtos->sortItems(0);
             ui->tableWidget_Produtos->setHorizontalHeaderLabels(cabecalho);
             ui->tableWidget_Produtos->setSelectionBehavior(QAbstractItemView::SelectRows);
             ui->tableWidget_Produtos->setAlternatingRowColors(true);
@@ -79,7 +78,7 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
         if(query.exec()){
             int linha=0;
             ui->tableWidget_Produtos->setColumnCount(13);
-            ui->tableWidget_Produtos->setColumnWidth(0, 100);
+            ui->tableWidget_Produtos->setColumnWidth(0, 150);
             ui->tableWidget_Produtos->setColumnWidth(1, 60);
             ui->tableWidget_Produtos->setColumnWidth(2, 50);
             ui->tableWidget_Produtos->setColumnWidth(3, 110);
@@ -114,6 +113,7 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
             }
             QStringList cabecalho = {"Nome", "Código", "Preço", "Data de Fabricação", "Data de Validade", "Unidade", "Volume/L", "Alcoolizada", "Gaseificada", "Fornecedor", "País", "Estado", "Cidade"};
 
+            ui->tableWidget_Produtos->sortItems(0);
             ui->tableWidget_Produtos->setHorizontalHeaderLabels(cabecalho);
             ui->tableWidget_Produtos->setSelectionBehavior(QAbstractItemView::SelectRows);
             ui->tableWidget_Produtos->setAlternatingRowColors(true);
@@ -129,7 +129,7 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
         if(query.exec()){
             int linha=0;
             ui->tableWidget_Produtos->setColumnCount(11);
-            ui->tableWidget_Produtos->setColumnWidth(0, 100);
+            ui->tableWidget_Produtos->setColumnWidth(0, 150);
             ui->tableWidget_Produtos->setColumnWidth(1, 60);
             ui->tableWidget_Produtos->setColumnWidth(2, 50);
             ui->tableWidget_Produtos->setColumnWidth(3, 110);
@@ -160,6 +160,7 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
             }
             QStringList cabecalho = {"Nome", "Código", "Preço", "Data de Fabricação", "Data de Validade", "Unidade", "Fragrância", "Fornecedor", "País", "Estado", "Cidade"};
 
+            ui->tableWidget_Produtos->sortItems(0);
             ui->tableWidget_Produtos->setHorizontalHeaderLabels(cabecalho);
             ui->tableWidget_Produtos->setSelectionBehavior(QAbstractItemView::SelectRows);
             ui->tableWidget_Produtos->setAlternatingRowColors(true);
@@ -175,7 +176,7 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
         if(query.exec()){
             int linha=0;
             ui->tableWidget_Produtos->setColumnCount(10);
-            ui->tableWidget_Produtos->setColumnWidth(0, 100);
+            ui->tableWidget_Produtos->setColumnWidth(0, 150);
             ui->tableWidget_Produtos->setColumnWidth(1, 60);
             ui->tableWidget_Produtos->setColumnWidth(2, 50);
             ui->tableWidget_Produtos->setColumnWidth(3, 110);
@@ -204,6 +205,7 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
             }
             QStringList cabecalho = {"Nome", "Código", "Preço", "Data de Fabricação", "Data de Validade", "Unidade", "Fornecedor", "País", "Estado", "Cidade"};
 
+            ui->tableWidget_Produtos->sortItems(0);
             ui->tableWidget_Produtos->setHorizontalHeaderLabels(cabecalho);
             ui->tableWidget_Produtos->setSelectionBehavior(QAbstractItemView::SelectRows);
             ui->tableWidget_Produtos->setAlternatingRowColors(true);
@@ -219,7 +221,7 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
         if(query.exec()){
             int linha=0;
             ui->tableWidget_Produtos->setColumnCount(11);
-            ui->tableWidget_Produtos->setColumnWidth(0, 100);
+            ui->tableWidget_Produtos->setColumnWidth(0, 150);
             ui->tableWidget_Produtos->setColumnWidth(1, 60);
             ui->tableWidget_Produtos->setColumnWidth(2, 50);
             ui->tableWidget_Produtos->setColumnWidth(3, 110);
@@ -251,6 +253,7 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
             }
             QStringList cabecalho = {"Nome", "Código", "Preço", "Data de Fabricação", "Data de Validade", "Peso", "Glúten", "Fornecedor", "País", "Estado", "Cidade"};
 
+            ui->tableWidget_Produtos->sortItems(0);
             ui->tableWidget_Produtos->setHorizontalHeaderLabels(cabecalho);
             ui->tableWidget_Produtos->setSelectionBehavior(QAbstractItemView::SelectRows);
             ui->tableWidget_Produtos->setAlternatingRowColors(true);

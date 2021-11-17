@@ -28,10 +28,10 @@ QT_BEGIN_NAMESPACE
 class Ui_relatorio_de_produtos
 {
 public:
-    QVBoxLayout *verticalLayout_2;
+    QHBoxLayout *horizontalLayout_3;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
-    QHBoxLayout *horizontalLayout_2;
+    QVBoxLayout *verticalLayout_2;
     QScrollArea *scrollArea_2;
     QWidget *scrollAreaWidgetContents_2;
     QVBoxLayout *verticalLayout;
@@ -49,24 +49,24 @@ public:
         if (relatorio_de_produtos->objectName().isEmpty())
             relatorio_de_produtos->setObjectName(QString::fromUtf8("relatorio_de_produtos"));
         relatorio_de_produtos->resize(800, 600);
-        relatorio_de_produtos->setMinimumSize(QSize(800, 600));
-        verticalLayout_2 = new QVBoxLayout(relatorio_de_produtos);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        relatorio_de_produtos->setMinimumSize(QSize(0, 0));
+        horizontalLayout_3 = new QHBoxLayout(relatorio_de_produtos);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         scrollArea = new QScrollArea(relatorio_de_produtos);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, -47, 818, 618));
-        horizontalLayout_2 = new QHBoxLayout(scrollAreaWidgetContents);
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 818, 563));
+        verticalLayout_2 = new QVBoxLayout(scrollAreaWidgetContents);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         scrollArea_2 = new QScrollArea(scrollAreaWidgetContents);
         scrollArea_2->setObjectName(QString::fromUtf8("scrollArea_2"));
-        scrollArea_2->setMinimumSize(QSize(800, 600));
+        scrollArea_2->setMinimumSize(QSize(800, 500));
         scrollArea_2->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 798, 598));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 798, 543));
         verticalLayout = new QVBoxLayout(scrollAreaWidgetContents_2);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         formLayout = new QFormLayout();
@@ -95,7 +95,7 @@ public:
         tableWidget_Produtos->setEnabled(false);
         tableWidget_Produtos->setEditTriggers(QAbstractItemView::NoEditTriggers);
         tableWidget_Produtos->setAlternatingRowColors(true);
-        tableWidget_Produtos->setSortingEnabled(false);
+        tableWidget_Produtos->setSortingEnabled(true);
 
         verticalLayout->addWidget(tableWidget_Produtos);
 
@@ -122,11 +122,11 @@ public:
 
         scrollArea_2->setWidget(scrollAreaWidgetContents_2);
 
-        horizontalLayout_2->addWidget(scrollArea_2);
+        verticalLayout_2->addWidget(scrollArea_2);
 
         scrollArea->setWidget(scrollAreaWidgetContents);
 
-        verticalLayout_2->addWidget(scrollArea);
+        horizontalLayout_3->addWidget(scrollArea);
 
 
         retranslateUi(relatorio_de_produtos);

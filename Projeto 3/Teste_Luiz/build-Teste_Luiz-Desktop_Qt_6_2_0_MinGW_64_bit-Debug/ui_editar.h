@@ -31,10 +31,10 @@ QT_BEGIN_NAMESPACE
 class Ui_editar
 {
 public:
-    QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout_7;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
-    QHBoxLayout *horizontalLayout_6;
+    QVBoxLayout *verticalLayout;
     QScrollArea *scrollArea_2;
     QWidget *scrollAreaWidgetContents_2;
     QVBoxLayout *verticalLayout_2;
@@ -107,24 +107,24 @@ public:
             editar->setObjectName(QString::fromUtf8("editar"));
         editar->resize(853, 628);
         editar->setMinimumSize(QSize(800, 600));
-        verticalLayout = new QVBoxLayout(editar);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        horizontalLayout_7 = new QHBoxLayout(editar);
+        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
         scrollArea = new QScrollArea(editar);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
         scrollArea->setEnabled(true);
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, -3, 819, 618));
-        horizontalLayout_6 = new QHBoxLayout(scrollAreaWidgetContents);
-        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 833, 608));
+        verticalLayout = new QVBoxLayout(scrollAreaWidgetContents);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         scrollArea_2 = new QScrollArea(scrollAreaWidgetContents);
         scrollArea_2->setObjectName(QString::fromUtf8("scrollArea_2"));
-        scrollArea_2->setMinimumSize(QSize(800, 600));
+        scrollArea_2->setMinimumSize(QSize(800, 500));
         scrollArea_2->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 799, 598));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 813, 588));
         verticalLayout_2 = new QVBoxLayout(scrollAreaWidgetContents_2);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_3 = new QVBoxLayout();
@@ -270,6 +270,7 @@ public:
         doubleSpinBox_Peso = new QDoubleSpinBox(scrollAreaWidgetContents_2);
         doubleSpinBox_Peso->setObjectName(QString::fromUtf8("doubleSpinBox_Peso"));
         doubleSpinBox_Peso->setEnabled(false);
+        doubleSpinBox_Peso->setDecimals(3);
 
         formLayout_7->setWidget(0, QFormLayout::FieldRole, doubleSpinBox_Peso);
 
@@ -290,7 +291,7 @@ public:
         doubleSpinBox_Volume_por_Unidade = new QDoubleSpinBox(scrollAreaWidgetContents_2);
         doubleSpinBox_Volume_por_Unidade->setObjectName(QString::fromUtf8("doubleSpinBox_Volume_por_Unidade"));
         doubleSpinBox_Volume_por_Unidade->setEnabled(false);
-        doubleSpinBox_Volume_por_Unidade->setDecimals(2);
+        doubleSpinBox_Volume_por_Unidade->setDecimals(3);
         doubleSpinBox_Volume_por_Unidade->setMaximum(999.000000000000000);
 
         formLayout_8->setWidget(0, QFormLayout::FieldRole, doubleSpinBox_Volume_por_Unidade);
@@ -739,11 +740,11 @@ public:
 
         scrollArea_2->setWidget(scrollAreaWidgetContents_2);
 
-        horizontalLayout_6->addWidget(scrollArea_2);
+        verticalLayout->addWidget(scrollArea_2);
 
         scrollArea->setWidget(scrollAreaWidgetContents);
 
-        verticalLayout->addWidget(scrollArea);
+        horizontalLayout_7->addWidget(scrollArea);
 
 
         retranslateUi(editar);

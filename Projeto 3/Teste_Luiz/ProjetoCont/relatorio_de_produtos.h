@@ -5,6 +5,7 @@
 #include <QtSql>
 #include <QDebug>
 #include <QMessageBox>
+#include "editar.h"
 
 namespace Ui {
 class relatorio_de_produtos;

@@ -114,16 +114,16 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 824, 618));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 824, 518));
         horizontalLayout_6 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
         scrollArea_2 = new QScrollArea(scrollAreaWidgetContents);
         scrollArea_2->setObjectName(QString::fromUtf8("scrollArea_2"));
-        scrollArea_2->setMinimumSize(QSize(800, 600));
+        scrollArea_2->setMinimumSize(QSize(800, 500));
         scrollArea_2->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 804, 598));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 804, 498));
         verticalLayout_2 = new QVBoxLayout(scrollAreaWidgetContents_2);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_3 = new QVBoxLayout();
@@ -285,6 +285,7 @@ public:
         doubleSpinBox_Peso = new QDoubleSpinBox(scrollAreaWidgetContents_2);
         doubleSpinBox_Peso->setObjectName(QString::fromUtf8("doubleSpinBox_Peso"));
         doubleSpinBox_Peso->setEnabled(false);
+        doubleSpinBox_Peso->setDecimals(3);
 
         formLayout_7->setWidget(0, QFormLayout::FieldRole, doubleSpinBox_Peso);
 
@@ -305,7 +306,7 @@ public:
         doubleSpinBox_Volume_por_Unidade = new QDoubleSpinBox(scrollAreaWidgetContents_2);
         doubleSpinBox_Volume_por_Unidade->setObjectName(QString::fromUtf8("doubleSpinBox_Volume_por_Unidade"));
         doubleSpinBox_Volume_por_Unidade->setEnabled(false);
-        doubleSpinBox_Volume_por_Unidade->setDecimals(2);
+        doubleSpinBox_Volume_por_Unidade->setDecimals(3);
         doubleSpinBox_Volume_por_Unidade->setMaximum(999.000000000000000);
 
         formLayout_8->setWidget(0, QFormLayout::FieldRole, doubleSpinBox_Volume_por_Unidade);

@@ -2,6 +2,7 @@
 #define EDITAR_H
 
 #include <QDialog>
+#include <QtSql>
 
 namespace Ui {
 class editar;

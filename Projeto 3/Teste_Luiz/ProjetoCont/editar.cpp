@@ -1,6 +1,5 @@
 #include "editar.h"
 #include "ui_editar.h"
-#include <QtSql>
 
 static QSqlQuery query;
 static QString section;

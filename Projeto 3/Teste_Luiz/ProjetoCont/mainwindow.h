@@ -5,6 +5,10 @@
 #include <QtSql>
 #include <QDebug>
 #include <QFileInfo>
+#include "cadastro.h"
+#include "ui_cadastro.h"
+#include "relatorio_de_produtos.h"
+#include "ui_relatorio_de_produtos.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
