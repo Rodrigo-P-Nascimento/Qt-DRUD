@@ -1,3 +1,4 @@
+release/agradecimentos.o
 release/cadastro.o
 release/editar.o
 release/main.o
@@ -7,6 +8,7 @@ release/relatorio_de_produtos.o
 release/sobre.o
 release/qrc_Arquivos_de_Recursos.o
 release/qrc_qmake_qmake_qm_files.o
+release/moc_agradecimentos.o
 release/moc_cadastro.o
 release/moc_editar.o
 release/moc_mainwindow.o

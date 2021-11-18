@@ -131,8 +131,9 @@ public:
         label = new QLabel(scrollAreaWidgetContents_2);
         label->setObjectName(QString::fromUtf8("label"));
         QFont font;
+        font.setFamilies({QString::fromUtf8("Verdana")});
         font.setPointSize(14);
-        font.setBold(true);
+        font.setBold(false);
         label->setFont(font);
 
         verticalLayout_3->addWidget(label);

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Agradecimentos</class>
+ <widget class="QDialog" name="Agradecimentos">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>164</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Agradecimentos</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#Agradecimentos{
+	background-color: rgb(98, 218, 154);
+
+}
+#label{
+	background-color: rgb(3, 69, 105);
+	border: 3px solid rgb(255, 255, 255);
+	border-radius: 10px;
+}
+QLabel{
+	color: rgb(255, 255, 255);
+}</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>381</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Agency FB</family>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Agradecimentos</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>371</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;div&gt;Ícones feitos por &lt;a href=&quot;https://www.freepik.com&quot; title=&quot;Freepik&quot;&gt;Freepik&lt;/a&gt; from &lt;a href=&quot;https://www.flaticon.com/br/&quot; title=&quot;Flaticon&quot;&gt;www.flaticon.com&lt;/a&gt;&lt;/div&gt;
+
+&lt;div&gt;Ícones feitos por &lt;a href=&quot;https://www.flaticon.com/br/autores/dighital&quot; title=&quot;Dighital&quot;&gt;Dighital&lt;/a&gt; from &lt;a href=&quot;https://www.flaticon.com/br/&quot; title=&quot;Flaticon&quot;&gt;www.flaticon.com&lt;/a&gt;&lt;/div&gt;
+
+&lt;div&gt;Ícones feitos por &lt;a href=&quot;https://www.flaticon.com/br/autores/monkik&quot; title=&quot;monkik&quot;&gt;monkik&lt;/a&gt; from &lt;a href=&quot;https://www.flaticon.com/br/&quot; title=&quot;Flaticon&quot;&gt;www.flaticon.com&lt;/a&gt;&lt;/div&gt;
+
+&lt;div&gt;Ícones feitos por &lt;a href=&quot;https://www.flaticon.com/br/autores/royyan-wijaya&quot; title=&quot;Royyan Wijaya&quot;&gt;Royyan Wijaya&lt;/a&gt; from &lt;a href=&quot;https://www.flaticon.com/br/&quot; title=&quot;Flaticon&quot;&gt;www.flaticon.com&lt;/a&gt;&lt;/div&gt;
+
+&lt;div&gt;Ícones feitos por &lt;a href=&quot;https://www.flaticon.com/br/autores/webalys&quot; title=&quot;Webalys&quot;&gt;Webalys&lt;/a&gt; from &lt;a href=&quot;https://www.flaticon.com/br/&quot; title=&quot;Flaticon&quot;&gt;www.flaticon.com&lt;/a&gt;&lt;/div&gt;
+</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

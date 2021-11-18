@@ -9,6 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    agradecimentos.cpp \
     cadastro.cpp \
     editar.cpp \
     main.cpp \
@@ -18,6 +19,7 @@ SOURCES += \
     sobre.cpp
 
 HEADERS += \
+    agradecimentos.h \
     cadastro.h \
     editar.h \
     mainwindow.h \
@@ -26,6 +28,7 @@ HEADERS += \
     sobre.h
 
 FORMS += \
+    agradecimentos.ui \
     cadastro.ui \
     editar.ui \
     mainwindow.ui \

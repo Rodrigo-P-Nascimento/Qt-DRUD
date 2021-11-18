@@ -11,6 +11,8 @@
 #include "ui_relatorio_de_produtos.h"
 #include "sobre.h"
 #include "ui_sobre.h"
+#include "agradecimentos.h"
+#include "ui_agradecimentos.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -32,6 +34,8 @@ private slots:
     void on_action_Gerenciar_Produtos_triggered();
 
     void on_actionSobre_o_Grupo_triggered();
+
+    void on_actionAgradecimentos_triggered();
 
 private:
     Ui::MainWindow *ui;

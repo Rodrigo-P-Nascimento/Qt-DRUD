@@ -50,3 +50,10 @@ void MainWindow::on_actionSobre_o_Grupo_triggered()
     about->show();
 }
 
+
+void MainWindow::on_actionAgradecimentos_triggered()
+{
+    Agradecimentos *agrade = new Agradecimentos();
+    agrade->show();
+}
+
