@@ -9,6 +9,8 @@
 #include "ui_cadastro.h"
 #include "relatorio_de_produtos.h"
 #include "ui_relatorio_de_produtos.h"
+#include "sobre.h"
+#include "ui_sobre.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -28,6 +30,8 @@ private slots:
     void on_action_Cadastrar_triggered();
 
     void on_action_Gerenciar_Produtos_triggered();
+
+    void on_actionSobre_o_Grupo_triggered();
 
 private:
     Ui::MainWindow *ui;

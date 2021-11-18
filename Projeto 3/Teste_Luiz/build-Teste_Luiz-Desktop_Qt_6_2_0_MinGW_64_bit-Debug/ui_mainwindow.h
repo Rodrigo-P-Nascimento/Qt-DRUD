@@ -30,7 +30,6 @@ public:
     QAction *action_Cadastrar;
     QAction *action_Gerenciar_Produtos;
     QAction *actionSobre_o_Grupo;
-    QAction *actionSobre_o_Qt;
     QAction *actionAgradecimentos;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
@@ -140,8 +139,9 @@ public:
         action_Gerenciar_Produtos->setIcon(icon1);
         actionSobre_o_Grupo = new QAction(MainWindow);
         actionSobre_o_Grupo->setObjectName(QString::fromUtf8("actionSobre_o_Grupo"));
-        actionSobre_o_Qt = new QAction(MainWindow);
-        actionSobre_o_Qt->setObjectName(QString::fromUtf8("actionSobre_o_Qt"));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/imagem/Imagens/ponto-de-exclamacao.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionSobre_o_Grupo->setIcon(icon2);
         actionAgradecimentos = new QAction(MainWindow);
         actionAgradecimentos->setObjectName(QString::fromUtf8("actionAgradecimentos"));
         centralwidget = new QWidget(MainWindow);
@@ -202,7 +202,6 @@ public:
         menu_Produto->addAction(action_Cadastrar);
         menu_Relatorio->addAction(action_Gerenciar_Produtos);
         menu_Funcionario->addAction(actionSobre_o_Grupo);
-        menu_Funcionario->addAction(actionSobre_o_Qt);
         menu_Funcionario->addAction(actionAgradecimentos);
         toolBar->addAction(action_Cadastrar);
         toolBar->addAction(action_Gerenciar_Produtos);
@@ -224,7 +223,6 @@ public:
 #endif // QT_CONFIG(tooltip)
         action_Gerenciar_Produtos->setText(QCoreApplication::translate("MainWindow", "Gerenciar Produtos", nullptr));
         actionSobre_o_Grupo->setText(QCoreApplication::translate("MainWindow", "Sobre o Grupo", nullptr));
-        actionSobre_o_Qt->setText(QCoreApplication::translate("MainWindow", "Sobre o Qt", nullptr));
         actionAgradecimentos->setText(QCoreApplication::translate("MainWindow", "Agradecimentos", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Vers\303\243o 1.0", nullptr));
         menu_Produto->setTitle(QCoreApplication::translate("MainWindow", "Produto", nullptr));

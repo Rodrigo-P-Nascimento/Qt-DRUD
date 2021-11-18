@@ -8,5 +8,9 @@
         <file>Imagens/padaria.png</file>
         <file>Imagens/recarregar.png</file>
         <file>Imagens/relatorio.png</file>
+        <file>Imagens/ponto-de-exclamacao.png</file>
+        <file>Imagens/qt.png</file>
+        <file>Imagens/avatar_Rodrigo.png</file>
+        <file>Imagens/avatar.png</file>
     </qresource>
 </RCC>

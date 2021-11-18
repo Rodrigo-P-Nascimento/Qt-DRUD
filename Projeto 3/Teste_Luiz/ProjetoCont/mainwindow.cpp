@@ -43,3 +43,10 @@ void MainWindow::on_action_Gerenciar_Produtos_triggered()
     ui->tabWidget->addTab(new relatorio_de_produtos(), "Gerenciar Produtos");
     ui->tabWidget->setCurrentIndex(ui->tabWidget->count()-1);
 }
+
+void MainWindow::on_actionSobre_o_Grupo_triggered()
+{
+    Sobre *about = new Sobre();
+    about->show();
+}
+

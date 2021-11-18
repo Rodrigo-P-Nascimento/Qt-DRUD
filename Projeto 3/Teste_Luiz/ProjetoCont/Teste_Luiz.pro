@@ -14,20 +14,23 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     produtos.cpp \
-    relatorio_de_produtos.cpp
+    relatorio_de_produtos.cpp \
+    sobre.cpp
 
 HEADERS += \
     cadastro.h \
     editar.h \
     mainwindow.h \
     produtos.h \
-    relatorio_de_produtos.h
+    relatorio_de_produtos.h \
+    sobre.h
 
 FORMS += \
     cadastro.ui \
     editar.ui \
     mainwindow.ui \
-    relatorio_de_produtos.ui
+    relatorio_de_produtos.ui \
+    sobre.ui
 
 TRANSLATIONS += \
     Teste_Taylor_pt_BR.ts

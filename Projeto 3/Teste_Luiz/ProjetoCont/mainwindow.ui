@@ -185,7 +185,6 @@ Versão 1.0
      <string>Sobre</string>
     </property>
     <addaction name="actionSobre_o_Grupo"/>
-    <addaction name="actionSobre_o_Qt"/>
     <addaction name="actionAgradecimentos"/>
    </widget>
    <addaction name="menu_Produto"/>
@@ -236,13 +235,12 @@ Versão 1.0
    </property>
   </action>
   <action name="actionSobre_o_Grupo">
+   <property name="icon">
+    <iconset resource="Arquivos_de_Recursos.qrc">
+     <normaloff>:/imagem/Imagens/ponto-de-exclamacao.png</normaloff>:/imagem/Imagens/ponto-de-exclamacao.png</iconset>
+   </property>
    <property name="text">
     <string>Sobre o Grupo</string>
-   </property>
-  </action>
-  <action name="actionSobre_o_Qt">
-   <property name="text">
-    <string>Sobre o Qt</string>
    </property>
   </action>
   <action name="actionAgradecimentos">
