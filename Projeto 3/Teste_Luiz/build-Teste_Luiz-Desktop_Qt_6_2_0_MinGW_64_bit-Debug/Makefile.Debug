@@ -148,6 +148,7 @@ debug/qrc_Arquivos_de_Recursos.cpp: ../ProjetoCont/Arquivos_de_Recursos.qrc \
 		C:/Qt/6.2.0/mingw81_64/bin/rcc.exe \
 		../ProjetoCont/Imagens/ferramentas-de-limpeza.png \
 		../ProjetoCont/Imagens/padaria.png \
+		../ProjetoCont/Imagens/avatar_Taylor.png \
 		../ProjetoCont/Imagens/recarregar.png \
 		../ProjetoCont/Imagens/qt.png \
 		../ProjetoCont/Imagens/adicionar.png \
@@ -304,6 +305,8 @@ debug/moc_agradecimentos.cpp: ../ProjetoCont/agradecimentos.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtGui/QTransform \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qloggingcategory.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QGraphicsDropShadowEffect \
+		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qgraphicseffect.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
 	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "C:/Users/rodri/Documents/GitHub/ProjetoLP1/Projeto 3/Teste_Luiz/build-Teste_Luiz-Desktop_Qt_6_2_0_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"C:/Users/rodri/Documents/GitHub/ProjetoLP1/Projeto 3/Teste_Luiz/ProjetoCont" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtWidgets -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtSql -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\ProjetoCont\agradecimentos.h -o debug\moc_agradecimentos.cpp
@@ -1245,6 +1248,8 @@ debug/moc_mainwindow.cpp: ../ProjetoCont/mainwindow.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QGraphicsDropShadowEffect \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qgraphicseffect.h \
 		ui_sobre.h \
+		../ProjetoCont/agradecimentos.h \
+		ui_agradecimentos.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.2.0/mingw81_64/bin/moc.exe
 	C:\Qt\6.2.0\mingw81_64\bin\moc.exe $(DEFINES) --include "C:/Users/rodri/Documents/GitHub/ProjetoLP1/Projeto 3/Teste_Luiz/build-Teste_Luiz-Desktop_Qt_6_2_0_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.2.0/mingw81_64/mkspecs/win32-g++ -I"C:/Users/rodri/Documents/GitHub/ProjetoLP1/Projeto 3/Teste_Luiz/ProjetoCont" -IC:/Qt/6.2.0/mingw81_64/include -IC:/Qt/6.2.0/mingw81_64/include/QtWidgets -IC:/Qt/6.2.0/mingw81_64/include/QtGui -IC:/Qt/6.2.0/mingw81_64/include/QtSql -IC:/Qt/6.2.0/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\ProjetoCont\mainwindow.h -o debug\moc_mainwindow.cpp
@@ -1856,7 +1861,36 @@ debug/agradecimentos.o: ../ProjetoCont/agradecimentos.cpp ../ProjetoCont/agradec
 		C:/Qt/6.2.0/mingw81_64/include/QtGui/QTransform \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/qloggingcategory.h \
-		ui_agradecimentos.h
+		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QGraphicsDropShadowEffect \
+		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qgraphicseffect.h \
+		ui_agradecimentos.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/QVariant \
+		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QApplication \
+		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qeventloop.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfuture.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfutureinterface.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qresultstore.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qfuture_impl.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qthreadpool.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qthread.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qelapsedtimer.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qrunnable.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qexception.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qapplicationpermission.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtGui/qguiapplication.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtGui/qinputmethod.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtGui/qguiapplication_platform.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QLabel \
+		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qlabel.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtGui/qpicture.h \
+		C:/Qt/6.2.0/mingw81_64/include/QtGui/qtextdocument.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\agradecimentos.o ..\ProjetoCont\agradecimentos.cpp
 
 debug/cadastro.o: ../ProjetoCont/cadastro.cpp ../ProjetoCont/cadastro.h \
@@ -2869,6 +2903,8 @@ debug/main.o: ../ProjetoCont/main.cpp ../ProjetoCont/mainwindow.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QGraphicsDropShadowEffect \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qgraphicseffect.h \
 		ui_sobre.h \
+		../ProjetoCont/agradecimentos.h \
+		ui_agradecimentos.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QLocale \
 		C:/Qt/6.2.0/mingw81_64/include/QtCore/QTranslator
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\ProjetoCont\main.cpp
@@ -3220,6 +3256,8 @@ debug/mainwindow.o: ../ProjetoCont/mainwindow.cpp ../ProjetoCont/mainwindow.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/QGraphicsDropShadowEffect \
 		C:/Qt/6.2.0/mingw81_64/include/QtWidgets/qgraphicseffect.h \
 		ui_sobre.h \
+		../ProjetoCont/agradecimentos.h \
+		ui_agradecimentos.h \
 		ui_mainwindow.h \
 		C:/Qt/6.2.0/mingw81_64/include/QtGui/QAction \
 		C:/Qt/6.2.0/mingw81_64/include/QtGui/qaction.h \

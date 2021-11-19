@@ -66,7 +66,7 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
             ui->tableWidget_Produtos->setSelectionBehavior(QAbstractItemView::SelectRows);
             ui->tableWidget_Produtos->setAlternatingRowColors(true);
         }else{
-            qDebug() << query.lastError().text();
+            //qDebug() << query.lastError().text();
             QMessageBox::information(this, "Aviso", "Banco de dados não esta aberto");
         }
 
@@ -118,7 +118,7 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
             ui->tableWidget_Produtos->setSelectionBehavior(QAbstractItemView::SelectRows);
             ui->tableWidget_Produtos->setAlternatingRowColors(true);
         }else{
-            qDebug() << query.lastError().text();
+            //qDebug() << query.lastError().text();
             QMessageBox::information(this, "Aviso", "Banco de dados não esta aberto");
         }
     }else if(arg1 == "Limpeza"){
@@ -165,7 +165,7 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
             ui->tableWidget_Produtos->setSelectionBehavior(QAbstractItemView::SelectRows);
             ui->tableWidget_Produtos->setAlternatingRowColors(true);
         }else{
-            qDebug() << query.lastError().text();
+            //qDebug() << query.lastError().text();
             QMessageBox::information(this, "Aviso", "Banco de dados não esta aberto");
         }
     }else if(arg1 == "Mercearia"){
@@ -210,7 +210,7 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
             ui->tableWidget_Produtos->setSelectionBehavior(QAbstractItemView::SelectRows);
             ui->tableWidget_Produtos->setAlternatingRowColors(true);
         }else{
-            qDebug() << query.lastError().text();
+            //qDebug() << query.lastError().text();
             QMessageBox::information(this, "Aviso", "Banco de dados não esta aberto");
         }
     }else if(arg1 == "Padaria"){
@@ -258,7 +258,7 @@ void relatorio_de_produtos::on_comboBox_currentTextChanged(const QString &arg1)
             ui->tableWidget_Produtos->setSelectionBehavior(QAbstractItemView::SelectRows);
             ui->tableWidget_Produtos->setAlternatingRowColors(true);
         }else{
-            qDebug() << query.lastError().text();
+            //qDebug() << query.lastError().text();
             QMessageBox::information(this, "Aviso", "Banco de dados não esta aberto");
         }
     }else if(arg1 == "Selecionar"){
@@ -306,7 +306,8 @@ void relatorio_de_produtos::on_BTN_EXCLUIR_clicked()
         ui->tableWidget_Produtos->removeRow(linha);
     }
     else {
-        qDebug() << "Erro ao excluir produto!";
+        QMessageBox::information(this, "ERRO", "Erro ao excluir produto!");
+        //qDebug() << "Erro ao excluir produto!";
     }
 }
 
@@ -326,6 +327,7 @@ void relatorio_de_produtos::on_BTN_EDITAR_clicked()
     editar ed(this, secao, codigo);
     ed.exec();
 
-    //Atualizar tabela de produtos após edição ****
+    QMessageBox::information(this, "Dados Editados", "Seus dados foram editados com sucesso!");
+    relatorio_de_produtos::on_comboBox_currentTextChanged(ui->comboBox->currentText());
 }
 

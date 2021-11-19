@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QtSql>
+#include <QMessageBox>
 
 namespace Ui {
 class editar;

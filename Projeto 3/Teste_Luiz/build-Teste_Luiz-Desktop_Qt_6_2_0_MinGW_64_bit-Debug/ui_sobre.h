@@ -176,7 +176,7 @@ public:
         avatar3 = new QLabel(Sobre);
         avatar3->setObjectName(QString::fromUtf8("avatar3"));
         avatar3->setMaximumSize(QSize(60, 60));
-        avatar3->setPixmap(QPixmap(QString::fromUtf8(":/imagem/Imagens/avatar_Rodrigo.png")));
+        avatar3->setPixmap(QPixmap(QString::fromUtf8(":/imagem/Imagens/avatar_Taylor.png")));
         avatar3->setScaledContents(true);
 
         formLayout->setWidget(2, QFormLayout::LabelRole, avatar3);
@@ -217,7 +217,7 @@ public:
         nome1->setText(QCoreApplication::translate("Sobre", "> Luiz Henrique Queiroz", nullptr));
         nome2->setText(QCoreApplication::translate("Sobre", "> Rodrigo P. Nascimento", nullptr));
         avatar3->setText(QString());
-        nome3->setText(QCoreApplication::translate("Sobre", "> Taylor Nobrega", nullptr));
+        nome3->setText(QCoreApplication::translate("Sobre", "> Taylor K. C. Nobrega", nullptr));
         avatar2->setText(QString());
     } // retranslateUi
 

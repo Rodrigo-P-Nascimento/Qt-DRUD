@@ -28,12 +28,12 @@ editar::editar(QWidget *parent, QString secao, QString codigo) :
         secao = "limpeza";
     }
 
-
     query.prepare("select * from "+secao+" where codigo="+codigo);
     if(query.exec()){
         query.first();
     }
     else {
+
         qDebug() << "Erro ao encontrar o produto para edição no banco de dados";
     }
 
