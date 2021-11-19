@@ -205,7 +205,7 @@ QLabel{
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="Arquivos_de_Recursos.qrc">:/imagem/Imagens/avatar_Rodrigo.png</pixmap>
+        <pixmap resource="Arquivos_de_Recursos.qrc">:/imagem/Imagens/avatar_Taylor.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
