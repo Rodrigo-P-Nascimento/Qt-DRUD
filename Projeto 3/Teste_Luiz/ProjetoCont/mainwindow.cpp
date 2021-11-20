@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QMessageBox>
 
 static QSqlDatabase dbdados = QSqlDatabase::addDatabase("QSQLITE");
 
@@ -11,12 +12,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->statusbar->addPermanentWidget(ui->label);
 
     dbdados.setDatabaseName("dados.db");
-
     if(!dbdados.open()){
-        qDebug() << "Não foi possível abrir o DB";
-    }else{
+        QMessageBox::warning(this, "ERRO", "Erro ao abrir o banco de dados!");
+        //qDebug() << "Não foi possível abrir o DB";
+    }/*else{
         qDebug() << "DB aberto.";
-    }
+    }*/
 }
 
 MainWindow::~MainWindow()

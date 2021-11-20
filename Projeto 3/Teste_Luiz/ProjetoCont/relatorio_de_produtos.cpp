@@ -1,5 +1,6 @@
 #include "relatorio_de_produtos.h"
 #include "ui_relatorio_de_produtos.h"
+#include <QMessageBox>
 
 relatorio_de_produtos::relatorio_de_produtos(QWidget *parent) :
     QWidget(parent),
@@ -306,7 +307,7 @@ void relatorio_de_produtos::on_BTN_EXCLUIR_clicked()
         ui->tableWidget_Produtos->removeRow(linha);
     }
     else {
-        QMessageBox::information(this, "ERRO", "Erro ao excluir produto!");
+        QMessageBox::warning(this, "ERRO", "Erro ao excluir produto!");
         //qDebug() << "Erro ao excluir produto!";
     }
 }
@@ -327,7 +328,7 @@ void relatorio_de_produtos::on_BTN_EDITAR_clicked()
     editar ed(this, secao, codigo);
     ed.exec();
 
-    QMessageBox::information(this, "Dados Editados", "Seus dados foram editados com sucesso!");
+    //QMessageBox::information(this, "Dados Editados", "Seus dados foram editados com sucesso!");
     relatorio_de_produtos::on_comboBox_currentTextChanged(ui->comboBox->currentText());
 }
 

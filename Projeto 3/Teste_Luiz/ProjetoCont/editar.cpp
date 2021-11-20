@@ -33,8 +33,9 @@ editar::editar(QWidget *parent, QString secao, QString codigo) :
         query.first();
     }
     else {
-
-        qDebug() << "Erro ao encontrar o produto para edição no banco de dados";
+        QMessageBox::warning(this, "ERRO", "Erro ao encontrar o produto para edição no banco de dados");
+        return;
+        //qDebug() << "Erro ao encontrar o produto para edição no banco de dados";
     }
 
 
@@ -314,7 +315,10 @@ void editar::on_BTN_SALVAR_clicked()
                   ", nome_for='"+nome_for+"', pais_for='"+pais_for+"', estado_for='"+estado_for+
                   "', cidade_for='"+cidade_for+"' where codigo="+cod);
     if (!query.exec()){
-        qDebug() << "Erro ao atualizar dados do produto!";
+        QMessageBox::warning(this, "ERRO", "Erro ao atualizar dados do produto");
+        this->close();
+        return;
+        //qDebug() << "Erro ao atualizar dados do produto!";
     }
 
     if (section == "mercearia"){
@@ -322,14 +326,14 @@ void editar::on_BTN_SALVAR_clicked()
 
         unidades = ui->spinBox_Unidades->text();
 
-        query.exec("update "+section+" set unidade="+unidades+" where codigo="+codigo);
+        query.prepare("update "+section+" set unidade="+unidades+" where codigo="+codigo);
     }
     else if (section == "frios"){
         QString peso;
 
         peso = ui->doubleSpinBox_Peso->text();
 
-        query.exec("update "+section+" set peso='"+peso+"' where codigo="+codigo);
+        query.prepare("update "+section+" set peso='"+peso+"' where codigo="+codigo);
     }
     else if (section == "bebidas"){
         QString unidade, volume, alcool, gas;
@@ -339,8 +343,8 @@ void editar::on_BTN_SALVAR_clicked()
         alcool = ui->comboBox_Alcoolica->currentText();
         gas = ui->comboBox_Gaseificada->currentText();
 
-        query.exec("update "+section+" set unidade="+unidade+", volume='"+volume+
-                   "', alcool='"+alcool+"', gas='"+gas+"' where codigo="+codigo);
+        query.prepare("update "+section+" set unidade="+unidade+", volume='"+volume+
+                      "', alcool='"+alcool+"', gas='"+gas+"' where codigo="+codigo);
     }
     else if (section == "padaria"){
         QString peso, gluten;
@@ -348,8 +352,7 @@ void editar::on_BTN_SALVAR_clicked()
         peso = ui->doubleSpinBox_Peso->text();
         gluten = ui->comboBox_Gluten->currentText();
 
-        query.exec("update "+section+" set peso='"+peso+"', gluten='"+gluten+"' "
-                   "where codigo="+codigo);
+        query.prepare("update "+section+" set peso='"+peso+"', gluten='"+gluten+"' where codigo="+codigo);
     }
     else if (section == "limpeza"){
         QString unidade, fragrancia;
@@ -357,7 +360,14 @@ void editar::on_BTN_SALVAR_clicked()
         unidade = ui->spinBox_Unidades->text();
         fragrancia = ui->lineEdit_Fragrancia->text();
 
-        query.exec("update "+section+" set unidade="+unidade+", fragrancia='"+fragrancia+"' where codigo="+codigo);
+        query.prepare("update "+section+" set unidade="+unidade+", fragrancia='"+fragrancia+"' where codigo="+codigo);
+    }
+
+
+    if (query.exec()){
+        QMessageBox::information(this, "Dados Editados", "Seus dados foram editados com sucesso!");
+    }else {
+        QMessageBox::warning(this, "ERRO", "Erro ao atualizar parte dos dados do produto");
     }
 
 

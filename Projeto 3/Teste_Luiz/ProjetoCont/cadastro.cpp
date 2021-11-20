@@ -214,10 +214,11 @@ void cadastro::on_pushButton_Salvar_clicked()
     }
 
     if(query.exec()){
-        QMessageBox::information(this, "Bom trabalho!", "Dados salvos com sucesso");
+        QMessageBox::information(this, "Bom trabalho!", "Dados salvos com sucesso!");
     }else{
-        qDebug() << query.lastError().text();
-        qDebug() << "Dados NÃO SALVOS";
+        QMessageBox::warning(this, "ERRO", "Erro ao cadastrar o produto!");
+        //qDebug() << query.lastError().text();
+        //qDebug() << "Dados NÃO SALVOS";
     }
 
 
