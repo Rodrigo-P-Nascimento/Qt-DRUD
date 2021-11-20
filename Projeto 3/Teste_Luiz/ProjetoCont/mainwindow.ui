@@ -78,9 +78,7 @@ QTabWidget::pane {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   top:-1px; 
-  background-image: url(:/imagem/Imagens/merchandising-de-mercearia.png) no-repeat center center fixed;
-  background-size: 50px 50px;
-
+  background: rgb(60, 157, 208); 
 } 
 
 QTabBar::tab {
