@@ -325,6 +325,29 @@ void relatorio_de_produtos::on_BTN_EDITAR_clicked()
     QString secao = ui->comboBox->currentText();
     QString codigo = ui->tableWidget_Produtos->item(linha, 1)->text();
 
+    if (secao == "Açougue e Frios"){
+        secao = "frios";
+    }
+    else if (secao == "Bebidas"){
+        secao = "bebidas";
+    }
+    else if (secao == "Mercearia"){
+        secao = "mercearia";
+    }
+    else if (secao == "Padaria"){
+        secao = "padaria";
+    }
+    else if (secao == "Limpeza"){
+        secao = "limpeza";
+    }
+
+    QSqlQuery query;
+    query.prepare("select * from "+secao+" where codigo="+codigo);
+    if (!query.exec()){
+        QMessageBox::warning(this, "ERRO", "Erro ao acessar banco de dados");
+        return;
+    }
+
     editar ed(this, secao, codigo);
     ed.exec();
 

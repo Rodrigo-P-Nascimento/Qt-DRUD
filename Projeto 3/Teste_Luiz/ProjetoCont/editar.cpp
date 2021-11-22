@@ -11,32 +11,8 @@ editar::editar(QWidget *parent, QString secao, QString codigo) :
 {
     ui->setupUi(this);
 
-
-    if (secao == "Açougue e Frios"){
-        secao = "frios";
-    }
-    else if (secao == "Bebidas"){
-        secao = "bebidas";
-    }
-    else if (secao == "Mercearia"){
-        secao = "mercearia";
-    }
-    else if (secao == "Padaria"){
-        secao = "padaria";
-    }
-    else if (secao == "Limpeza"){
-        secao = "limpeza";
-    }
-
-    query.prepare("select * from "+secao+" where codigo="+codigo);
-    if(query.exec()){
-        query.first();
-    }
-    else {
-        QMessageBox::warning(this, "ERRO", "Erro ao encontrar o produto para edição no banco de dados");
-        return;
-        //qDebug() << "Erro ao encontrar o produto para edição no banco de dados";
-    }
+    query.exec("select * from "+secao+" where codigo="+codigo);
+    query.first();
 
 
     desabled();
