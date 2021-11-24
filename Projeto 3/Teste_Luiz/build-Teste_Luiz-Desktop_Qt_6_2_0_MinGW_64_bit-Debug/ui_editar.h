@@ -754,7 +754,7 @@ public:
 
     void retranslateUi(QDialog *editar)
     {
-        editar->setWindowTitle(QCoreApplication::translate("editar", "Dialog", nullptr));
+        editar->setWindowTitle(QCoreApplication::translate("editar", "Editar", nullptr));
         label->setText(QCoreApplication::translate("editar", "Dados do Produto", nullptr));
         label_Nome_do_Produto->setText(QCoreApplication::translate("editar", "Nome do Produto:", nullptr));
         label_Codigo->setText(QCoreApplication::translate("editar", "C\303\263digo:", nullptr));
